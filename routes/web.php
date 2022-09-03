@@ -19,4 +19,7 @@ use App\Http\Controllers\IndexController;
 // });
 Route::controller(IndexController::class)->group(function (){
     Route::get('/', 'indexAction');
+    Route::get('/category/{id}', 'categoryAction', function($id){
+        return $id;
+        });
 });
