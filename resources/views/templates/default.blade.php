@@ -11,10 +11,11 @@
 <meta name="msapplication-TileColor" content="#E6E6FA">
 <meta name="msapplication-TileImage" content="/assets/templates/universal/assets/ico/fav192.png">
 <meta name="theme-color" content="#E6E6FA">
-<script async="" src="/assetshttps://mc.yandex.ru/metrika/tag.js"></script><script>
+<script async="" src="/assets/tag.js"></script>
+<script>
     if('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/pwa/sw.js');
+        navigator.serviceWorker.register('/sw.js');
       });
     }
         var pwaReq = null;
@@ -30,7 +31,7 @@
         }
     }
 </script>
-<link rel="shortcut icon" href="/assetshttps://universal.elite-board.org/templates/universal/images/favicon.png" type="image/png">
+<link rel="shortcut icon" href="/assets/templates/universal/images/favicon.png" type="image/png">
 <title>Universal</title>
 <link href="/assets/templates/universal/css/bootstrap.min.css" rel="stylesheet">
 <link href="/assets/templates/universal/css/style-main.css" rel="stylesheet">
@@ -39,30 +40,31 @@
 <link href="/assets/templates/universal/carousel/owl.carousel.min.css" rel="stylesheet">
 <link href="/assets/templates/universal/carousel/owl.theme.default.min.css" rel="stylesheet">  
 <script>
-var TPL_PATH = "/";
-var TPL_PATH_THEME = '/assets/templates/universal/';
-var TPL_REGION_ID = 0;
-var TPL_AUTOROTATE = 2000;
-var TPL_L_00 = '[после регистрации]';
-var TPL_L_01 = 'Отменить';
-var TPL_L_02 = 'Применить';
-var TPL_L_03 = 'Вы уверены?';
-var TPL_L_04 = '[ Ваш выбор ]';
-var TPL_L_05 = '[ Выбрано ]';
-var TPL_L_06 = 'Необходимо выбрать хотя бы одно объявление';
-var TPL_L_07 = 'Показать ещё';
-var TPL_L_08 = 'Скрыть';
-paceOptions = {
-elements: true
-};        
-var fields = new Array();
-var yamaps = new Array();
+    var TPL_PATH = "/";
+    var TPL_PATH_THEME = '/assets/templates/universal/';
+    var TPL_REGION_ID = 0;
+    var TPL_AUTOROTATE = 2000;
+    var TPL_L_00 = '[после регистрации]';
+    var TPL_L_01 = 'Отменить';
+    var TPL_L_02 = 'Применить';
+    var TPL_L_03 = 'Вы уверены?';
+    var TPL_L_04 = '[ Ваш выбор ]';
+    var TPL_L_05 = '[ Выбрано ]';
+    var TPL_L_06 = 'Необходимо выбрать хотя бы одно объявление';
+    var TPL_L_07 = 'Показать ещё';
+    var TPL_L_08 = 'Скрыть';
+    paceOptions = {
+    elements: true
+    };        
+    var fields = new Array();
+    var yamaps = new Array();
 </script>
+<script src="/assets/cron.js" defer=""></script>
 <meta property="og:title" content="Universal">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://universal.elite-board.org/">
 <meta property="og:description" content="Шаблон Universal для сайта объявлений Elite-Board.">
-<meta property="og:image" content="https://universal.elite-board.org/images/cat/logo.png"><style type="text/css">.imgLiquid img {visibility:hidden}</style></head>
+<meta property="og:image" content="/assets/images/cat/logo.png"><style type="text/css">.imgLiquid img {visibility:hidden}</style></head>
   
 <body>
   
@@ -73,7 +75,7 @@ var yamaps = new Array();
 <a href="/assets/" class="logo-title c-20 pos-rel">
 <span class="logo-icon"><img alt="Оксана Соболева" src="/assets/images/cat/logo.png"></span>
 <span class="logo-text al-mid s22 f-b">Universal</span></a> 
-<a href="/assets#selectRegion" data-toggle="modal" class="selectRegion bl-inl al-mid c-20 s15">
+<a href="#selectRegion" data-toggle="modal" class="selectRegion bl-inl al-mid c-20 s15">
 <span class="hidden-xsm bl-inl al-mid sp-now regw">Все регионы</span></a></div>
   
 <div class="bl-cell al-mid text-right">
@@ -324,7 +326,7 @@ var current_region = TPL_REGION_ID;
 <div class="bl-regionlist br3">
 <div class="region_current"><a href="/assets#" id="region_select_current"><span id="region_select_current_name"></span></a></div>  
 <div class="RegionFilter pos-rel"><input type="text" id="region-modal-filter" value="" class="form-control" placeholder="Фильтр по названию..." autocomplete="off"><a id="region-modal-clear" class="pos-abs bl-bl s16 point c-a  text-center">×</a></div>
-<ul id="regionlist"></ul></div>
+<ul id="regionlist" style=""><li><a href="#" class="" id="rl1">Россия</a></li><li><a href="#" class="" id="rl104">Украина</a></li><li><a href="#" class="" id="rl105">Белоруссия</a></li><li><a href="#" class="" id="rl114">Грузия</a></li><li><a href="#" class="" id="rl113">Туркмения</a></li><li><a href="#" class="" id="rl112">Узбекистан</a></li><li><a href="#" class="" id="rl111">Таджикистан</a></li><li><a href="#" class="" id="rl110">Молдавия</a></li><li><a href="#" class="" id="rl109">Киргизия</a></li><li><a href="#" class="" id="rl108">Казахстан</a></li><li><a href="#" class="" id="rl107">Армения</a></li><li><a href="#" class="" id="rl106">Азербайджан</a></li><li><a href="#" class="" id="rl115">Другое</a></li></ul></div>
 <div id="region_loader_img" style="display:none;"><div>Пожалуйста, подождите...</div></div>
 <div class="region_control"><a href="/assets#" id="region_select_back" class="btn btn-default btn-xs">Назад</a>
 <a href="/assets#" id="region_select_all" class="btn btn-default btn-xs pull-right">Все регионы</a></div>  

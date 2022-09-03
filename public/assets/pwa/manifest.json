@@ -10,7 +10,7 @@
   
    "icons": [
      {
-       "src":"\/templates/universal/assets/ico/fav192.png",
+       "src":"\/assets/templates/universal/assets/ico/fav192.png",
        "sizes": "192x192",
        "type": "image\/png"
      }
