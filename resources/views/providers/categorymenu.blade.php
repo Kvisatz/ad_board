@@ -14,9 +14,9 @@
                         <ul class="dropdown-menu hidden-xs">
                             @foreach($category->supcategories as $supcategory)
                                 <li>
-                                    <a class="sp-now" href="https://universal.elite-board.org/Avtotransport/sale/">
+                                    <a class="sp-now" href="{{ url('/category', [$supcategory->id]) }}">
                                         {{ $supcategory->name }}
-                                        <span class="cat-count b-f c-7">9</span>
+                                        <span class="cat-count b-f c-7">{{ $supcategory->amount }}</span>
                                     </a>
                                 </li>
                             @endforeach

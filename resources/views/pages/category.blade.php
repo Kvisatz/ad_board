@@ -9,7 +9,7 @@
                 <img class="imgcat pull-left hidden-xs" src="/assets/images/cat/{{ $category->img }}" alt="{{ $category->name }}">  
                 <h1>{{ $category->name }}</h1>  
   
-                <p>Актуальная база объявлений о продаже новых и подержанных машин</p>
+                <p>{{ $category->description }}</p>
 <ul class="row tree1">
 <li class="col-xs-6 col-sm-5 col-md-4 colp"><div class="tree-l sp-now pos-rel"><a href="https://universal.elite-board.org/Avtotransport/sale/" class="pos-rel b-f">
 Продажа авто</a><span class="count-tree1 b-f pos-abs c-a s13">9</span></div></li>
