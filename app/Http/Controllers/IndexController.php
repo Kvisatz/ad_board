@@ -13,7 +13,9 @@ class IndexController extends Controller
     public function indexAction()
     {
         $template = $this->template;
-        return view('pages.index', compact('template'));
+        $categories = Category::get();
+
+        return view('pages.index', compact('template', 'categories'));
 
     }
     public function categoryAction($id)
