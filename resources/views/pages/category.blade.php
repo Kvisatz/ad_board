@@ -34,6 +34,8 @@
                                     <script>$(".radio-value").on("click",function(){var a="( ";$(this).find("input[type=radio]:checked").each(function(){a+=$(this).siblings("label").text()+" "});a+=")";"( )"==a&&(a="");$(this).find(".selected-radio").text(a)});
                                         $(".checkbox-value").on("click",function(){var a="( ";$(this).find("input[type=checkbox]:checked").each(function(){a+=$(this).siblings("label").text()+" "});a+=")";"( )"==a&&(a="");$(this).find(".selected-checkbox").text(a)});
                                     </script>
+                                @foreach($category->filters as $filter)
+
                                     <div class="col-xs-12 col-sm-6 col-md-4 colp2">
                                         <div class="dropdown yamm-fw radio-value">
                                             <div data-toggle="dropdown" class="dropdown-toggle sp-now point form-control">
@@ -62,7 +64,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-12 col-sm-6 col-md-4 colp2">
+                                @endforeach
+                                    <!-- <div class="col-xs-12 col-sm-6 col-md-4 colp2">
                                         <div class="dropdown yamm-fw checkbox-value">
                                             <div data-toggle="dropdown" class="dropdown-toggle sp-now point form-control">
                                                 <div class="sp-now-w">
@@ -259,7 +262,10 @@
                                                 </div>
                                             </div> 
                                         </div> 
-                                    </div>
+                                    </div> -->
+
+
+
                                 </div>
                             </div>
                             <div class="text-right search-ajax-btn">

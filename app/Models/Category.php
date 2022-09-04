@@ -15,4 +15,8 @@
 	    {
 	        return $this->hasMany(Category::class, 'parent_id');
 	    }
+        public function filters()
+	    {
+	        return $this->belongsToMany(Filter::class);
+	    }
 	}
