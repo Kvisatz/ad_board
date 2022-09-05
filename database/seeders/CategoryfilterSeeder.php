@@ -58,95 +58,62 @@ class CategoryfilterSeeder extends Seeder
                 'category_id' => 1,
                 'filter_id' => 10,
             ],
-            [
-                'category_id' => 1,
-                'filter_id' => 11,
-            ],
-            [
-                'category_id' => 1,
-                'filter_id' => 12,
-            ],
-            [
-                'category_id' => 2,
-                'filter_id' => 1,
-            ],
-            [
-                'category_id' => 2,
-                'filter_id' => 5,
-            ],
-            [
-                'category_id' => 2,
-                'filter_id' => 12,
-            ],
-            [
-                'category_id' => 3,
-                'filter_id' => 1,
-            ],
-            [
-                'category_id' => 3,
-                'filter_id' => 5,
-            ],
-            [
-                'category_id' => 3,
-                'filter_id' => 12,
-            ],
-            [
-                'category_id' => 4,
-                'filter_id' => 1,
-            ],
-            [
-                'category_id' => 4,
-                'filter_id' => 5,
-            ],
-            [
-                'category_id' => 4,
-                'filter_id' => 12,
-            ],
-            [
-                'category_id' => 5,
-                'filter_id' => 1,
-            ],
-            [
-                'category_id' => 5,
-                'filter_id' => 5,
-            ],
-            [
-                'category_id' => 5,
-                'filter_id' => 12,
-            ],[
-                'category_id' => 6,
-                'filter_id' => 1,
-            ],
-            [
-                'category_id' => 6,
-                'filter_id' => 5,
-            ],
-            [
-                'category_id' => 6,
-                'filter_id' => 12,
-            ],[
-                'category_id' => 7,
-                'filter_id' => 1,
-            ],
-            [
-                'category_id' => 7,
-                'filter_id' => 5,
-            ],
-            [
-                'category_id' => 7,
-                'filter_id' => 12,
-            ],[
-                'category_id' => 8,
-                'filter_id' => 1,
-            ],
-            [
-                'category_id' => 8,
-                'filter_id' => 5,
-            ],
-            [
-                'category_id' => 8,
-                'filter_id' => 12,
-            ],
+            // [
+            //     'category_id' => 2,
+            //     'filter_id' => 5,
+            // ],
+            // [
+            //     'category_id' => 2,
+            //     'filter_id' => 12,
+            // ],
+            // [
+            //     'category_id' => 3,
+            //     'filter_id' => 5,
+            // ],
+            // [
+            //     'category_id' => 3,
+            //     'filter_id' => 12,
+            // ],
+            // [
+            //     'category_id' => 4,
+            //     'filter_id' => 5,
+            // ],
+            // [
+            //     'category_id' => 4,
+            //     'filter_id' => 12,
+            // ],
+            // [
+            //     'category_id' => 5,
+            //     'filter_id' => 5,
+            // ],
+            // [
+            //     'category_id' => 5,
+            //     'filter_id' => 12,
+            // ],
+            // [
+            //     'category_id' => 6,
+            //     'filter_id' => 5,
+            // ],
+            // [
+            //     'category_id' => 6,
+            //     'filter_id' => 12,
+            // ],
+            // [
+            //     'category_id' => 7,
+            //     'filter_id' => 5,
+            // ],
+            // [
+            //     'category_id' => 7,
+            //     'filter_id' => 12,
+            // ],
+            // [
+            //     'category_id' => 8,
+            //     'filter_id' => 5,
+            // ],
+            // [
+            //     'category_id' => 8,
+            //     'filter_id' => 12,
+            // ],
         ]);
     }
 }

@@ -20,7 +20,7 @@ class FilterSeeder extends Seeder
         DB::table('filters')->insertOrIgnore([
             [
                 'id' => 1,
-                'name' => 'Сортировать по полю',
+                'name' => 'Марка автомобиля',
             ],
             [
                 'id' => 2,
@@ -36,36 +36,29 @@ class FilterSeeder extends Seeder
             ],
             [
                 'id' => 5,
-                'name' => 'Должно присутствовать',
-            ],
-            [
-                'id' => 6,
                 'name' => 'Тип двигателя',
             ],
             [
-                'id' => 7,
+                'id' => 6,
                 'name' => 'Опции',
             ],
             [
-                'id' => 8,
+                'id' => 7,
                 'name' => 'Обмен',
             ],
             [
-                'id' => 9,
+                'id' => 8,
                 'name' => 'Год выпуска',
             ],
             [
-                'id' => 10,
+                'id' => 9,
                 'name' => 'Пробег',
             ],
             [
-                'id' => 11,
+                'id' => 10,
                 'name' => 'Материал салона',
             ],
-            [
-                'id' => 12,
-                'name' => 'Цена',
-            ],
+            
 
         ]);
     }

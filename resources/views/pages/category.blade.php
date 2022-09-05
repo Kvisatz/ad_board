@@ -34,37 +34,45 @@
                                     <script>$(".radio-value").on("click",function(){var a="( ";$(this).find("input[type=radio]:checked").each(function(){a+=$(this).siblings("label").text()+" "});a+=")";"( )"==a&&(a="");$(this).find(".selected-radio").text(a)});
                                         $(".checkbox-value").on("click",function(){var a="( ";$(this).find("input[type=checkbox]:checked").each(function(){a+=$(this).siblings("label").text()+" "});a+=")";"( )"==a&&(a="");$(this).find(".selected-checkbox").text(a)});
                                     </script>
-                                @foreach($category->filters as $filter)
+                               
+                                    @foreach($category->filters as $filter)
+                                        <div class="col-xs-12 col-sm-6 col-md-4 colp2">
+                                            <select size="1" name="filter_option_id_{{ $filter->id }}" id="filter_id_{{ $filter->id }}" class="form-control">
+                                                <option value="">{{ $filter->name }}</option>
+                                                @foreach($filter->options as $options)
+                                                    <option value="{{ $options->name }}">{{ $options->name }}</option>
 
-                                    <div class="col-xs-12 col-sm-6 col-md-4 colp2">
-                                        <div class="dropdown yamm-fw radio-value">
-                                            <div data-toggle="dropdown" class="dropdown-toggle sp-now point form-control">
-                                                <div class="sp-now-w">
-                                                    Сортировать по полю 
-                                                    <span class="selected-radio"></span>
-                                                </div>
-                                            </div>
-                                            <div class="dropdown-menu">
-                                                <div class="btn-group">
-                                                    <div class="btn btn-default cl-radio" role="button">
-                                                        <input id="sort_by1" name="sort_by" type="radio" value="date_add">
-                                                        <label for="sort_by1">Дата</label>
-                                                    </div>
-                                                    <div class="btn btn-default cl-radio" role="button">
-                                                        <input class="form-check" id="f_271" name="sort_by" type="radio" value="f_27">
-                                                        <label for="f_271">Цена</label>
-                                                    </div>
-                                                </div>
-                                                <div class="sort-desc">
-                                                    <div class="bl-inl al-top cl-check">
-                                                        <input class="form-check" id="desc1" name="desc" type="checkbox" value="yes">
-                                                        <label for="desc1">В обратном порядке</label>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                @endforeach
+
+                                            </select>
                                         </div>
+                                    @endforeach
+                                    <div class="col-xs-12 col-sm-6 col-md-4 colp2">
+                                        <div class="dropdown yamm-fw">
+                                            <div data-toggle="dropdown" class="dropdown-toggle sp-now point form-control icar">
+                                                <div class="sp-now-w">Цена</div>
+                                            </div>  
+                                        
+                                            <div class="dropdown-menu">
+                                                <div class="slider-inputs">
+                                                    <div class="slider-cont" data-id="f_27" data-min="37050" data-max="9660000">
+                                                        <div class="input-range">
+                                                            <span class="bl-inl rateloc s13 c-5">От</span>
+                                                            <input class="from form-control bl-inl al-top" type="text" name="f_27[from]">
+                                                            <span class="bl-inl rateloc s13 c-5">До</span>
+                                                            <input class="to form-control bl-inl al-top" type="text" name="f_27[to]">
+                                                        </div>
+                                                        <input type="hidden" class="rate_value" name="f_27[rate]" value="1">
+                                                        <div class="rates-range btn-group">
+                                                            <div class="rate btn s13 btn-default active" data-rate="1" data-id="1">руб.</div>
+                                                            <div class="rate btn s13 btn-default" data-rate="65.52" data-id="2">usd</div>
+                                                            <div class="rate btn s13 btn-default" data-rate="71.24" data-id="3">eur</div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                        </div>                     
                                     </div>
-                                @endforeach
                                     <!-- <div class="col-xs-12 col-sm-6 col-md-4 colp2">
                                         <div class="dropdown yamm-fw checkbox-value">
                                             <div data-toggle="dropdown" class="dropdown-toggle sp-now point form-control">

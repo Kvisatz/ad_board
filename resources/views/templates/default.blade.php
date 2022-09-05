@@ -135,8 +135,9 @@
             </div>
         </div>
 
-        
-        {!! $widget_header_carousel !!}
+        @if(isset($flag) && $flag == true)
+            {!! $widget_header_carousel !!}
+        @endif
     </div><!-- /header -->
 
 
