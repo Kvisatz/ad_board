@@ -18,11 +18,14 @@ use App\Http\Controllers\IndexController;
 //     return view('pages.index');
 // });
 Route::controller(IndexController::class)->group(function (){
-    
+    Route::middleware(['auth'])->group(function () {
+        
+        Route::get('/cabinet', 'cabinetAction')->name('cabinet');
+    });
     Route::get('/', 'indexAction');
     Route::get('/login', 'loginAction')->name('login');
     Route::post('/login-request', 'loginrequestAction');
     Route::get('/logout', 'logoutAction')->name('logout');
-    Route::get('/cabinet', 'cabinetAction')->name('cabinet')->middleware('auth');
+    
 
 });
