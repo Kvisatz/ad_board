@@ -2,194 +2,214 @@
 
 @section('content')
      
-<div id="main"><div class="container">  
-  
-   
-<div class="bl-tb container-tb">
-<div class="bl-cell al-top bl-center">
-   
-  
-<div class="text-center"><h1 class="ind-h1 s25">Платформа Объявлений</h1>
-<p class="s17 c-4">Совершайте быструю продажу и выгодную покупку 
-в вашем регионе!</p></div>
+<div id="main">
+    <div class="container">  
+        <div class="bl-tb container-tb">
+            <div class="bl-cell al-top bl-center">
+                <div class="text-center">
+                    <h1 class="ind-h1 s25">Платформа Объявлений</h1>
+                    <p class="s17 c-4">Совершайте быструю продажу и выгодную покупку в вашем регионе!</p>
+                </div>
 
-<div class="bl-tb bltree-ind">
+                <div class="bl-tb bltree-ind">
+                    <div class="bl-cell al-top">
+                        <div class="categories">
+                            <ul class="row tree4 wrapper-scroll-tree4"> 
+                                @foreach($categories as $category)
+                                    @if($category->parent_id == null)
+                                        <li class="categories-item col-xs-6 col-sm-4 col-md-4">
+                                            <a href="{{ url('/category', [$category->id]) }}" class="c-4 bl-bl b-f br3 pos-rel sp-now">
+                                                <span class="img-circ pull-left">
+                                                    <img src="/assets/images/cat/{{ $category->img }}" alt="{{ $category->name }}">
+                                                </span> 
+                                                <span class="name-cat s15 bl-bl sp-now">{{ $category->name }}</span>
+                                                <span class="count-tree c-7 s12 bl-bl sp-now">{{ $category->amount }} объявлений</span>
+                                            </a>
+                                        </li>
+                                    @endif
+                                @endforeach
+                            </ul>
+                        </div> 
+                    </div>
   
-<div class="bl-cell al-top"><div class="categories"><ul class="row tree4 wrapper-scroll-tree4"> 
-<li class="categories-item col-xs-6 col-sm-4 col-md-4"><a href="/assetshttps://universal.elite-board.org/Avtotransport/" class="c-4 bl-bl b-f br3 pos-rel sp-now">
-<span class="img-circ pull-left"><img src="/assets/images/cat/avto-cat.png" alt="Автотранспорт"></span> 
-<span class="name-cat s15 bl-bl sp-now">Автотранспорт</span><span class="count-tree c-7 s12 bl-bl sp-now">11 объявлений</span></a>
-</li><li class="categories-item col-xs-6 col-sm-4 col-md-4"><a href="/assetshttps://universal.elite-board.org/Nedvizhimost/" class="c-4 bl-bl b-f br3 pos-rel sp-now">
-<span class="img-circ pull-left"><img src="/assets/images/cat/nedv-cat.png" alt="Недвижимость"></span> 
-<span class="name-cat s15 bl-bl sp-now">Недвижимость</span><span class="count-tree c-7 s12 bl-bl sp-now">5 объявлений</span></a>
-</li><li class="categories-item col-xs-6 col-sm-4 col-md-4"><a href="/assetshttps://universal.elite-board.org/Rabota/" class="c-4 bl-bl b-f br3 pos-rel sp-now">
-<span class="img-circ pull-left"><img src="/assets/images/cat/obr-cat.png" alt="Работа"></span> 
-<span class="name-cat s15 bl-bl sp-now">Работа</span><span class="count-tree c-7 s12 bl-bl sp-now">2 объявления</span></a>
-</li><li class="categories-item col-xs-6 col-sm-4 col-md-4"><a href="/assetshttps://universal.elite-board.org/Lichnye-veshi/" class="c-4 bl-bl b-f br3 pos-rel sp-now">
-<span class="img-circ pull-left"><img src="/assets/images/cat/od-cat.png" alt="Личные вещи"></span> 
-<span class="name-cat s15 bl-bl sp-now">Личные вещи</span><span class="count-tree c-7 s12 bl-bl sp-now">4 объявления</span></a>
-</li><li class="categories-item col-xs-6 col-sm-4 col-md-4"><a href="/assetshttps://universal.elite-board.org/Mebel-interer/" class="c-4 bl-bl b-f br3 pos-rel sp-now">
-<span class="img-circ pull-left"><img src="/assets/images/cat/meb-cat.png" alt="Мебель, интерьер"></span> 
-<span class="name-cat s15 bl-bl sp-now">Мебель, интерьер</span><span class="count-tree c-7 s12 bl-bl sp-now">1 объявление</span></a>
-</li><li class="categories-item col-xs-6 col-sm-4 col-md-4"><a href="/assetshttps://universal.elite-board.org/Znakomstva/" class="c-4 bl-bl b-f br3 pos-rel sp-now">
-<span class="img-circ pull-left"><img src="/assets/images/cat/snak-cat.png" alt="Знакомства"></span> 
-<span class="name-cat s15 bl-bl sp-now">Знакомства</span><span class="count-tree c-7 s12 bl-bl sp-now">0 объявлений</span></a>
-</li><li class="categories-item col-xs-6 col-sm-4 col-md-4"><a href="/assetshttps://universal.elite-board.org/Zhivotnye/" class="c-4 bl-bl b-f br3 pos-rel sp-now">
-<span class="img-circ pull-left"><img src="/assets/images/cat/anim-cat.png" alt="Животные"></span> 
-<span class="name-cat s15 bl-bl sp-now">Животные</span><span class="count-tree c-7 s12 bl-bl sp-now">0 объявлений</span></a>
-</li><li class="categories-item col-xs-6 col-sm-4 col-md-4"><a href="/assetshttps://universal.elite-board.org/Stroi-materialy/" class="c-4 bl-bl b-f br3 pos-rel sp-now">
-<span class="img-circ pull-left"><img src="/assets/images/cat/mat-cat.png" alt="Строй материалы"></span> 
-<span class="name-cat s15 bl-bl sp-now">Строй материалы</span><span class="count-tree c-7 s12 bl-bl sp-now">0 объявлений</span></a>
-</li><li class="categories-item col-xs-6 col-sm-4 col-md-4"><a href="/assetshttps://universal.elite-board.org/Muzyka-iskusstvo/" class="c-4 bl-bl b-f br3 pos-rel sp-now">
-<span class="img-circ pull-left"><img src="/assets/images/cat/music-cat.png" alt="Музыка, искусство"></span> 
-<span class="name-cat s15 bl-bl sp-now">Музыка, искусство</span><span class="count-tree c-7 s12 bl-bl sp-now">1 объявление</span></a>
-</li><li class="categories-item col-xs-6 col-sm-4 col-md-4"><a href="/assetshttps://universal.elite-board.org/Bytovaya-tehnika/" class="c-4 bl-bl b-f br3 pos-rel sp-now">
-<span class="img-circ pull-left"><img src="/assets/images/cat/el-cat.png" alt="Бытовая техника"></span> 
-<span class="name-cat s15 bl-bl sp-now">Бытовая техника</span><span class="count-tree c-7 s12 bl-bl sp-now">0 объявлений</span></a>
-</li><li class="categories-item col-xs-6 col-sm-4 col-md-4"><a href="/assetshttps://universal.elite-board.org/Biznes/" class="c-4 bl-bl b-f br3 pos-rel sp-now">
-<span class="img-circ pull-left"><img src="/assets/images/cat/bis-cat.png" alt="Бизнес"></span> 
-<span class="name-cat s15 bl-bl sp-now">Бизнес</span><span class="count-tree c-7 s12 bl-bl sp-now">1 объявление</span></a>
-</li><li class="categories-item col-xs-6 col-sm-4 col-md-4"><a href="/assetshttps://universal.elite-board.org/Uslugi/" class="c-4 bl-bl b-f br3 pos-rel sp-now">
-<span class="img-circ pull-left"><img src="/assets/images/cat/ycl-cat.png" alt="Услуги"></span> 
-<span class="name-cat s15 bl-bl sp-now">Услуги</span><span class="count-tree c-7 s12 bl-bl sp-now">0 объявлений</span></a>
-</li><li class="categories-item col-xs-6 col-sm-4 col-md-4"><a href="/assetshttps://universal.elite-board.org/Telefony/" class="c-4 bl-bl b-f br3 pos-rel sp-now">
-<span class="img-circ pull-left"><img src="/assets/images/cat/tel-cat.png" alt="Телефоны"></span> 
-<span class="name-cat s15 bl-bl sp-now">Телефоны</span><span class="count-tree c-7 s12 bl-bl sp-now">0 объявлений</span></a>
-</li><li class="categories-item col-xs-6 col-sm-4 col-md-4"><a href="/assetshttps://universal.elite-board.org/Tovary/" class="c-4 bl-bl b-f br3 pos-rel sp-now">
-<span class="img-circ pull-left"><img src="/assets/images/cat/tovar-cat.png" alt="Товары"></span> 
-<span class="name-cat s15 bl-bl sp-now">Товары</span><span class="count-tree c-7 s12 bl-bl sp-now">1 объявление</span></a>
-</li><li class="categories-item col-xs-6 col-sm-4 col-md-4"><a href="/assetshttps://universal.elite-board.org/Oborudovanie/" class="c-4 bl-bl b-f br3 pos-rel sp-now">
-<span class="img-circ pull-left"><img src="/assets/images/cat/obor-cat.png" alt="Оборудование"></span> 
-<span class="name-cat s15 bl-bl sp-now">Оборудование</span><span class="count-tree c-7 s12 bl-bl sp-now">0 объявлений</span></a>
-</li></ul></div>
-</div>
-  
-<div class="bl-cell al-top blsection-services"><div class="section-services">
-<div class="section-services-item-bl"><a href="/assets/uslugi_saita/"><div class="ssi-bl1 s16 f-m c-20">Продвижение объявлений</div>
-<span class="c-7 s13">Специальные услуги позволят значительно ускорить продажу вашего объявления.</span></a></div>
-<div class="section-services-item-bl"><a href="/assets/users/shop/"><div class="ssi-bl2 s16 f-m c-20">Свой магазин</div>
-<span class="c-7 s13">Подробная информация о компании повысит доверие к вашему бизнесу со стороны клиентов.</span></a></div><div class="section-services-item-bl"><a href="/assets/reklama-na-saite/"><div class="ssi-bl3 s16 f-m c-20">Реклама на сайте</div>
-<span class="c-7 s13">Эффективный способ привлечь новых клиентов и вывести бизнес на новый уровень.</span></a></div> 
-</div>
-</div></div>
-  
-<div class="list-block-ind row">
-  
-<div class="title-name s19 col-sm-12">VIP-объявления <a class="a-all s13 c-7 f-l" href="/assets/allmessvip/">Все объявления</a></div>
+                    <div class="bl-cell al-top blsection-services">
+                        <div class="section-services">
+                            <div class="section-services-item-bl">
+                                <a href="/assets/uslugi_saita/">
+                                    <div class="ssi-bl1 s16 f-m c-20">Продвижение объявлений</div>
+                                    <span class="c-7 s13">Специальные услуги позволят значительно ускорить продажу вашего объявления.</span>
+                                </a>
+                            </div>
+                            <div class="section-services-item-bl">
+                                <a href="/assets/users/shop/">
+                                    <div class="ssi-bl2 s16 f-m c-20">Свой магазин</div>
+                                    <span class="c-7 s13">Подробная информация о компании повысит доверие к вашему бизнесу со стороны клиентов.</span>
+                                </a>
+                            </div>
+                            <div class="section-services-item-bl">
+                                <a href="/assets/reklama-na-saite/">
+                                    <div class="ssi-bl3 s16 f-m c-20">Реклама на сайте</div>
+                                    <span class="c-7 s13">Эффективный способ привлечь новых клиентов и вывести бизнес на новый уровень.</span>
+                                </a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <!-- Начало блока вип обьявлений -->
+                <div class="list-block-ind row">
+                    <div class="title-name s19 col-sm-12">
+                        VIP-объявления 
+                        <a class="a-all s13 c-7 f-l" href="/allmessvip/">Все объявления</a>
+                    </div>
 
-<div class="wrapper-scroll"><div class="wrapper-scroll-bl">
-  
-<div class="list_message_block col-xs-6 col-sm-4 col-md-3"><div class="b-f br3">
-   
-<div class="message_block_imag br3 pos-rel">
-<a title="BRP Can-Am Spyder Roadster" href="/assetshttps://universal.elite-board.org/Russia/Moscow/Avtotransport/sale/mototeh/17-brp-can-am-spyder-roadster.html">
-<div class="carousel-img brazzers-daddy"><div class="carousel-more pos-abs c-f s12">Ещё 1 фото</div><div class="tmb-wrap"><div class="tmb-wrap-table"><div class="active"></div><div></div></div></div><div class="image-wrap"><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets/uploads/usr/0/ts_7ff343613e105334ddecc6fb5e0dfb9a_35_3.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;"><img alt="BRP Can-Am Spyder Roadster" src="/assets/uploads/usr/0/ts_7ff343613e105334ddecc6fb5e0dfb9a_35_3.webp" style="display: none;"></div><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/uploads/usr/0/ts_7ff343613e105334ddecc6fb5e0dfb9a_35_4.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;"><img alt="BRP Can-Am Spyder Roadster" src="/assets/uploads/usr/0/ts_7ff343613e105334ddecc6fb5e0dfb9a_35_4.webp" style="display: none;"></div></div></div>
-</a>  
- 
-<span class="notepad-fav"><span class="notepad ic-star" data-id="17" data-toggle="tooltip" data-placement="top" title="Добавить в избранные"></span></span>  
-  
-</div>  
-  
-<div class="message_block_tit pos-rel">
-<h3><a class="c-20 s14" title="BRP Can-Am Spyder Roadster" href="/assetshttps://universal.elite-board.org/Russia/Moscow/Avtotransport/sale/mototeh/17-brp-can-am-spyder-roadster.html">BRP Can-Am Spyder Roadster</a></h3>
+                    <div class="wrapper-scroll">
+                        <div class="wrapper-scroll-bl">
+                            <!-- Начало обьявления -->
+                            <div class="list_message_block col-xs-6 col-sm-4 col-md-3">
+                                <div class="b-f br3">
+                                    <div class="message_block_imag br3 pos-rel">
+                                        <a title="Yamaha XVS 650" href="https://universal.elite-board.org/Russia/spb/Avtotransport/sale/mototeh/22-yamaha-xvs-650.html">
+                                            <div class="carousel-img brazzers-daddy">
+                                                <div class="tmb-wrap">
+                                                    <div class="tmb-wrap-table">
+                                                        <div class=""></div>
+                                                    </div>
+                                                </div>
+                                                <div class="image-wrap">
+                                                    <div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets/uploads/usr/0/ts_d77f0ea9cafe2413c3f3677775a3993c_35_1.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;">
+                                                        <img alt="Yamaha XVS 650" src="/assets/uploads/usr/0/ts_d77f0ea9cafe2413c3f3677775a3993c_35_1.webp" style="display: none;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>  
+                                        <span class="notepad-fav">
+                                            <span class="notepad ic-star" data-id="22" data-toggle="tooltip" data-placement="top" title="Добавить в избранные"></span>
+                                        </span> 
+                                    </div>  
+                                    <div class="message_block_tit pos-rel">
+                                        <h3>
+                                            <a class="c-20 s14" title="Yamaha XVS 650" href="https://universal.elite-board.org/Russia/spb/Avtotransport/sale/mototeh/22-yamaha-xvs-650.html">Yamaha XVS 650</a>
+                                        </h3>
+                                        <div class="sp-now">
+                                            <span class="s15">
+                                                <span class="currency">₽</span>
+                                                 320 000
+                                            </span>
+                                            <span class="reg_cat s13 c-7 f-l">Санкт-Петербург</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Конец обьявления -->
+                            <!-- Начало обьявления с 2 фото -->
+                            <div class="list_message_block col-xs-6 col-sm-4 col-md-3">
+                                <div class="b-f br3">
+                                    <div class="message_block_imag br3 pos-rel">
+                                        <a title="Электрогитара FGN EEL-HM. Japan, с кейсом" href="https://universal.elite-board.org/Russia/spb/Muzyka-iskusstvo/instrumenti/5-jelektrogitara-fgn-eel-hm.-japan-s-kejsom.html">
+                                            <div class="carousel-img brazzers-daddy">
+                                                <div class="tmb-wrap">
+                                                    <div class="tmb-wrap-table">
+                                                        <div class=""></div>
+                                                        <div class="active"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="image-wrap">
+                                                    <div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets/uploads/usr/0/ts_cb488031628829f119a39d2de5c22ff8_35_0.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: none;">
+                                                        <img alt="Электрогитара FGN EEL-HM. Japan, с кейсом" src="/assets/uploads/usr/0/ts_cb488031628829f119a39d2de5c22ff8_35_0.webp" style="display: none;">
+                                                    </div>
+                                                    <div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets/uploads/usr/0/ts_cb488031628829f119a39d2de5c22ff8_35_1.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;">
+                                                        <img alt="Электрогитара FGN EEL-HM. Japan, с кейсом" src="/assets/uploads/usr/0/ts_cb488031628829f119a39d2de5c22ff8_35_1.webp" style="display: none;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>                                         
+                                        <span class="notepad-fav">
+                                            <span class="notepad ic-star" data-id="5" data-toggle="tooltip" data-placement="top" title="Добавить в избранные"></span>
+                                        </span>
+                                    </div>                                          
+                                    <div class="message_block_tit pos-rel">
+                                        <h3>
+                                            <a class="c-20 s14" title="Электрогитара FGN EEL-HM. Japan, с кейсом" href="https://universal.elite-board.org/Russia/spb/Muzyka-iskusstvo/instrumenti/5-jelektrogitara-fgn-eel-hm.-japan-s-kejsom.html">Электрогитара FGN EEL-HM. Japan, с кейсом</a>
+                                        </h3>
+                                        <div class="sp-now">
+                                            <span class="s15">
+                                                <span class="currency">₽</span>
+                                                    75 000
+                                                </span>
+                                            <span class="reg_cat s13 c-7 f-l">Санкт-Петербург</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Конец обьявления с 2 фото -->
+                                        
+                                        <div class="list_message_block col-xs-6 col-sm-4 col-md-3"><div class="b-f br3">
+                                        
+                                        <div class="message_block_imag br3 pos-rel">
+                                        <a title="Продам 1-к квартиру, 41 м², 9/24 эт." href="https://universal.elite-board.org/Russia/Moscow/Nedvizhimost/apartmen/sale/1-prodam-1-k-kvartiru-41-m-9-24-jet.html">
+                                        <div class="carousel-img brazzers-daddy"><div class="tmb-wrap"><div class="tmb-wrap-table"><div class="active"></div><div class=""></div></div></div><div class="image-wrap"><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/uploads/usr/0/ts_6700bfa7268531f7b9f11d5875989502_35_2.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;"><img alt="Продам 1-к квартиру, 41 м², 9/24 эт." src="/uploads/usr/0/ts_6700bfa7268531f7b9f11d5875989502_35_2.webp" style="display: none;"></div><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/uploads/usr/0/ts_6700bfa7268531f7b9f11d5875989502_35_3.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: none;"><img alt="Продам 1-к квартиру, 41 м², 9/24 эт." src="/uploads/usr/0/ts_6700bfa7268531f7b9f11d5875989502_35_3.webp" style="display: none;"></div></div></div>
+                                        </a>  
+                                        
+                                        <span class="notepad-fav"><span class="notepad ic-star" data-id="1" data-toggle="tooltip" data-placement="top" title="Добавить в избранные"></span></span>  
+                                        
+                                        </div>  
+                                        
+                                        <div class="message_block_tit pos-rel">
+                                        <h3><a class="c-20 s14" title="Продам 1-к квартиру, 41 м², 9/24 эт." href="https://universal.elite-board.org/Russia/Moscow/Nedvizhimost/apartmen/sale/1-prodam-1-k-kvartiru-41-m-9-24-jet.html">Продам 1-к квартиру, 41 м², 9/24 эт.</a></h3>
 
-<div class="sp-now">
-<span class="s15"><span class="currency">₽</span> 670 000</span>
-<span class="reg_cat s13 c-7 f-l">Москва</span></div>
-  
-</div>
-</div></div>
-  
-<div class="list_message_block col-xs-6 col-sm-4 col-md-3"><div class="b-f br3">
-   
-<div class="message_block_imag br3 pos-rel">
-<a title="Yamaha XVS 650" href="/assetshttps://universal.elite-board.org/Russia/spb/Avtotransport/sale/mototeh/22-yamaha-xvs-650.html">
-<div class="carousel-img brazzers-daddy"><div class="tmb-wrap"><div class="tmb-wrap-table"><div class="active"></div></div></div><div class="image-wrap"><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets
-/assets/uploads/usr/0/ts_d77f0ea9cafe2413c3f3677775a3993c_35_1.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;"><img alt="Yamaha XVS 650" src="/assets/uploads/usr/0/ts_d77f0ea9cafe2413c3f3677775a3993c_35_1.webp" style="display: none;"></div></div></div>
-</a>  
- 
-<span class="notepad-fav"><span class="notepad ic-star" data-id="22" data-toggle="tooltip" data-placement="top" title="Добавить в избранные"></span></span>  
-  
-</div>  
-  
-<div class="message_block_tit pos-rel">
-<h3><a class="c-20 s14" title="Yamaha XVS 650" href="/assetshttps://universal.elite-board.org/Russia/spb/Avtotransport/sale/mototeh/22-yamaha-xvs-650.html">Yamaha XVS 650</a></h3>
+                                        <div class="sp-now">
+                                        <span class="s15"><span class="currency">₽</span>3 000 000</span>
+                                        <span class="reg_cat s13 c-7 f-l">Москва</span></div>
+                                        
+                                        </div>
+                                        </div></div>
+                                        
+                                        <div class="list_message_block col-xs-6 col-sm-4 col-md-3"><div class="b-f br3">
+                                        
+                                        <div class="message_block_imag br3 pos-rel">
+                                        <a title="BRP Can-Am Spyder Roadster" href="https://universal.elite-board.org/Russia/Moscow/Avtotransport/sale/mototeh/17-brp-can-am-spyder-roadster.html">
+                                        <div class="carousel-img brazzers-daddy"><div class="carousel-more pos-abs c-f s12">Ещё 1 фото</div><div class="tmb-wrap"><div class="tmb-wrap-table"><div class="active"></div><div class=""></div></div></div><div class="image-wrap"><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/uploads/usr/0/ts_7ff343613e105334ddecc6fb5e0dfb9a_35_3.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;"><img alt="BRP Can-Am Spyder Roadster" src="/uploads/usr/0/ts_7ff343613e105334ddecc6fb5e0dfb9a_35_3.webp" style="display: none;"></div><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/uploads/usr/0/ts_7ff343613e105334ddecc6fb5e0dfb9a_35_4.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: none;"><img alt="BRP Can-Am Spyder Roadster" src="/uploads/usr/0/ts_7ff343613e105334ddecc6fb5e0dfb9a_35_4.webp" style="display: none;"></div></div></div>
+                                        </a>  
+                                        
+                                        <span class="notepad-fav"><span class="notepad ic-star" data-id="17" data-toggle="tooltip" data-placement="top" title="Добавить в избранные"></span></span>  
+                                        
+                                        </div>  
+                                        
+                                        <div class="message_block_tit pos-rel">
+                                        <h3><a class="c-20 s14" title="BRP Can-Am Spyder Roadster" href="https://universal.elite-board.org/Russia/Moscow/Avtotransport/sale/mototeh/17-brp-can-am-spyder-roadster.html">BRP Can-Am Spyder Roadster</a></h3>
 
-<div class="sp-now">
-<span class="s15"><span class="currency">₽</span> 320 000</span>
-<span class="reg_cat s13 c-7 f-l">Санкт-Петербург</span></div>
-  
-</div>
-</div></div>
-  
-<div class="list_message_block col-xs-6 col-sm-4 col-md-3"><div class="b-f br3">
-   
-<div class="message_block_imag br3 pos-rel">
-<a title="Продам 1-к квартиру, 41 м², 9/24 эт." href="/assetshttps://universal.elite-board.org/Russia/Moscow/Nedvizhimost/apartmen/sale/1-prodam-1-k-kvartiru-41-m-9-24-jet.html">
-<div class="carousel-img brazzers-daddy"><div class="tmb-wrap"><div class="tmb-wrap-table"><div class="active"></div><div></div></div></div><div class="image-wrap"><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets/uploads/usr/0/ts_6700bfa7268531f7b9f11d5875989502_35_2.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;"><img alt="Продам 1-к квартиру, 41 м², 9/24 эт." src="/assets/uploads/usr/0/ts_6700bfa7268531f7b9f11d5875989502_35_2.webp" style="display: none;"></div><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets/uploads/usr/0/ts_6700bfa7268531f7b9f11d5875989502_35_3.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;"><img alt="Продам 1-к квартиру, 41 м², 9/24 эт." src="/assets/uploads/usr/0/ts_6700bfa7268531f7b9f11d5875989502_35_3.webp" style="display: none;"></div></div></div>
-</a>  
- 
-<span class="notepad-fav"><span class="notepad ic-star" data-id="1" data-toggle="tooltip" data-placement="top" title="Добавить в избранные"></span></span>  
-  
-</div>  
-  
-<div class="message_block_tit pos-rel">
-<h3><a class="c-20 s14" title="Продам 1-к квартиру, 41 м², 9/24 эт." href="/assetshttps://universal.elite-board.org/Russia/Moscow/Nedvizhimost/apartmen/sale/1-prodam-1-k-kvartiru-41-m-9-24-jet.html">Продам 1-к квартиру, 41 м², 9/24 эт.</a></h3>
+                                        <div class="sp-now">
+                                        <span class="s15"><span class="currency">₽</span> 670 000</span>
+                                        <span class="reg_cat s13 c-7 f-l">Москва</span></div>
+                                        
+                                        </div>
+                                        </div></div>
+                                        
+                                        <div class="list_message_block col-xs-6 col-sm-4 col-md-3"><div class="b-f br3">
+                                        
+                                        <div class="message_block_imag br3 pos-rel">
+                                        <a title="BRP Ski-Doo Summit 850" href="https://universal.elite-board.org/Russia/Moscow/Avtotransport/sale/mototeh/11-brp-ski-doo-summit-850.html">
+                                        <div class="carousel-img brazzers-daddy"><div class="carousel-more pos-abs c-f s12">Ещё 1 фото</div><div class="tmb-wrap"><div class="tmb-wrap-table"><div class="active"></div><div class=""></div></div></div><div class="image-wrap"><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/uploads/usr/0/ts_c4d6de90c52e9839c404cad9a7cc107a_35_3.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;"><img alt="BRP Ski-Doo Summit 850" src="/uploads/usr/0/ts_c4d6de90c52e9839c404cad9a7cc107a_35_3.webp" style="display: none;"></div><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/uploads/usr/0/ts_c4d6de90c52e9839c404cad9a7cc107a_35_0.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: none;"><img alt="BRP Ski-Doo Summit 850" src="/uploads/usr/0/ts_c4d6de90c52e9839c404cad9a7cc107a_35_0.webp" style="display: none;"></div></div></div>
+                                        </a>  
+                                        
+                                        <span class="notepad-fav"><span class="notepad ic-star" data-id="11" data-toggle="tooltip" data-placement="top" title="" data-original-title="Добавить в избранные"></span></span>  
+                                        
+                                        </div>  
+                                        
+                                        <div class="message_block_tit pos-rel">
+                                        <h3><a class="c-20 s14" title="BRP Ski-Doo Summit 850" href="https://universal.elite-board.org/Russia/Moscow/Avtotransport/sale/mototeh/11-brp-ski-doo-summit-850.html">BRP Ski-Doo Summit 850</a></h3>
 
-<div class="sp-now">
-<span class="s15"><span class="currency">₽</span>3 000 000</span>
-<span class="reg_cat s13 c-7 f-l">Москва</span></div>
-  
-</div>
-</div></div>
-  
-<div class="list_message_block col-xs-6 col-sm-4 col-md-3"><div class="b-f br3">
-   
-<div class="message_block_imag br3 pos-rel">
-<a title="BRP Ski-Doo Summit 850" href="/assetshttps://universal.elite-board.org/Russia/Moscow/Avtotransport/sale/mototeh/11-brp-ski-doo-summit-850.html">
-<div class="carousel-img brazzers-daddy"><div class="carousel-more pos-abs c-f s12">Ещё 1 фото</div><div class="tmb-wrap"><div class="tmb-wrap-table"><div class="active"></div><div></div></div></div><div class="image-wrap"><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets/uploads/usr/0/ts_c4d6de90c52e9839c404cad9a7cc107a_35_3.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;"><img alt="BRP Ski-Doo Summit 850" src="/assets/uploads/usr/0/ts_c4d6de90c52e9839c404cad9a7cc107a_35_3.webp" style="display: none;"></div><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(/assets/uploads/usr/0/ts_c4d6de90c52e9839c404cad9a7cc107a_35_0.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;"><img alt="BRP Ski-Doo Summit 850" src="/assets/uploads/usr/0/ts_c4d6de90c52e9839c404cad9a7cc107a_35_0.webp" style="display: none;"></div></div></div>
-</a>  
- 
-<span class="notepad-fav"><span class="notepad ic-star" data-id="11" data-toggle="tooltip" data-placement="top" title="Добавить в избранные"></span></span>  
-  
-</div>  
-  
-<div class="message_block_tit pos-rel">
-<h3><a class="c-20 s14" title="BRP Ski-Doo Summit 850" href="/assetshttps://universal.elite-board.org/Russia/Moscow/Avtotransport/sale/mototeh/11-brp-ski-doo-summit-850.html">BRP Ski-Doo Summit 850</a></h3>
-
-<div class="sp-now">
-<span class="s15"><span class="currency">₽</span>1 250 000</span>
-<span class="reg_cat s13 c-7 f-l">Москва</span></div>
-  
-</div>
-</div></div>
-  
-<div class="list_message_block col-xs-6 col-sm-4 col-md-3"><div class="b-f br3">
-   
-<div class="message_block_imag br3 pos-rel">
-<a title="Электрогитара FGN EEL-HM. Japan, с кейсом" href="/assetshttps://universal.elite-board.org/Russia/spb/Muzyka-iskusstvo/instrumenti/5-jelektrogitara-fgn-eel-hm.-japan-s-kejsom.html">
-<div class="carousel-img brazzers-daddy"><div class="tmb-wrap"><div class="tmb-wrap-table"><div class="active"></div><div></div></div></div><div class="image-wrap"><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets/uploads/usr/0/ts_cb488031628829f119a39d2de5c22ff8_35_0.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;"><img alt="Электрогитара FGN EEL-HM. Japan, с кейсом" src="/assets/uploads/usr/0/ts_cb488031628829f119a39d2de5c22ff8_35_0.webp" style="display: none;"></div><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets/uploads/usr/0/ts_cb488031628829f119a39d2de5c22ff8_35_1.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;"><img alt="Электрогитара FGN EEL-HM. Japan, с кейсом" src="/assets/uploads/usr/0/ts_cb488031628829f119a39d2de5c22ff8_35_1.webp" style="display: none;"></div></div></div>
-</a>  
- 
-<span class="notepad-fav"><span class="notepad ic-star" data-id="5" data-toggle="tooltip" data-placement="top" title="Добавить в избранные"></span></span>  
-  
-</div>  
-  
-<div class="message_block_tit pos-rel">
-<h3><a class="c-20 s14" title="Электрогитара FGN EEL-HM. Japan, с кейсом" href="/assetshttps://universal.elite-board.org/Russia/spb/Muzyka-iskusstvo/instrumenti/5-jelektrogitara-fgn-eel-hm.-japan-s-kejsom.html">Электрогитара FGN EEL-HM. Japan, с кейсом</a></h3>
-
-<div class="sp-now">
-<span class="s15"><span class="currency">₽</span>75 000</span>
-<span class="reg_cat s13 c-7 f-l">Санкт-Петербург</span></div>
-  
-</div>
-</div></div>
-  
-</div></div></div>
+                                        <div class="sp-now">
+                                        <span class="s15"><span class="currency">₽</span>1 250 000</span>
+                                        <span class="reg_cat s13 c-7 f-l">Москва</span></div>
+                                        
+                                        </div>
+                                        </div></div>
+                                        
+                                        </div></div></div>
 
 
-
-
+<!-- Начало блока свежего -->
 <div id="list_message_block" class="list-block-ind row">
     
 <div class="title-name s19 col-sm-12">Свежие объявления <a class="a-all s13 c-7 f-l" href="/assets/allmess/">Все объявления</a></div><div class="wrapper-scroll"><div class="wrapper-scroll-bl">
@@ -446,7 +466,7 @@
 
 
 </div></div></div>
-
+<!-- Начало блока статей -->
 <div class="articles-ind list-block-ind row">
 <div class="title-name s19 col-sm-12">Последние статьи <a class="a-all s13 c-7 f-l" href="/assets/articles/">Все статьи</a>
 <div class="bl-tb art-ind-cat"><a title="" class="c-5 s13 br20 bl-inl al-top" href="/assetsarticles/Zdorove/">Здоровье</a><a title="" class="c-5 s13 br20 bl-inl al-top" href="/assetsarticles/Nauka-i-tehnika/">Наука и техника</a><a title="" class="c-5 s13 br20 bl-inl al-top" href="/assetsarticles/Puteshestviya/">Путешествия</a><a title="" class="c-5 s13 br20 bl-inl al-top" href="/assetsarticles/Finansy-i-investicii/">Финансы и инвестиции</a></div></div>

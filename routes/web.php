@@ -26,6 +26,8 @@ Route::controller(IndexController::class)->group(function (){
     Route::get('/login', 'loginAction')->name('login');
     Route::post('/login-request', 'loginrequestAction');
     Route::get('/logout', 'logoutAction')->name('logout');
-    
+    Route::get('/category/{id}', 'categoryAction', function($id){
+        return $id;
+        });
 
 });

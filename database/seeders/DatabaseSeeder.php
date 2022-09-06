@@ -23,8 +23,21 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             RoleSeeder::class,
+            CategorySeeder::class,
+            FilterSeeder::class,
+            CategoryfilterSeeder::class,
+            FilteroptionsSeeder::class,
+            // CarbrandSeeder::class,
+            // CarbodySeeder::class,
+            // TransmissionSeeder::class,
+            // CarcolorSeeder::class,
+            // EngineSeeder::class,
+            // ExchangeSeeder::class,
+            // YearSeeder::class,
+            // CarmileageSeeder::class,
+            // CarsalonSeeder::class,
+            
         ]);
-        
 
     }
 }
