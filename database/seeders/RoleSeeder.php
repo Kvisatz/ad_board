@@ -26,10 +26,7 @@ class RoleSeeder extends Seeder
                 'id' => 2,
                 'name' => 'Продавец',
             ],
-            [
-                'id' => 3,
-                'name' => 'Покупатель',
-            ],
+            
         ]);
     }
 }

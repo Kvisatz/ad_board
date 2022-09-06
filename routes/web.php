@@ -19,4 +19,8 @@ use App\Http\Controllers\IndexController;
 // });
 Route::controller(IndexController::class)->group(function (){
     Route::get('/', 'indexAction');
+    Route::get('/login', 'loginAction')->name('login');
+    Route::post('/login-request', 'loginrequestAction');
+    Route::get('/cabinet', 'cabinetAction')->name('cabinet');
+
 });

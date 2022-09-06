@@ -81,7 +81,7 @@
 <div class="bl-cell al-mid text-right">
 <div class="mobile-menu bl-inl"> 
 <a class="mob-shop c-20 s15" href="/assets/shops/">Магазины</a><a class="btn-notepad bl-inl al-mid c-20 s15" title="Избранных объявлений: 0" href="/assets/notepad/">Избранное <span class="n_count bl-inl al-top pos-rel br100 s11 text-center">0</span></a>  
-<a class="btn-user bl-inl al-mid c-20 br20 b-f s15" href="/assets/users/login/">Личный кабинет</a>
+<a class="btn-user bl-inl al-mid c-20 br20 b-f s15" href="/login">Личный кабинет</a>
 <a class="mob-btnadd btn btn-primary btn-add br30" href="/assets/add/">Подать объявление</a>
 <span class="mbtn-close visible-xs pos-abs">×</span>
 </div><!-- /mobile-menu -->
