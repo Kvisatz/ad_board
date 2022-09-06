@@ -143,238 +143,219 @@
 
 
 
-@yield('content')
+    @yield('content')
 
 
-<div id="footer">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="s20 text-up foot-h2">Удачный выбор для всех и для каждого!</h2>
-            Найди свое среди тысяч товаров, опубликованных на нашем сайте
-        </div>  
-        <div class="section-promo text-center row">
-            <div class="col-xs-6 col-sm-6 col-md-3 bs-r">
-                <div class="section-promo-number s-p-n1 f-m s18">26 объявлений</div>
-                <div class="section-promo-text s13 c-7">Объявления от частных лиц и организаций</div>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-3 bs-r">
-                <div class="section-promo-number s-p-n2 f-m s18">108 рубрик</div>
-                <div class="section-promo-text s13 c-7">Размещайте объявление на любую тематику легко и быстро</div>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-3 bs-r">
-                <div class="section-promo-number s-p-n3 f-m s18">95 регионов</div>
-                <div class="section-promo-text s13 c-7">Находите выгодные предложения в соседних регионах</div>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-3">
-                <div class="section-promo-number s-p-n4 f-m s18">7 магазинов</div>
-                <div class="section-promo-text s13 c-7">Информация о компании повысит доверие к вашему бизнесу</div>
-            </div>
-        </div>
-        <div class="footer">
-            <div class="row">
-                <div class="col-xs-6 col-sm-3 col-md-3">
-                    <ul>
-                        <li class="footer-logo">
-                            <a class="logo-title s22 f-b c-20" href="/" title="Оксана Соболева">
-                                <img alt="Оксана Соболева" src="/assets/images/cat/logo.png">Universal
-                            </a>
-                        </li>
-                        <li class="footer-social c-7 s13">
-                            <a href="/assets/" data-toggle="tooltip" data-placement="top" title="vkontakte" class="s-vk">
-                                <img alt="Оксана Соболева" src="/assets/templates/universal/images/svk.svg">
-                            </a>
-                            <a href="/" data-toggle="tooltip" data-placement="top" title="odnoklassniki" class="s-od">
-                                <img alt="Оксана Соболева" src="/assets/templates/universal/images/sod.svg">
-                            </a>
-                            <a href="/" data-toggle="tooltip" data-placement="top" title="twitter" class="s-tw">
-                                <img alt="Оксана Соболева" src="/assets/templates/universal/images/stw.svg">
-                            </a> 
-                        </li>  
-                        <li class="footer-instr">
-                            <div class="btn-group btn-group-xs">
-                                <a role="button" class="btn btn-default" href="/assets/rss.xml">Rss</a>
-                                <a role="button" class="btn btn-default" href="/assets/sitemap.xml">Map</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-xs-6 col-sm-3 col-md-3">
-                    <ul class="footer-link">
-                        <li class="footer-tit text-up">Платные услуги</li>
-                        <li>
-                            <a href="/partnerskaya-programma/" title="" class="c-4">Партнерская программа</a>
-                        </li>
-                        <li>
-                            <a href="/reklama-na-saite/" title="" class="c-4">Реклама на сайте</a>
-                        </li>  
-                        <li>
-                            <a href="/uslugi_saita/" title="" class="c-4">Платные услуги</a>
-                        </li>
-                        <li>
-                            <a href="/mail/" title="" class="c-4">Контакты</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-xs-6 col-sm-3 col-md-3">
-                    <ul class="footer-link resp-line">
-                        <li class="footer-tit text-up">Информация</li>
-                        <li>
-                            <a href="/assets/politika-konfidencialnosti/" title="" class="c-4">Политика конфиденциальности</a>
-                        </li>
-                        <li>
-                            <a href="/assets/pravila/" title="" class="c-4">Правила сайта</a>
-                        </li>
-                        <li>
-                            <a href="/assets/help/" title="" class="c-4">Помощь</a>
-                        </li>
-                        <li>
-                            <a href="/assets/articles/" title="" class="c-4">Статьи</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-xs-6 col-sm-3 col-md-3">
-                    <ul class="footer-link resp-line">
-                        <li class="footer-tit text-up">Пользователю</li>
-                        <li>
-                            <a href="/assets/users/shop/" title="" class="c-4">Создать магазин</a>
-                        </li>
-                        <li>
-                            <a href="/assets/users/login/" title="" class="c-4">Личный кабинет</a>
-                        </li>  
-                        <li>
-                            <a href="/assets/users/register/" title="" class="c-4">Регистрация</a>
-                        </li>
-                        <li>
-                            <a href="/assets#" onclick="pwa(); return false;" class="c-4" data-toggle="tooltip" data-placement="top" title="Установить мобильное приложение">Установить приложение</a>
-                        </li>
-                    </ul>
-                </div>  
-            </div>
-
-            <div class="footer-copyright c-7 s13 text-center">© 2022 universal.elite-board.org – доска бесплатных объявлений
-                <div class="c-20 s14">
-                    <br>© Автор шаблона Оксана Соболева 
-                    <a href="https://elite-board.org/" title="" target="_blank">Шаблоны для доски объявлений</a>
-                </div>
-            </div> 
-  
-        </div>  
-    </div>
-</div>
-
-<div class="menu-overly-mask mbtn-close"></div>
-
-<script>
-    var parent_region = 0;
-    var back_region = 0;
-    var current_region = TPL_REGION_ID;
-</script>
-<div class="modal fade" id="selectRegion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content modal-content-region">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title text-center s18" id="exampleModalLabel">Выбор региона</h4> 
-                <div class="bl-regionlist br3">
-                    <div class="region_current">
-                        <a href="/assets#" id="region_select_current">
-                            <span id="region_select_current_name"></span>
-                        </a>
-                    </div>  
-                    <div class="RegionFilter pos-rel">
-                        <input type="text" id="region-modal-filter" value="" class="form-control" placeholder="Фильтр по названию..." autocomplete="off">
-                        <a id="region-modal-clear" class="pos-abs bl-bl s16 point c-a  text-center">×</a>
+    <div id="footer">
+        <div class="container">
+            @if(isset($flag) && $flag == true)
+                {!! $widget_footer_promo !!}
+            @endif
+            <div class="footer">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        <ul>
+                            <li class="footer-logo">
+                                <a class="logo-title s22 f-b c-20" href="/" title="Оксана Соболева">
+                                    <img alt="Оксана Соболева" src="/assets/images/cat/logo.png">Universal
+                                </a>
+                            </li>
+                            <li class="footer-social c-7 s13">
+                                <a href="/assets/" data-toggle="tooltip" data-placement="top" title="vkontakte" class="s-vk">
+                                    <img alt="Оксана Соболева" src="/assets/templates/universal/images/svk.svg">
+                                </a>
+                                <a href="/" data-toggle="tooltip" data-placement="top" title="odnoklassniki" class="s-od">
+                                    <img alt="Оксана Соболева" src="/assets/templates/universal/images/sod.svg">
+                                </a>
+                                <a href="/" data-toggle="tooltip" data-placement="top" title="twitter" class="s-tw">
+                                    <img alt="Оксана Соболева" src="/assets/templates/universal/images/stw.svg">
+                                </a> 
+                            </li>  
+                            <li class="footer-instr">
+                                <div class="btn-group btn-group-xs">
+                                    <a role="button" class="btn btn-default" href="/assets/rss.xml">Rss</a>
+                                    <a role="button" class="btn btn-default" href="/assets/sitemap.xml">Map</a>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <ul id="regionlist" style="">
-                        <li>
-                            <a href="#" class="" id="rl1">Россия</a>
-                        </li>
-                        <li>
-                            <a href="#" class="" id="rl104">Украина</a>
-                        </li>
-                        <li>
-                            <a href="#" class="" id="rl105">Белоруссия</a>
-                        </li>
-                        <li>
-                            <a href="#" class="" id="rl114">Грузия</a>
-                        </li>
-                        <li>
-                            <a href="#" class="" id="rl113">Туркмения</a>
-                        </li>
-                        <li>
-                            <a href="#" class="" id="rl112">Узбекистан</a>
-                        </li>
-                        <li>
-                            <a href="#" class="" id="rl111">Таджикистан</a>
-                        </li>
-                        <li>
-                            <a href="#" class="" id="rl110">Молдавия</a>
-                        </li>
-                        <li>
-                            <a href="#" class="" id="rl109">Киргизия</a>
-                        </li>
-                        <li>
-                            <a href="#" class="" id="rl108">Казахстан</a>
-                        </li>
-                        <li>
-                            <a href="#" class="" id="rl107">Армения</a>
-                        </li>
-                        <li>
-                            <a href="#" class="" id="rl106">Азербайджан</a>
-                        </li>
-                        <li>
-                            <a href="#" class="" id="rl115">Другое</a>
-                        </li>
-                    </ul>
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        <ul class="footer-link">
+                            <li class="footer-tit text-up">Платные услуги</li>
+                            <li>
+                                <a href="/partnerskaya-programma/" title="" class="c-4">Партнерская программа</a>
+                            </li>
+                            <li>
+                                <a href="/reklama-na-saite/" title="" class="c-4">Реклама на сайте</a>
+                            </li>  
+                            <li>
+                                <a href="/uslugi_saita/" title="" class="c-4">Платные услуги</a>
+                            </li>
+                            <li>
+                                <a href="/mail/" title="" class="c-4">Контакты</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        <ul class="footer-link resp-line">
+                            <li class="footer-tit text-up">Информация</li>
+                            <li>
+                                <a href="/assets/politika-konfidencialnosti/" title="" class="c-4">Политика конфиденциальности</a>
+                            </li>
+                            <li>
+                                <a href="/assets/pravila/" title="" class="c-4">Правила сайта</a>
+                            </li>
+                            <li>
+                                <a href="/assets/help/" title="" class="c-4">Помощь</a>
+                            </li>
+                            <li>
+                                <a href="/assets/articles/" title="" class="c-4">Статьи</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        <ul class="footer-link resp-line">
+                            <li class="footer-tit text-up">Пользователю</li>
+                            <li>
+                                <a href="/assets/users/shop/" title="" class="c-4">Создать магазин</a>
+                            </li>
+                            <li>
+                                <a href="/assets/users/login/" title="" class="c-4">Личный кабинет</a>
+                            </li>  
+                            <li>
+                                <a href="/assets/users/register/" title="" class="c-4">Регистрация</a>
+                            </li>
+                            <li>
+                                <a href="/assets#" onclick="pwa(); return false;" class="c-4" data-toggle="tooltip" data-placement="top" title="Установить мобильное приложение">Установить приложение</a>
+                            </li>
+                        </ul>
+                    </div>  
                 </div>
-                <div id="region_loader_img" style="display:none;">
-                    <div>Пожалуйста, подождите...</div>
-                </div>
-                <div class="region_control">
-                    <a href="#" id="region_select_back" class="btn btn-default btn-xs">Назад</a>
-                    <a href="#" id="region_select_all" class="btn btn-default btn-xs pull-right">Все регионы</a>
+
+                <div class="footer-copyright c-7 s13 text-center">© 2022 universal.elite-board.org – доска бесплатных объявлений
+                    <div class="c-20 s14">
+                        <br>© Автор шаблона Оксана Соболева 
+                        <a href="https://elite-board.org/" title="" target="_blank">Шаблоны для доски объявлений</a>
+                    </div>
+                </div> 
+    
+            </div>  
+        </div>
+    </div>
+
+    <div class="menu-overly-mask mbtn-close"></div>
+
+    <script>
+        var parent_region = 0;
+        var back_region = 0;
+        var current_region = TPL_REGION_ID;
+    </script>
+    <div class="modal fade" id="selectRegion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal-content-region">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title text-center s18" id="exampleModalLabel">Выбор региона</h4> 
+                    <div class="bl-regionlist br3">
+                        <div class="region_current">
+                            <a href="/assets#" id="region_select_current">
+                                <span id="region_select_current_name"></span>
+                            </a>
+                        </div>  
+                        <div class="RegionFilter pos-rel">
+                            <input type="text" id="region-modal-filter" value="" class="form-control" placeholder="Фильтр по названию..." autocomplete="off">
+                            <a id="region-modal-clear" class="pos-abs bl-bl s16 point c-a  text-center">×</a>
+                        </div>
+                        <ul id="regionlist" style="">
+                            <li>
+                                <a href="#" class="" id="rl1">Россия</a>
+                            </li>
+                            <li>
+                                <a href="#" class="" id="rl104">Украина</a>
+                            </li>
+                            <li>
+                                <a href="#" class="" id="rl105">Белоруссия</a>
+                            </li>
+                            <li>
+                                <a href="#" class="" id="rl114">Грузия</a>
+                            </li>
+                            <li>
+                                <a href="#" class="" id="rl113">Туркмения</a>
+                            </li>
+                            <li>
+                                <a href="#" class="" id="rl112">Узбекистан</a>
+                            </li>
+                            <li>
+                                <a href="#" class="" id="rl111">Таджикистан</a>
+                            </li>
+                            <li>
+                                <a href="#" class="" id="rl110">Молдавия</a>
+                            </li>
+                            <li>
+                                <a href="#" class="" id="rl109">Киргизия</a>
+                            </li>
+                            <li>
+                                <a href="#" class="" id="rl108">Казахстан</a>
+                            </li>
+                            <li>
+                                <a href="#" class="" id="rl107">Армения</a>
+                            </li>
+                            <li>
+                                <a href="#" class="" id="rl106">Азербайджан</a>
+                            </li>
+                            <li>
+                                <a href="#" class="" id="rl115">Другое</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="region_loader_img" style="display:none;">
+                        <div>Пожалуйста, подождите...</div>
+                    </div>
+                    <div class="region_control">
+                        <a href="#" id="region_select_back" class="btn btn-default btn-xs">Назад</a>
+                        <a href="#" id="region_select_all" class="btn btn-default btn-xs pull-right">Все регионы</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<script src="/assets/templates/universal/js/jquery/3.2.1/jquery.min.js"></script>
-<script src="/assets/templates/universal/js/jquery.cookie.js"></script>
-  
-<script src="/assets/templates/universal/carousel/owl.carousel.min.js"></script>
-<script>$('.header-carousel').owlCarousel({center:true,dots:false,loop:true,margin:16,nav:true,autoplay:true,autoplayTimeout:6000,autoplayHoverPause:true,responsive:{0:{items:1},900:{items:2}}})</script>
-<script src="/assets/templates/universal/js/lightslider.min.js"></script>
-<link href="/assets/templates/universal/css/lightslider.min.css" rel="stylesheet">
-<script>$(document).ready(function(){$(".specials-offer-slider").lightSlider({item:1,slideMargin:0,loop:!0,pager:!1,pauseOnHover:!0,auto:!0,pause:4E3,});});</script>
+    <script src="/assets/templates/universal/js/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/assets/templates/universal/js/jquery.cookie.js"></script>
+    
+    <script src="/assets/templates/universal/carousel/owl.carousel.min.js"></script>
+    <script>$('.header-carousel').owlCarousel({center:true,dots:false,loop:true,margin:16,nav:true,autoplay:true,autoplayTimeout:6000,autoplayHoverPause:true,responsive:{0:{items:1},900:{items:2}}})</script>
+    <script src="/assets/templates/universal/js/lightslider.min.js"></script>
+    <link href="/assets/templates/universal/css/lightslider.min.css" rel="stylesheet">
+    <script>$(document).ready(function(){$(".specials-offer-slider").lightSlider({item:1,slideMargin:0,loop:!0,pager:!1,pauseOnHover:!0,auto:!0,pause:4E3,});});</script>
 
-<script>$(document).ready(function(){$(".carousel-img").brazzersCarousel()});</script>
-<script src="/assets/templates/universal/js/script.min.js"></script>
-<link rel="stylesheet" href="/assets/templates/universal/css/jquery-ui.css">
+    <script>$(document).ready(function(){$(".carousel-img").brazzersCarousel()});</script>
+    <script src="/assets/templates/universal/js/script.min.js"></script>
+    <link rel="stylesheet" href="/assets/templates/universal/css/jquery-ui.css">
 
-<script>
-    $(".mobile-btn").click(function(){$(".mobile-menu").addClass("open"); $(".menu-overly-mask").addClass("open");});
-    $(".mbtn-close").click(function(){$(".mobile-menu").removeClass("open"); $(".menu-overly-mask").removeClass("open");});
-</script>
-<script>$(document).ready(function() {$(".imgLiquidFill").imgLiquid();});</script>
-<script src="/assets/templates/universal/js/imgLiquid-min.js"></script>  
-<script src="/assets/templates/universal/js/script.js"></script>
-<script src="/assets/js/jquery.ui.touch-punch.min.js"></script>
-<!-- Yandex.Metrika counter --> 
-<script type="text/javascript"> (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(56456398, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true }); </script> <noscript><div><img src="/assetshttps://mc.yandex.ru/watch/56456398" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
-<!-- Дизайн сайта: Оксана Соболева -->
-<script>
-var _csrf = document.cookie.split("_csrf=");
-    if(_csrf[1] !== undefined){
-        _csrf = _csrf[1].split(";");
-        _csrf = _csrf[0]
-        $("form[method=post]").each(function(){
-                $("<input>").attr("type", "hidden").attr("name", "_csrf").attr("value", _csrf).appendTo($(this));
-        });
-    }
-</script>
-<div class="autocomplete-suggestions" style="position: absolute; display: none; max-height: 300px; z-index: 9999;"></div>
-<div class="autocomplete-suggestions" style="position: absolute; display: none; max-height: 300px; z-index: 9999;"></div>
+    <script>
+        $(".mobile-btn").click(function(){$(".mobile-menu").addClass("open"); $(".menu-overly-mask").addClass("open");});
+        $(".mbtn-close").click(function(){$(".mobile-menu").removeClass("open"); $(".menu-overly-mask").removeClass("open");});
+    </script>
+    <script>$(document).ready(function() {$(".imgLiquidFill").imgLiquid();});</script>
+    <script src="/assets/templates/universal/js/imgLiquid-min.js"></script>  
+    <script src="/assets/templates/universal/js/script.js"></script>
+    <script src="/assets/js/jquery.ui.touch-punch.min.js"></script>
+    <!-- Yandex.Metrika counter --> 
+    <script type="text/javascript"> (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(56456398, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true }); </script> <noscript><div><img src="/assetshttps://mc.yandex.ru/watch/56456398" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+    <!-- Дизайн сайта: Оксана Соболева -->
+    <script>
+    var _csrf = document.cookie.split("_csrf=");
+        if(_csrf[1] !== undefined){
+            _csrf = _csrf[1].split(";");
+            _csrf = _csrf[0]
+            $("form[method=post]").each(function(){
+                    $("<input>").attr("type", "hidden").attr("name", "_csrf").attr("value", _csrf).appendTo($(this));
+            });
+        }
+    </script>
+    <div class="autocomplete-suggestions" style="position: absolute; display: none; max-height: 300px; z-index: 9999;"></div>
+    <div class="autocomplete-suggestions" style="position: absolute; display: none; max-height: 300px; z-index: 9999;"></div>
 </body>
 </html>

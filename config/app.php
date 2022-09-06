@@ -196,6 +196,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\CategoryMenuServiceProvider::class,
         App\Providers\HeadercarouselServiceProvider::class,
+        App\Providers\FooterpromoServiceProvider::class,
         
 
     ],
