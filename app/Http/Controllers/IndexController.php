@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use App\Validators\LoginValidator;
+use Illuminate\Support\Facades\Auth;
 
 
 class IndexController extends Controller
@@ -35,8 +36,20 @@ class IndexController extends Controller
         if($validator->fails()) {
             return redirect()->route('login')->withErrors($validator)->withInput();
         }
-        return redirect()->route('cabinet');
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+            return redirect()->route('cabinet');
+        }
+        else{
+            return redirect()->route('login');
+        }
+        // dd(Auth::user());
+        
 
+    }
+
+    public function logoutAction(){
+        Auth::logout();
+        return redirect()->route('login');
     }
 
     public function cabinetAction()
