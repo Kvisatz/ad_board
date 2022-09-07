@@ -69,7 +69,9 @@ class IndexController extends Controller
     {
         $template = $this->template;
 
-        return view('pages.cabinet', compact('template'));
+        $bootstrap = true;
+
+        return view('pages.cabinet', compact('template', 'bootstrap'));
 
     }
     

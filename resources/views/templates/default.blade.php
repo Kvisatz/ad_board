@@ -33,9 +33,13 @@
             }
         }
     </script> -->
-    <link rel="shortcut icon" href="/assets/templates/universal/images/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="/assets/images/cat/logo.png" type="image/png">
     <title>Universal</title>
     <link href="/assets/templates/universal/css/bootstrap.min.css" rel="stylesheet">
+    @if(isset($bootstrap) && $bootstrap == true)
+    <link href="/assets/templates/universal/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="/assets/sidebar/sidebars.css" rel="stylesheet">
+    @endif
     <link href="/assets/templates/universal/css/style-main.css" rel="stylesheet">
     <link href="/assets/templates/universal/css/light.css" rel="stylesheet">
     <link href="/assets/templates/universal/css/glyphicon.css" rel="stylesheet">
@@ -93,7 +97,17 @@
                             <a class="btn-notepad bl-inl al-mid c-20 s15" title="Избранных объявлений: 0" href="/assets/notepad/">Избранное 
                                 <span class="n_count bl-inl al-top pos-rel br100 s11 text-center">0</span>
                             </a>  
-                            <a class="btn-user bl-inl al-mid c-20 br20 b-f s15" href="/assets/users/login/">Личный кабинет</a>
+                            
+                            @if(Auth::user() != null)
+                            
+                                <a class="btn-user bl-inl al-mid c-20 br20 b-f s15" href="/cabinet">
+                                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                                    <strong>mdo</strong>
+                                </a>
+                                @else
+                                <a class="btn-user bl-inl al-mid c-20 br20 b-f s15" href="/login">Личный кабинет</a>
+                            @endif
+                            
                             <a class="mob-btnadd btn btn-primary btn-add br30" href="/assets/add/">Подать объявление</a>
                             <span class="mbtn-close visible-xs pos-abs">×</span>
                         </div><!-- /mobile-menu -->
