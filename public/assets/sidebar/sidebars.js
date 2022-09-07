@@ -5,11 +5,16 @@
   tooltipTriggerList.forEach(function (tooltipTriggerEl) {
     new bootstrap.Tooltip(tooltipTriggerEl)
   })
-  let elemInput = document.querySelectorAll('.input-dis')
-  let button = document.querySelectorAll('.remover-btn')
-  button.addEventListener()
-  elem.forEach(function(){
-    console.log(elem)
-    elem.removeAttribute('disabled')
+  let elemInputs = document.querySelectorAll('.input-dis')
+  let button = document.querySelector('.remover-btn')
+  console.log(button)
+  button.addEventListener('click', ()=>{
+    for(let elemInput of elemInputs){
+        console.log(elemInput)
+        
+        elemInput.removeAttribute('disabled')
+      }
   })
+  
+  
 })()

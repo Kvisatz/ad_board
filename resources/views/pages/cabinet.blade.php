@@ -60,12 +60,12 @@
                                 
                         </form>
                         <div class="text-center">
-                            <a class="btn btn-primary btn-add br30 hidden-xs remover-btn" href="/assets/add/">Изменить данные</a>
+                            <button class="btn btn-primary btn-add br30 hidden-xs remover-btn" href="#">Изменить данные</button>
                         </div>
                        
                     </div>
                 </div>
-                <link href="/templates/universal/style.css " rel="stylesheet">
+                
             </div>
                 
             <div class="bl-cell al-top bl-right">
