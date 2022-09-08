@@ -60,6 +60,30 @@ class IndexController extends Controller
 
     }
 
+    public function datarequestAction(Request $request)
+    {
+        $request->avatar->store('/public');
+
+		$p = $request->avatar->hashName();
+        // dd($request);
+        $validator = LoginValidator::loginValidator($request);
+        
+        // dd($validator);                               
+        if($validator->fails()) {
+            return redirect()->route('login')->withErrors($validator)->withInput();
+        }
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+            return redirect()->route('cabinet');
+        }
+        else{
+            return redirect()->route('login');
+        }
+        // dd(Auth::user());
+        
+
+    }
+    
+
     public function logoutAction(){
         Auth::logout();
         return redirect()->route('login');
@@ -69,11 +93,20 @@ class IndexController extends Controller
     {
         $template = $this->template;
 
-        $bootstrap = true;
+        
 
-        return view('pages.cabinet', compact('template', 'bootstrap'));
+        return view('pages.cabinet', compact('template'));
 
     }
-    
+    public function testAction()
+    {
+        $template = $this->template;
+
+        // $bootstrap = true;
+
+        return view('pages.test', compact('template'));
+        
+
+    }
     
 }

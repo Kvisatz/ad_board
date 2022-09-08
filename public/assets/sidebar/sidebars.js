@@ -12,7 +12,7 @@
     for(let elemInput of elemInputs){
         console.log(elemInput)
         
-        elemInput.removeAttribute('disabled')
+        elemInput.toggleAttribute('disabled')
       }
   })
   

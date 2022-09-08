@@ -21,6 +21,7 @@ Route::controller(IndexController::class)->group(function (){
     Route::middleware(['auth'])->group(function () {
         
         Route::get('/cabinet', 'cabinetAction')->name('cabinet');
+        Route::post('/cabinet/personal-data-request', 'datarequestAction');
     });
     Route::get('/', 'indexAction');
     Route::get('/login', 'loginAction')->name('login');
@@ -29,5 +30,6 @@ Route::controller(IndexController::class)->group(function (){
     Route::get('/category/{id}', 'categoryAction', function($id){
         return $id;
         });
-
+        Route::get('/test', 'testAction');
+    
 });

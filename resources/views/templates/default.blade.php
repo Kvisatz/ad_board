@@ -36,10 +36,10 @@
     <link rel="shortcut icon" href="/assets/images/cat/logo.png" type="image/png">
     <title>Universal</title>
     <link href="/assets/templates/universal/css/bootstrap.min.css" rel="stylesheet">
-    @if(isset($bootstrap) && $bootstrap == true)
+    <!-- @if(isset($bootstrap) && $bootstrap == true)
     <link href="/assets/templates/universal/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link href="/assets/sidebar/sidebars.css" rel="stylesheet">
-    @endif
+    @endif -->
     <link href="/assets/templates/universal/css/style-main.css" rel="stylesheet">
     <link href="/assets/templates/universal/css/light.css" rel="stylesheet">
     <link href="/assets/templates/universal/css/glyphicon.css" rel="stylesheet">
@@ -101,8 +101,8 @@
                             @if(Auth::user() != null)
                             
                                 <a class="btn-user bl-inl al-mid c-20 br20 b-f s15" href="/cabinet">
-                                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                                    <strong>mdo</strong>
+                                    <img src="/assets/images/avatars/{{ Auth::user()->avatar }}" alt="" width="32" height="32" class="rounded-circle me-2">
+                                    <strong>{{ Auth::user()->name }}</strong>
                                 </a>
                                 @else
                                 <a class="btn-user bl-inl al-mid c-20 br20 b-f s15" href="/login">Личный кабинет</a>
