@@ -509,7 +509,7 @@ $(document).ready(function () {
     function compare_passwords(){
         var p1 = $("#password1").val();
         var p2 = $("#password2").val();
-        if(p1.length < 6 && p1 != ""){
+        if(p1.length < 3 && p1 != ""){
             $("#password_info").show();
         }else{
             $("#password_info").hide();

@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use App\Validators\LoginValidator;
+use App\Validators\UserinfoValidator;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
+use App\Models\User;
 
 
 
@@ -62,24 +64,26 @@ class IndexController extends Controller
 
     public function datarequestAction(Request $request)
     {
-        $request->avatar->store('/public');
+        $validator = UserinfoValidator::userinfoValidator($request);
+        if(isset($request->avatar)){
+            $request->avatar->store('/public/avatars');
 
-		$p = $request->avatar->hashName();
+		    $avatarName = $request->avatar->hashName(); 
+        }
         // dd($request);
-        $validator = LoginValidator::loginValidator($request);
-        
         // dd($validator);                               
         if($validator->fails()) {
-            return redirect()->route('login')->withErrors($validator)->withInput();
+            return redirect()->route('cabinet')->withErrors($validator)->withInput();
         }
-        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
-            return redirect()->route('cabinet');
-        }
-        else{
-            return redirect()->route('login');
-        }
-        // dd(Auth::user());
-        
+        $user = new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->avatar = $avatarName;
+        $user->save();
+
+        return redirect()->route('cabinet')->with('success', 'Информация измеена')->withInput();
+                
 
     }
     
