@@ -22,6 +22,9 @@ Route::controller(IndexController::class)->group(function (){
         
         Route::get('/cabinet', 'cabinetAction')->name('cabinet');
         Route::post('/cabinet/personal-data-request', 'datarequestAction');
+        Route::get('/cabinet/favorite', 'favoriteAction')->name('favorite');
+
+        
     });
     Route::get('/', 'indexAction');
     Route::get('/login', 'loginAction')->name('login');

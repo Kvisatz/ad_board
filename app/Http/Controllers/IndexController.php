@@ -64,12 +64,7 @@ class IndexController extends Controller
     {
 
         $validator = UserinfoValidator::userinfoValidator($request);
-        if(isset($request->avatar))
-        {
-            $request->avatar->store('/public/avatars');
-
-		    $avatarName = $request->avatar->hashName(); 
-        }
+        
                                      
         if($validator->fails())
         {
@@ -98,11 +93,13 @@ class IndexController extends Controller
         return view('pages.cabinet', compact('template'));
 
     }
-    public function testAction()
+
+
+    public function favoriteAction()
     {
         $template = $this->template;
 
-        // $bootstrap = true;
+       
 
         return view('pages.test', compact('template'));
         

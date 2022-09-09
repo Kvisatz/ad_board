@@ -17,7 +17,12 @@
                 <!-- <div class="bl-cell al-top bl-center"> -->
                     <h1>Личные данные</h1> 
                     @if(isset(Auth::user()->avatar))
-                        <img src="/storage/avatars/{{ Auth::user()->avatar}}" alt="140x140" class="img-circle img-responsive">
+                        <div class="container">
+                            <div class="row">
+                                <img src="/storage/avatars/{{ Auth::user()->avatar}}" width="100" height="100" alt="140x140" class="img-circle img-responsive">
+                            </div>
+                        </div>
+                        
                     @endif
                     @if(count($errors) > 0)
                         @foreach ($errors->all() as $error)
@@ -26,13 +31,13 @@
                             <button class="close" data-dismiss="alert">×</button>
                             {{ $error }}
                         </div>
-                        @endforeach
+                    @endforeach
 
                     @endif
                     @if(session('success'))
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong>Ок!</strong> {{ session('success') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <div class="alert alert-success">
+                            <strong>Ок!</strong> {{ session('success') }}
+                            <button type="button" class="close" data-dismiss="alert">×</button>
                         </div>
                     @endif
                     <form action="/cabinet/personal-data-request" method="POST" enctype="multipart/form-data">
@@ -85,7 +90,7 @@
                             <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
                                 <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
                                     <li role="presentation" class="active"><a href="/cabinet">Личные данные</a></li>
-                                    <li role="presentation"><a href="#">Profile</a></li>
+                                    <li role="presentation"><a href="/cabinet/favorite">Избранное</a></li>
                                     <li role="presentation"><a href="#">Messages</a></li>
                                 </ul>
                                 <!-- <ul class="nav nav-pills flex-column mb-auto">
