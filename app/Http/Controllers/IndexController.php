@@ -10,6 +10,7 @@ use App\Validators\UserinfoValidator;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
 use App\Models\User;
+use App\Helpers\CheckuserHelper;
 
 
 
@@ -44,43 +45,38 @@ class IndexController extends Controller
 
     public function loginrequestAction(Request $request)
     {
-        // dd($request);
         $validator = LoginValidator::loginValidator($request);
-        
-        // dd($validator);                               
+                              
         if($validator->fails()) {
             return redirect()->route('login')->withErrors($validator)->withInput();
         }
+
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
             return redirect()->route('cabinet');
         }
         else{
             return redirect()->route('login');
-        }
-        // dd(Auth::user());
-        
+        }        
 
     }
 
     public function datarequestAction(Request $request)
     {
+
         $validator = UserinfoValidator::userinfoValidator($request);
-        if(isset($request->avatar)){
+        if(isset($request->avatar))
+        {
             $request->avatar->store('/public/avatars');
 
 		    $avatarName = $request->avatar->hashName(); 
         }
-        // dd($request);
-        // dd($validator);                               
-        if($validator->fails()) {
+                                     
+        if($validator->fails())
+        {
             return redirect()->route('cabinet')->withErrors($validator)->withInput();
         }
-        $user = new User;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        $user->avatar = $avatarName;
-        $user->save();
+        CheckuserHelper::changeuser(Auth::user()->id, $request);
+        
 
         return redirect()->route('cabinet')->with('success', 'Информация измеена')->withInput();
                 

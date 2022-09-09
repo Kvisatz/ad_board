@@ -17,7 +17,7 @@
                 <!-- <div class="bl-cell al-top bl-center"> -->
                     <h1>Личные данные</h1> 
                     @if(isset(Auth::user()->avatar))
-                        <img src="/assets/images/avatars/{{ Auth::user()->avatar}}" alt="140x140" class="img-circle img-responsive">
+                        <img src="/storage/avatars/{{ Auth::user()->avatar}}" alt="140x140" class="img-circle img-responsive">
                     @endif
                     @if(count($errors) > 0)
                         @foreach ($errors->all() as $error)

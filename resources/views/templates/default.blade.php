@@ -101,7 +101,10 @@
                             @if(Auth::user() != null)
                             
                                 <a class="btn-user bl-inl al-mid c-20 br20 b-f s15" href="/cabinet">
-                                    <img src="/assets/images/avatars/{{ Auth::user()->avatar }}" alt="" width="32" height="32" class="rounded-circle me-2">
+                                @if(isset(Auth::user()->avatar))
+                                <img src="/storage/avatars/{{ Auth::user()->avatar}}" alt="" width="32" height="32" class="rounded-circle me-2">
+                                @endif
+                                    
                                     <strong>{{ Auth::user()->name }}</strong>
                                 </a>
                                 @else
