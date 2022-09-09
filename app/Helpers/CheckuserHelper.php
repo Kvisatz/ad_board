@@ -12,7 +12,12 @@
         static function changeuser($field, $request){
 
             $user = User::where('id', $field)->first();
+            if(isset($request->avatar))
+            {
+                $request->avatar->store('/public/avatars');
 
+                $avatarName = $request->avatar->hashName(); 
+            }
             if($user != null)
             {
 				$user->name = $request->name;
