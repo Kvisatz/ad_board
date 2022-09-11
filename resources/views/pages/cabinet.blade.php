@@ -91,7 +91,7 @@
                                 <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
                                     <li role="presentation" class="active"><a href="/cabinet">Личные данные</a></li>
                                     <li role="presentation"><a href="/cabinet/favorite">Избранное</a></li>
-                                    <li role="presentation"><a href="#">Messages</a></li>
+                                    <li role="presentation"><a href="/cabinet/my-adverts">Мои обьявления</a></li>
                                 </ul>
                                 <!-- <ul class="nav nav-pills flex-column mb-auto">
                                     <li class="nav-item">

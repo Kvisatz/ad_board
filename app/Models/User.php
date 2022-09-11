@@ -46,4 +46,14 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class);
     }
+
+    public function adverts()
+    {
+        return $this->belongsToMany(Advertisment::class, 'user_advertisment');
+    }
+
+    public function favoriteadverts()
+    {
+        return $this->belongsToMany(Advertisment::class, 'favorites');
+    }
 }

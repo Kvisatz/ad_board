@@ -99,11 +99,23 @@ class IndexController extends Controller
     {
         $template = $this->template;
 
-       
+       $user = User::where('id', Auth::user()->id)->first();
 
-        return view('pages.test', compact('template'));
+        return view('pages.cabinetfavorite', compact('template', 'user'));
         
 
     }
+
+    public function myadvertsAction()
+    {
+        $template = $this->template;
+
+       $user = User::where('id', Auth::user()->id)->first();
+
+        return view('pages.myadverts', compact('template', 'user'));
+        
+
+    }
+    
     
 }

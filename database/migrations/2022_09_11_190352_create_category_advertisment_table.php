@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('advertisment', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->integer('price');
-            $table->text('description')->nullable();
+        Schema::create('category_advertisment', function (Blueprint $table) {
+            $table->integer('advertisment_id');
+            $table->integer('category_id');
         });
     }
 
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('advertisment');
+        Schema::dropIfExists('category_advertisment');
     }
 };

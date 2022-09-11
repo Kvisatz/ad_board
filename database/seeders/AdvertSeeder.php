@@ -18,10 +18,9 @@ class AdvertSeeder extends Seeder
     public function run()
     {
         $data = [];
-        for ($i=0; $i<=9; $i++) {
+        for ($i=0; $i<=60; $i++) {
             $product = [
                         'title' => Str::random(10),
-                        'img' => 'заглушка.jpg',
                         'price' => 1000,
                         'description' => Str::random(40),
                         

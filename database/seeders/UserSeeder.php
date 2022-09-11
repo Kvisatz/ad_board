@@ -23,14 +23,14 @@ class UserSeeder extends Seeder
                 'email' => 'admin@gmail.com',
                 'password' => '$2y$10$vVMX.9uMiYiLcAukgNFWE.RhK35Blnh6sLmjF/STXDdaWTyWqeU0K', 
                 'role_id' => 1, 
-                'avatar' => 'avatar1.png'
+                'avatar' => null
             ],
             [
                 'name' => 'bob',
                 'email' => 'bob@gmail.com',
                 'password' => '$2y$10$vVMX.9uMiYiLcAukgNFWE.RhK35Blnh6sLmjF/STXDdaWTyWqeU0K',  
                 'role_id' => 2, 
-                'avatar' => 'avatar2.png'
+                'avatar' => null
 
 
             ],

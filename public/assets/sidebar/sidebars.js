@@ -8,13 +8,16 @@
   let elemInputs = document.querySelectorAll('.input-dis')
   let button = document.querySelector('.remover-btn')
   console.log(button)
-  button.addEventListener('click', ()=>{
-    for(let elemInput of elemInputs){
-        console.log(elemInput)
-        
-        elemInput.toggleAttribute('disabled')
-      }
-  })
+  if(button != null){
+    button.addEventListener('click', ()=>{
+      for(let elemInput of elemInputs){
+          console.log(elemInput)
+          
+          elemInput.toggleAttribute('disabled')
+        }
+    })
+  }
+    
   
   
 })()

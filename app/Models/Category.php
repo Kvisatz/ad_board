@@ -20,4 +20,9 @@
 	    {
 	        return $this->belongsToMany(Filter::class);
 	    }
+
+		public function advertisment()
+    {
+        return $this->belongsToMany(Advertisment::class, 'category_advertisment');
+    }
 	}
