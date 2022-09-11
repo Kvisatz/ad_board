@@ -35,6 +35,9 @@ Route::controller(IndexController::class)->group(function (){
     Route::get('/category/{id}', 'categoryAction', function($id){
         return $id;
         });
-        Route::get('/test', 'testAction');
+    Route::get('/advert/{id}', 'advertAction', function($id){
+        return $id;
+        });
+    Route::get('/test', 'testAction');
     
 });

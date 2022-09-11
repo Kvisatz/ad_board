@@ -116,6 +116,17 @@ class IndexController extends Controller
         
 
     }
+
+    public function advertAction($id)
+    {
+        $template = $this->template;
+
+        $advert = Advertisment::where('id', $id)->first();
+
+        return view('pages.advert', compact('template', 'advert'));
+        
+
+    }
     
     
 }
