@@ -65,148 +65,49 @@
                     <div class="wrapper-scroll">
                         <div class="wrapper-scroll-bl">
                             <!-- Начало обьявления -->
-                            <div class="list_message_block col-xs-6 col-sm-4 col-md-3">
-                                <div class="b-f br3">
-                                    <div class="message_block_imag br3 pos-rel">
-                                        <a title="Yamaha XVS 650" href="https://universal.elite-board.org/Russia/spb/Avtotransport/sale/mototeh/22-yamaha-xvs-650.html">
-                                            <div class="carousel-img brazzers-daddy">
-                                                <div class="tmb-wrap">
-                                                    <div class="tmb-wrap-table">
-                                                        <div class=""></div>
+                            @foreach($vipAdverts as $advert)
+                                @if($advert->vip == true)
+                                    <div class="list_message_block col-xs-6 col-sm-4 col-md-3">
+                                        <div class="b-f br3">
+                                            <div class="message_block_imag br3 pos-rel">
+                                                <a title="{{ $advert->title }}" href="{{ url('/advert', $advert->id)}}">
+                                                    <div class="carousel-img brazzers-daddy">
+                                                        <div class="tmb-wrap">
+                                                            <div class="tmb-wrap-table">
+                                                                <div class=""></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="image-wrap">
+                                                            <div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets/uploads/usr/0/ts_d77f0ea9cafe2413c3f3677775a3993c_35_1.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;">
+                                                                <img alt="{{ $advert->title }}" src="/assets/uploads/usr/0/ts_d77f0ea9cafe2413c3f3677775a3993c_35_1.webp" style="display: none;">
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="image-wrap">
-                                                    <div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets/uploads/usr/0/ts_d77f0ea9cafe2413c3f3677775a3993c_35_1.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;">
-                                                        <img alt="Yamaha XVS 650" src="/assets/uploads/usr/0/ts_d77f0ea9cafe2413c3f3677775a3993c_35_1.webp" style="display: none;">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>  
-                                        <span class="notepad-fav">
-                                            <span class="notepad ic-star" data-id="22" data-toggle="tooltip" data-placement="top" title="Добавить в избранные"></span>
-                                        </span> 
-                                    </div>  
-                                    <div class="message_block_tit pos-rel">
-                                        <h3>
-                                            <a class="c-20 s14" title="Yamaha XVS 650" href="https://universal.elite-board.org/Russia/spb/Avtotransport/sale/mototeh/22-yamaha-xvs-650.html">Yamaha XVS 650</a>
-                                        </h3>
-                                        <div class="sp-now">
-                                            <span class="s15">
-                                                <span class="currency">₽</span>
-                                                 320 000
-                                            </span>
-                                            <span class="reg_cat s13 c-7 f-l">Санкт-Петербург</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Конец обьявления -->
-                            <!-- Начало обьявления с 2 фото -->
-                            <div class="list_message_block col-xs-6 col-sm-4 col-md-3">
-                                <div class="b-f br3">
-                                    <div class="message_block_imag br3 pos-rel">
-                                        <a title="Электрогитара FGN EEL-HM. Japan, с кейсом" href="https://universal.elite-board.org/Russia/spb/Muzyka-iskusstvo/instrumenti/5-jelektrogitara-fgn-eel-hm.-japan-s-kejsom.html">
-                                            <div class="carousel-img brazzers-daddy">
-                                                <div class="tmb-wrap">
-                                                    <div class="tmb-wrap-table">
-                                                        <div class=""></div>
-                                                        <div class="active"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="image-wrap">
-                                                    <div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets/uploads/usr/0/ts_cb488031628829f119a39d2de5c22ff8_35_0.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: none;">
-                                                        <img alt="Электрогитара FGN EEL-HM. Japan, с кейсом" src="/assets/uploads/usr/0/ts_cb488031628829f119a39d2de5c22ff8_35_0.webp" style="display: none;">
-                                                    </div>
-                                                    <div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets/uploads/usr/0/ts_cb488031628829f119a39d2de5c22ff8_35_1.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;">
-                                                        <img alt="Электрогитара FGN EEL-HM. Japan, с кейсом" src="/assets/uploads/usr/0/ts_cb488031628829f119a39d2de5c22ff8_35_1.webp" style="display: none;">
-                                                    </div>
+                                                </a>  
+                                                <span class="notepad-fav">
+                                                    <span class="notepad ic-star" data-id="22" data-toggle="tooltip" data-placement="top" title="Добавить в избранные"></span>
+                                                </span> 
+                                            </div>  
+                                            <div class="message_block_tit pos-rel">
+                                                <h3>
+                                                    <a class="c-20 s14" title="{{ $advert->title }}" href="{{ url('/advert', $advert->id)}}">{{ $advert->title }}</a>
+                                                </h3>
+                                                <div class="sp-now">
+                                                    <span class="s15">
+                                                        <span class="currency">₽</span>
+                                                        {{ $advert->price }}
+                                                    </span>
+                                                    <span class="reg_cat s13 c-7 f-l">Санкт-Петербург</span>
                                                 </div>
                                             </div>
-                                        </a>                                         
-                                        <span class="notepad-fav">
-                                            <span class="notepad ic-star" data-id="5" data-toggle="tooltip" data-placement="top" title="Добавить в избранные"></span>
-                                        </span>
-                                    </div>                                          
-                                    <div class="message_block_tit pos-rel">
-                                        <h3>
-                                            <a class="c-20 s14" title="Электрогитара FGN EEL-HM. Japan, с кейсом" href="https://universal.elite-board.org/Russia/spb/Muzyka-iskusstvo/instrumenti/5-jelektrogitara-fgn-eel-hm.-japan-s-kejsom.html">Электрогитара FGN EEL-HM. Japan, с кейсом</a>
-                                        </h3>
-                                        <div class="sp-now">
-                                            <span class="s15">
-                                                <span class="currency">₽</span>
-                                                    75 000
-                                                </span>
-                                            <span class="reg_cat s13 c-7 f-l">Санкт-Петербург</span>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <!-- Конец обьявления с 2 фото -->
-                                        
-                                        <div class="list_message_block col-xs-6 col-sm-4 col-md-3"><div class="b-f br3">
-                                        
-                                        <div class="message_block_imag br3 pos-rel">
-                                        <a title="Продам 1-к квартиру, 41 м², 9/24 эт." href="https://universal.elite-board.org/Russia/Moscow/Nedvizhimost/apartmen/sale/1-prodam-1-k-kvartiru-41-m-9-24-jet.html">
-                                        <div class="carousel-img brazzers-daddy"><div class="tmb-wrap"><div class="tmb-wrap-table"><div class="active"></div><div class=""></div></div></div><div class="image-wrap"><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/uploads/usr/0/ts_6700bfa7268531f7b9f11d5875989502_35_2.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;"><img alt="Продам 1-к квартиру, 41 м², 9/24 эт." src="/uploads/usr/0/ts_6700bfa7268531f7b9f11d5875989502_35_2.webp" style="display: none;"></div><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/uploads/usr/0/ts_6700bfa7268531f7b9f11d5875989502_35_3.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: none;"><img alt="Продам 1-к квартиру, 41 м², 9/24 эт." src="/uploads/usr/0/ts_6700bfa7268531f7b9f11d5875989502_35_3.webp" style="display: none;"></div></div></div>
-                                        </a>  
-                                        
-                                        <span class="notepad-fav"><span class="notepad ic-star" data-id="1" data-toggle="tooltip" data-placement="top" title="Добавить в избранные"></span></span>  
-                                        
-                                        </div>  
-                                        
-                                        <div class="message_block_tit pos-rel">
-                                        <h3><a class="c-20 s14" title="Продам 1-к квартиру, 41 м², 9/24 эт." href="https://universal.elite-board.org/Russia/Moscow/Nedvizhimost/apartmen/sale/1-prodam-1-k-kvartiru-41-m-9-24-jet.html">Продам 1-к квартиру, 41 м², 9/24 эт.</a></h3>
-
-                                        <div class="sp-now">
-                                        <span class="s15"><span class="currency">₽</span>3 000 000</span>
-                                        <span class="reg_cat s13 c-7 f-l">Москва</span></div>
-                                        
-                                        </div>
-                                        </div></div>
-                                        
-                                        <div class="list_message_block col-xs-6 col-sm-4 col-md-3"><div class="b-f br3">
-                                        
-                                        <div class="message_block_imag br3 pos-rel">
-                                        <a title="BRP Can-Am Spyder Roadster" href="https://universal.elite-board.org/Russia/Moscow/Avtotransport/sale/mototeh/17-brp-can-am-spyder-roadster.html">
-                                        <div class="carousel-img brazzers-daddy"><div class="carousel-more pos-abs c-f s12">Ещё 1 фото</div><div class="tmb-wrap"><div class="tmb-wrap-table"><div class="active"></div><div class=""></div></div></div><div class="image-wrap"><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/uploads/usr/0/ts_7ff343613e105334ddecc6fb5e0dfb9a_35_3.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;"><img alt="BRP Can-Am Spyder Roadster" src="/uploads/usr/0/ts_7ff343613e105334ddecc6fb5e0dfb9a_35_3.webp" style="display: none;"></div><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/uploads/usr/0/ts_7ff343613e105334ddecc6fb5e0dfb9a_35_4.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: none;"><img alt="BRP Can-Am Spyder Roadster" src="/uploads/usr/0/ts_7ff343613e105334ddecc6fb5e0dfb9a_35_4.webp" style="display: none;"></div></div></div>
-                                        </a>  
-                                        
-                                        <span class="notepad-fav"><span class="notepad ic-star" data-id="17" data-toggle="tooltip" data-placement="top" title="Добавить в избранные"></span></span>  
-                                        
-                                        </div>  
-                                        
-                                        <div class="message_block_tit pos-rel">
-                                        <h3><a class="c-20 s14" title="BRP Can-Am Spyder Roadster" href="https://universal.elite-board.org/Russia/Moscow/Avtotransport/sale/mototeh/17-brp-can-am-spyder-roadster.html">BRP Can-Am Spyder Roadster</a></h3>
-
-                                        <div class="sp-now">
-                                        <span class="s15"><span class="currency">₽</span> 670 000</span>
-                                        <span class="reg_cat s13 c-7 f-l">Москва</span></div>
-                                        
-                                        </div>
-                                        </div></div>
-                                        
-                                        <div class="list_message_block col-xs-6 col-sm-4 col-md-3"><div class="b-f br3">
-                                        
-                                        <div class="message_block_imag br3 pos-rel">
-                                        <a title="BRP Ski-Doo Summit 850" href="https://universal.elite-board.org/Russia/Moscow/Avtotransport/sale/mototeh/11-brp-ski-doo-summit-850.html">
-                                        <div class="carousel-img brazzers-daddy"><div class="carousel-more pos-abs c-f s12">Ещё 1 фото</div><div class="tmb-wrap"><div class="tmb-wrap-table"><div class="active"></div><div class=""></div></div></div><div class="image-wrap"><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/uploads/usr/0/ts_c4d6de90c52e9839c404cad9a7cc107a_35_3.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;"><img alt="BRP Ski-Doo Summit 850" src="/uploads/usr/0/ts_c4d6de90c52e9839c404cad9a7cc107a_35_3.webp" style="display: none;"></div><div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/uploads/usr/0/ts_c4d6de90c52e9839c404cad9a7cc107a_35_0.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: none;"><img alt="BRP Ski-Doo Summit 850" src="/uploads/usr/0/ts_c4d6de90c52e9839c404cad9a7cc107a_35_0.webp" style="display: none;"></div></div></div>
-                                        </a>  
-                                        
-                                        <span class="notepad-fav"><span class="notepad ic-star" data-id="11" data-toggle="tooltip" data-placement="top" title="" data-original-title="Добавить в избранные"></span></span>  
-                                        
-                                        </div>  
-                                        
-                                        <div class="message_block_tit pos-rel">
-                                        <h3><a class="c-20 s14" title="BRP Ski-Doo Summit 850" href="https://universal.elite-board.org/Russia/Moscow/Avtotransport/sale/mototeh/11-brp-ski-doo-summit-850.html">BRP Ski-Doo Summit 850</a></h3>
-
-                                        <div class="sp-now">
-                                        <span class="s15"><span class="currency">₽</span>1 250 000</span>
-                                        <span class="reg_cat s13 c-7 f-l">Москва</span></div>
-                                        
-                                        </div>
-                                        </div></div>
-                                        
-                                        </div></div></div>
+                                    <!-- Конец обьявления -->
+                                @endif
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
 
 
 <!-- Начало блока свежего -->

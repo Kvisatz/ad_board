@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('user_advertisment', function (Blueprint $table) {
-            $table->integer('user_id');
-            $table->integer('advertisment_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('advertisment_id');
         
         });
     }

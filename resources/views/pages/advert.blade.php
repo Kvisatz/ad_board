@@ -6,8 +6,9 @@
         <ol class="breadcrumb s13 f-l bread-product">
             <li><a class="btn-back bl-inl" title="Вернуться назад" href="javascript:history.back()">назад</a></li>
             <li><a title="" href="/">Главная</a></li>
-            <li><a title="" href="https://universal.elite-board.org/Russia/Moscow/Avtotransport/">Автотранспорт</a></li> <li><a title="" href="https://universal.elite-board.org/Russia/Moscow/Avtotransport/sale/">Продажа авто</a></li> 
-            <li><a title="" href="https://universal.elite-board.org/Russia/Moscow/Avtotransport/sale/mototeh/">Мототехника и другие средства</a></li> 
+            
+            <li><a title="" href="https://universal.elite-board.org/Russia/Moscow/Avtotransport/">{{ $advert->category->name}}</a></li> 
+            
         </ol>  
         <div class="bl-tb container-tb">
             <div class="bl-cell al-top bl-center">
@@ -15,7 +16,7 @@
                     <div class="product_header bl-tb">
                         <div class="bl-cell al-top">
                             <div class="s19 f-m">
-                                <h1>BRP Can-Am Spyder Roadster</h1>
+                                <h1>{{ $advert->title }}</h1>
                             </div>
                             <div class="product_header_info">
                                 <div class="product_header_btn bl-inl al-mid">
@@ -38,13 +39,12 @@
                         <div class="bl-cell al-top text-right bl-cell-price">
                             <div class="product_price">
                                 <span class="price-item s20 f-m">
-                                    <span class="currency">₽</span> 670 000
+                                    <span class="currency">₽</span> {{$advert->price}}
                                 </span>
                             </div>
                             <div class="product_header_count c-7 s13">
-                                <span data-toggle="tooltip" data-placement="top" title="Добавлено 14.02.2022 в 21:25 – Будет удалено 24.09.2025 в 00:00" class="data">14.02.2022</span>  
-                                <span data-toggle="tooltip" data-placement="top" title="Кол-во просмотров объявления" class="views">161</span>
-                                <span>ID 17</span>
+                                <span data-toggle="tooltip" data-placement="top" title="Добавлено 14.02.2022 в 21:25 – Будет удалено 24.09.2025 в 00:00" class="data">{{ $advert->created_at}}</span>  
+                                
                             </div>
                         </div>
                     </div><!--product_header-->
@@ -87,42 +87,17 @@
                                             <div class="fotorama__stage" style="width: 858px; height: 380px;">
                                                 <div class="fotorama__fullscreen-icon" tabindex="0" role="button"></div>
                                                 <div class="fotorama__stage__shaft" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); width: 858px; margin-left: 0px;">
+                                                    @foreach($advert->images as $image)
                                                     <div class="fotorama__stage__frame fotorama__loaded fotorama__loaded--img fotorama__active" style="left: 0px;">
-                                                        <img src="/uploads/usr/0/tb_7ff343613e105334ddecc6fb5e0dfb9a_35_3.webp" class="fotorama__img" style="width: 569.822px; height: 380px; left: 144.089px; top: 0px;">
+                                                        <img src="/assets/images/{{$image->name}}" class="fotorama__img" style="width: 569.822px; height: 380px; left: 144.089px; top: 0px;">
                                                     </div>
-                                                    <div class="fotorama__stage__frame fotorama__loaded fotorama__loaded--img" style="left: 860px;">
-                                                        <img src="/uploads/usr/0/tb_7ff343613e105334ddecc6fb5e0dfb9a_35_4.webp" class="fotorama__img" style="width: 570px; height: 380px; left: 144px; top: 0px;">
-                                                    </div>
-                                                </div>
-                                                <div class="fotorama__arr fotorama__arr--prev fotorama__arr--disabled" tabindex="-1" role="button" disabled="disabled"></div>
-                                                <div class="fotorama__arr fotorama__arr--next" tabindex="0" role="button"></div>
-                                                <div class="fotorama__video-close"></div>
-                                            </div>
-                                            <div class="fotorama__nav-wrap">
-                                                <div class="fotorama__nav fotorama__nav--thumbs" style="width: 858px;">
-                                                    <div class="fotorama__nav__shaft" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
-                                                        <div class="fotorama__thumb-border" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); width: 86px;"></div>
-                                                        <div class="fotorama__nav__frame fotorama__nav__frame--thumb fotorama__active" tabindex="0" role="button" style="width: 90px;">
-                                                            <div class="fotorama__thumb fotorama__loaded fotorama__loaded--img">
-                                                                <img src="/uploads/usr/0/ts_7ff343613e105334ddecc6fb5e0dfb9a_35_3.webp" class="fotorama__img" style="width: 96.2406px; height: 64px; left: -3.1203px; top: 0px;">
-                                                            </div>
-                                                        </div>
-                                                        <div class="fotorama__nav__frame fotorama__nav__frame--thumb" tabindex="0" role="button" style="width: 90px;">
-                                                        <div class="fotorama__thumb fotorama__loaded fotorama__loaded--img">
-                                                            <img src="/uploads/usr/0/ts_7ff343613e105334ddecc6fb5e0dfb9a_35_4.webp" class="fotorama__img" style="width: 96.2406px; height: 64px; left: -3.1203px; top: 0px;">
-                                                        </div>
-                                                    </div>
-                                                    <div class="fotorama__nav__frame fotorama__nav__frame--thumb" tabindex="0" role="button" style="width: 90px;">
-                                                    <div class="fotorama__thumb fotorama__loaded fotorama__loaded--img">
-                                                        <img src="/uploads/usr/0/ts_7ff343613e105334ddecc6fb5e0dfb9a_35_0.webp" class="fotorama__img" style="width: 116.364px; height: 64px; left: -13.1818px; top: 0px;">
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    @endforeach
+                                                    
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <span class="img-cover" style="background-image:url('/uploads/usr/0/tb_7ff343613e105334ddecc6fb5e0dfb9a_35_0.webp');"></span>
+                                    
                                 </div>
                             </div>
                             <div class="product_params">
@@ -165,74 +140,9 @@
                             </div> 
                             <div class="product_description">
                                 <div class="product_description_title s17 f-m">Описание продавца</div>
-                                <div class="product_description_text">Продаю свой спайдер, владею им 3 года.
-                                    <br>Покупал с пробегом 4500км
-                                    <br>сейчас накатал 10 000 км
-                                    <br>Бережная езда - МОСКВА - ВОРОБЬЕВЫ- ЗЕЛЕНОГРАД
-                                    <br>Поменяно: масла, фильтра, колодки оригинал, новый задний балон, в dexter поменяно по гарантии усилитель руля (отзывная компания)
-                                    <br>Чесный , Ухоженный - не ушатанный трайк
-                                    <br>ТОРГ только при осмотре!!!
-                                    <br>Любая диагностика - за Ваш счет
-                                    <br>Хранение только - теплый гараж
-                                    <br>Состояние пластика - идеальное ни одной царапины нет! 
+                                <div class="product_description_text">{{ $advert->description }}
                                 </div>
-                                <div class="socials">
-                                    <div class="socials-title c-7 bl-inl al-top">Поделиться</div>
-                                    <div class="ya-share2 bl-inl al-top ya-share2_inited" data-services="vkontakte,odnoklassniki,twitter,whatsapp,blogger,viber" data-counter="">
-                                        <div class="ya-share2__container ya-share2__container_size_m ya-share2__container_color-scheme_normal ya-share2__container_shape_normal">
-                                            <ul class="ya-share2__list ya-share2__list_direction_horizontal">
-                                                <li class="ya-share2__item ya-share2__item_service_vkontakte">
-                                                    <a class="ya-share2__link" href="https://vk.com/share.php?url=https%3A%2F%2Funiversal.elite-board.org%2FRussia%2FMoscow%2FAvtotransport%2Fsale%2Fmototeh%2F17-brp-can-am-spyder-roadster.html&amp;title=BRP%20Can-Am%20Spyder%20Roadster%20%2F%20Universal%20%D0%B2%20%D1%80%D0%B5%D0%B3%D0%B8%D0%BE%D0%BD%D0%B5%20%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F%2C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&amp;utm_source=share2" rel="nofollow noopener" target="_blank" title="ВКонтакте">
-                                                        <span class="ya-share2__badge">
-                                                            <span class="ya-share2__icon"></span>
-                                                        </span>
-                                                        <span class="ya-share2__title">ВКонтакте</span>
-                                                    </a>
-                                                </li>
-                                                <li class="ya-share2__item ya-share2__item_service_odnoklassniki">
-                                                    <a class="ya-share2__link" href="https://connect.ok.ru/offer?url=https%3A%2F%2Funiversal.elite-board.org%2FRussia%2FMoscow%2FAvtotransport%2Fsale%2Fmototeh%2F17-brp-can-am-spyder-roadster.html&amp;title=BRP%20Can-Am%20Spyder%20Roadster%20%2F%20Universal%20%D0%B2%20%D1%80%D0%B5%D0%B3%D0%B8%D0%BE%D0%BD%D0%B5%20%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F%2C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&amp;utm_source=share2" rel="nofollow noopener" target="_blank" title="Одноклассники">
-                                                        <span class="ya-share2__badge">
-                                                            <span class="ya-share2__icon"></span>
-                                                        </span>
-                                                        <span class="ya-share2__title">Одноклассники</span>
-                                                    </a>
-                                                </li>
-                                                <li class="ya-share2__item ya-share2__item_service_twitter">
-                                                    <a class="ya-share2__link" href="https://twitter.com/intent/tweet?text=BRP%20Can-Am%20Spyder%20Roadster%20%2F%20Universal%20%D0%B2%20%D1%80%D0%B5%D0%B3%D0%B8%D0%BE%D0%BD%D0%B5%20%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F%2C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&amp;url=https%3A%2F%2Funiversal.elite-board.org%2FRussia%2FMoscow%2FAvtotransport%2Fsale%2Fmototeh%2F17-brp-can-am-spyder-roadster.html&amp;utm_source=share2" rel="nofollow noopener" target="_blank" title="Twitter">
-                                                        <span class="ya-share2__badge">
-                                                            <span class="ya-share2__icon"></span>
-                                                        </span>
-                                                        <span class="ya-share2__title">Twitter</span>
-                                                    </a>
-                                                </li>
-                                                <li class="ya-share2__item ya-share2__item_service_whatsapp">
-                                                    <a class="ya-share2__link" href="https://api.whatsapp.com/send?text=BRP%20Can-Am%20Spyder%20Roadster%20%2F%20Universal%20%D0%B2%20%D1%80%D0%B5%D0%B3%D0%B8%D0%BE%D0%BD%D0%B5%20%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F%2C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%20https%3A%2F%2Funiversal.elite-board.org%2FRussia%2FMoscow%2FAvtotransport%2Fsale%2Fmototeh%2F17-brp-can-am-spyder-roadster.html&amp;utm_source=share2" rel="nofollow noopener" target="_blank" title="WhatsApp">
-                                                        <span class="ya-share2__badge">
-                                                            <span class="ya-share2__icon"></span>
-                                                        </span>
-                                                        <span class="ya-share2__title">WhatsApp</span>
-                                                    </a>
-                                                </li>
-                                                <li class="ya-share2__item ya-share2__item_service_blogger">
-                                                    <a class="ya-share2__link" href="https://www.blogger.com/blog-this.g?u=https%3A%2F%2Funiversal.elite-board.org%2FRussia%2FMoscow%2FAvtotransport%2Fsale%2Fmototeh%2F17-brp-can-am-spyder-roadster.html&amp;n=BRP%20Can-Am%20Spyder%20Roadster%20%2F%20Universal%20%D0%B2%20%D1%80%D0%B5%D0%B3%D0%B8%D0%BE%D0%BD%D0%B5%20%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F%2C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&amp;utm_source=share2" rel="nofollow noopener" target="_blank" title="Blogger">
-                                                        <span class="ya-share2__badge">
-                                                            <span class="ya-share2__icon"></span>
-                                                        </span>
-                                                        <span class="ya-share2__title">Blogger</span>
-                                                    </a>
-                                                </li>
-                                                <li class="ya-share2__item ya-share2__item_service_viber">
-                                                    <a class="ya-share2__link" href="viber://forward?text=BRP%20Can-Am%20Spyder%20Roadster%20%2F%20Universal%20%D0%B2%20%D1%80%D0%B5%D0%B3%D0%B8%D0%BE%D0%BD%D0%B5%20%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F%2C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%20https%3A%2F%2Funiversal.elite-board.org%2FRussia%2FMoscow%2FAvtotransport%2Fsale%2Fmototeh%2F17-brp-can-am-spyder-roadster.html&amp;utm_source=share2" rel="nofollow" target="_blank" title="Viber">
-                                                        <span class="ya-share2__badge">
-                                                            <span class="ya-share2__icon"></span>
-                                                        </span>
-                                                        <span class="ya-share2__title">Viber</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div> 
+                                
                             </div><!--product_description-->
                             <div class="modal fade" id="bid" tabindex="-1" role="dialog">
                                 <div class="modal-dialog">
@@ -306,6 +216,8 @@
                             </div>  
                         </div><!--product_block_body_container-->
                     </div><!--product_block-->
+
+
                     <div class="product_list">
                         <h3 class="product_list-title s17 f-m">Похожие объявления</h3>
                         <div class="wrapper-scroll">

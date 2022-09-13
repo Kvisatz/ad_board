@@ -10,6 +10,7 @@ use App\Validators\UserinfoValidator;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
 use App\Models\User;
+use App\Models\Advertisment;
 use App\Helpers\CheckuserHelper;
 
 
@@ -21,10 +22,18 @@ class IndexController extends Controller
     public function indexAction()
     {
         $template = $this->template;
+
         $categories = Category::get();
+
+        $adverts = Advertisment::get();
+        // dd($adverts);
+        $vipAdverts = Advertisment::where('vip', true)->take(5)->get();
+        // dd($vipAdverts);
+
+
         $flag = true;
 
-        return view('pages.index', compact('template', 'categories', 'flag'));
+        return view('pages.index', compact('template', 'categories', 'flag', 'adverts','vipAdverts'));
 
     }
     public function categoryAction($id)
@@ -122,6 +131,8 @@ class IndexController extends Controller
         $template = $this->template;
 
         $advert = Advertisment::where('id', $id)->first();
+
+        // dd($advert);
 
         return view('pages.advert', compact('template', 'advert'));
         

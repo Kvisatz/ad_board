@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('filter_options', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('filter_id');
+            $table->unsignedBigInteger('filter_id');
         });
     }
 

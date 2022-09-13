@@ -27,25 +27,6 @@ class AdvertismentcategorySeeder extends Seeder
         $data[] = $product;
     }
     DB::table('category_advertisment')->insertOrIgnore($data);
-        // DB::table('category_advertisment')->insertOrIgnore([
-        //                                                     [
-        //                                                         'category_id' => 1,
-        //                                                         'advertisment_id' => 5,
-                                                                
-        //                                                     ],
-        //                                                     [
-        //                                                         'category_id' => 1,
-        //                                                         'advertisment_id' => 7,
-        //                                                     ],
-        //                                                     [
-        //                                                         'category_id' => 2,
-        //                                                         'advertisment_id' => 8,
-        //                                                     ],
-        //                                                     [
-        //                                                         'category_id' => 2,
-        //                                                         'advertisment_id' => 1,
-        //                                                     ],
-                                                            
-        //                                                 ]);
+        
     }
 }

@@ -23,6 +23,6 @@
 
 		public function advertisment()
     {
-        return $this->belongsToMany(Advertisment::class, 'category_advertisment');
+        return $this->hasMany(Advertisment::class, 'category_id');
     }
 	}

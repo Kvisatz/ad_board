@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('img')->nullable();
             $table->string('description')->nullable();
-            $table->integer('parent_id')->nullable();
+            $table->unsignedBigInteger('parent_id')->nullable();
             $table->integer('amount');
         });
     }

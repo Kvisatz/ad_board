@@ -30,7 +30,9 @@ class DatabaseSeeder extends Seeder
             AdvertSeeder::class,
             FavoritesSeeder::class,
             MyadvertSeeder::class,
-            AdvertismentcategorySeeder::class,
+            // AdvertismentcategorySeeder::class,
+            // AdvertismentImageSeeder::class,
+            ImagesSeeder::class,
         ]);
 
     }
