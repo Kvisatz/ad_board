@@ -18,7 +18,7 @@ class ImagesSeeder extends Seeder
     public function run()
     {
         $data = [];
-        for ($i=35; $i<=65; $i++) {
+        for ($i=1; $i<=60; $i++) {
             $product =      [
                                 
                                 'name' => 'заглушка.jpg',
@@ -28,6 +28,29 @@ class ImagesSeeder extends Seeder
             $data[] = $product;
         }
         DB::table('images')->insertOrIgnore($data);
+
+        DB::table('images')->insertOrIgnore([
+            [
+                'name' => 'квадроцикл.webp',
+                'advertisment_id' => 62
+            ],
+            [
+                'name' => 'haval.webp',
+                'advertisment_id' => 63
+            ],
+            [
+                'name' => 'nissan.webp',
+                'advertisment_id' => 64
+            ],
+            [
+                'name' => 'снегоход.webp',
+                'advertisment_id' => 65
+            ],
+            [
+                'name' => 'диск.webp',
+                'advertisment_id' => 66
+            ],
+        ]);
 
 
         

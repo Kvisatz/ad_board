@@ -29,10 +29,12 @@ class DatabaseSeeder extends Seeder
             FilteroptionsSeeder::class,
             AdvertSeeder::class,
             FavoritesSeeder::class,
-            MyadvertSeeder::class,
+            // MyadvertSeeder::class,
             // AdvertismentcategorySeeder::class,
             // AdvertismentImageSeeder::class,
             ImagesSeeder::class,
+            AdvertismentfilterSeeder::class,
+            AdvertismentfilteroptionsSeeder::class,
         ]);
 
     }

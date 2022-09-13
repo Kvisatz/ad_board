@@ -13,9 +13,9 @@ class Advertisment extends Model
 
     public $timestamps = false;
 
-    public function users()
+    public function user()
     {
-        return $this->belongsToMany(User::class, 'user_advertisment');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function category()
@@ -26,6 +26,16 @@ class Advertisment extends Model
     public function images()
     {
         return $this->hasMany(Image::class, 'advertisment_id');
+    }
+
+    public function filters()
+    {
+        return $this->belongsToMany(Filter::class);
+    }
+
+    public function options()
+    {
+        return $this->belongsToMany(Filteroptions::class);
     }
 
 }

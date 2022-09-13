@@ -19,6 +19,10 @@ return new class extends Migration
             $table->integer('price');
             $table->text('description')->nullable();
             $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('user_id');
+            $table->integer('year')->nullable();
+            $table->integer('kilometrage')->nullable();
+            $table->string('transmission')->nullable();
         });
     }
 

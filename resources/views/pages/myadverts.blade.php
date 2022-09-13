@@ -41,9 +41,9 @@
                                 <a class="f-m a-hov" title="{{ $advert->title }}" href="#">{{ $advert->title }}</a>
                             </h3>
                             <div class="offer-location s13 f-l c-7">
-                                @foreach($advert->category as $category)
-                                    {{ $category->name }}
-                                @endforeach
+                                
+                                    {{ $advert->category->name }}
+                                
                                 <br> Москва</div>
                             <div class="magazin-l">
                                 <a class="btn btn-default s13" href="/shops/7-zapchasti-all.html" title="Запчасти ALL">Запчасти ALL</a>

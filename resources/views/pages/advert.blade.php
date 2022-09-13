@@ -7,7 +7,7 @@
             <li><a class="btn-back bl-inl" title="Вернуться назад" href="javascript:history.back()">назад</a></li>
             <li><a title="" href="/">Главная</a></li>
             
-            <li><a title="" href="https://universal.elite-board.org/Russia/Moscow/Avtotransport/">{{ $advert->category->name}}</a></li> 
+            <li><a title="" href="/category/{{$advert->category->id}}">{{ $advert->category->name}}</a></li> 
             
         </ol>  
         <div class="bl-tb container-tb">
@@ -54,9 +54,11 @@
                                 <span class="user-avatar text-up text-center bl-inl al-top br100 c-f f-m" id="avatar">А</span>
                                 <div class="user-info bl-inl al-top">
                                     <div class="email-conf bl-inl pos-abs br20" data-toggle="tooltip" data-placement="top" title="" data-original-title="Пользователь подтверждён"></div>
-                                        <a class="c-20 a-hov" data-toggle="tooltip" data-placement="top" title="Перейти в профиль" href="/userinfo/1/">
-                                            <span class="user-info-name f-m s16" id="name">Админ</span>
-                                        </a>
+                                    
+                                        
+                                            <span class="user-info-name f-m s16" >{{$advert->user->name}}</span>
+                                        
+                                    
                                     <div class="product_region s13">Москва</div>
                                 </div>
                             </div>
@@ -88,9 +90,9 @@
                                                 <div class="fotorama__fullscreen-icon" tabindex="0" role="button"></div>
                                                 <div class="fotorama__stage__shaft" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); width: 858px; margin-left: 0px;">
                                                     @foreach($advert->images as $image)
-                                                    <div class="fotorama__stage__frame fotorama__loaded fotorama__loaded--img fotorama__active" style="left: 0px;">
-                                                        <img src="/assets/images/{{$image->name}}" class="fotorama__img" style="width: 569.822px; height: 380px; left: 144.089px; top: 0px;">
-                                                    </div>
+                                                        <div class="fotorama__stage__frame fotorama__loaded fotorama__loaded--img fotorama__active" style="left: 0px;">
+                                                            <img src="/assets/uploads/usr/0/{{$image->name}}" class="fotorama__img" style="width: 569.822px; height: 380px; left: 144.089px; top: 0px;">
+                                                        </div>
                                                     @endforeach
                                                     
                                                 </div>
@@ -103,39 +105,17 @@
                             <div class="product_params">
                                 <div class="product_params_title s17 f-m">Параметры объявления</div>
                                 <ul class="product_params_list row">
-                                    <li class="col-xs-12 col-sm-6 col-md-6">
-                                        <span>Характер объявления:</span> 
-                                        <a class="c-20 a-hov" title="" href="/sort/?f_1=2">Предложение</a>
-                                    </li>
-                                    <li class="col-xs-12 col-sm-6 col-md-6">
-                                        <span>Год выпуска:</span> 
-                                        <a class="c-20 a-hov" title="" href="/sort/?f_4=160">2010</a>
-                                    </li>
-                                    <li class="col-xs-12 col-sm-6 col-md-6">
-                                        <span>Пробег:</span> 
-                                        <a class="c-20 a-hov" title="" href="/sort/?f_7=178">10 000</a>
-                                    </li>
-                                    <li class="col-xs-12 col-sm-6 col-md-6">
-                                        <span>КПП:</span> 
-                                        <a class="c-20 a-hov" title="" href="/sort/?f_8=185">Механика</a>
-                                    </li>
-                                    <li class="col-xs-12 col-sm-6 col-md-6">
-                                        <span>Опции:</span> 
-                                        <a class="c-20 a-hov" href="/sort/?f_9[]=189">Усилитель руля</a>, 
-                                        <a class="c-20 a-hov" href="/sort/?f_9[]=188">Подогрев передних сидений</a>, 
-                                        <a class="c-20 a-hov" href="/sort/?f_9[]=186">ABS</a>
-                                    </li> 
-                                    <li class="col-xs-12 col-sm-6 col-md-6">
-                                        <span>Торг:</span> 
-                                        <a class="c-20 a-hov" title="" href="/sort/?f_28=314">Возможен</a>
-                                    </li>
-                                    <li class="col-xs-12 col-sm-6 col-md-6">
-                                        <span>Доставка:</span> 
-                                        <a class="c-20 a-hov" title="" href="/sort/?f_29=316">Курьер</a>
-                                    </li> 
-                                    <li class="col-xs-12 col-sm-6 col-md-6">
-                                        <span>Место осмотра (адрес):</span> ул. Ленина
-                                    </li>
+                                    @foreach($advert->filters as $filter)
+                                        <li class="col-xs-12 col-sm-6 col-md-6">
+                                            <span>{{$filter->name}}</span> 
+                                            @foreach($advert->options as $option)
+                                                @if($option->filter_id == $filter->id)
+                                                    <a class="c-20 a-hov" title="" href="/sort/?f_1=2">{{$option->name}}</a>
+                                                @endif
+                                            @endforeach
+                                        </li>
+                                    @endforeach
+                                    
                                 </ul>  
                             </div> 
                             <div class="product_description">

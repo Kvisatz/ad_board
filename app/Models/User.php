@@ -49,7 +49,7 @@ class User extends Authenticatable
 
     public function adverts()
     {
-        return $this->belongsToMany(Advertisment::class, 'user_advertisment');
+        return $this->hasMany(Advertisment::class, 'user_id');
     }
 
     public function favoriteadverts()

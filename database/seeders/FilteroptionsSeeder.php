@@ -71,42 +71,42 @@ class FilteroptionsSeeder extends Seeder
             [
                 'id' => 11,
                 'name' => 'Бензин',
-                'filter_id' => 6,
+                'filter_id' => 5,
             ],
             [
                 'id' => 12,
                 'name' => 'Дизель',
-                'filter_id' => 6,
+                'filter_id' => 5,
             ],
             [
                 'id' => 13,
                 'name' => 'Круиз контроль',
-                'filter_id' => 7,
+                'filter_id' => 6,
             ],
             [
                 'id' => 14,
                 'name' => 'Усилитель руля',
-                'filter_id' => 7,
+                'filter_id' => 6,
             ],
             [
                 'id' => 15,
                 'name' => 'Возможен',
-                'filter_id' => 8,
+                'filter_id' => 7,
             ],
             [
                 'id' => 16,
                 'name' => 'Не интересует',
-                'filter_id' => 8,
+                'filter_id' => 7,
             ],
             [
                 'id' => 17,
                 'name' => '1999',
-                'filter_id' => 9,
+                'filter_id' => 8,
             ],
             [
                 'id' => 18,
                 'name' => '2000',
-                'filter_id' => 9,
+                'filter_id' => 8,
             ],
             [
                 'id' => 19,
