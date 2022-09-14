@@ -72,15 +72,15 @@
                                             <div class="message_block_imag br3 pos-rel">
                                                 <a title="{{ $advert->title }}" href="{{ url('/advert', $advert->id)}}">
                                                     <div class="carousel-img brazzers-daddy">
-                                                        <div class="tmb-wrap">
-                                                            <div class="tmb-wrap-table">
-                                                                <div class=""></div>
-                                                            </div>
-                                                        </div>
+                                                    
                                                         <div class="image-wrap">
-                                                            <div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets/uploads/usr/0/ts_d77f0ea9cafe2413c3f3677775a3993c_35_1.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;">
-                                                                <img alt="{{ $advert->title }}" src="/assets/uploads/usr/0/ts_d77f0ea9cafe2413c3f3677775a3993c_35_1.webp" style="display: none;">
+                                                            @foreach($advert->images as $image)
+                                                            <div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets/uploads/usr/0/{{ $image->name }}&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; display: block;">
+                                                                
+                                                                <img alt="{{ $advert->title }}" src="/assets/uploads/usr/0/{{ $image->name }}" style="display: none;">
+                                                                
                                                             </div>
+                                                            @endforeach
                                                         </div>
                                                     </div>
                                                 </a>  
@@ -111,9 +111,9 @@
 
 
 <!-- Начало блока свежего -->
-<div id="list_message_block" class="list-block-ind row">
-    
-<div class="title-name s19 col-sm-12">Свежие объявления <a class="a-all s13 c-7 f-l" href="/assets/allmess/">Все объявления</a></div><div class="wrapper-scroll"><div class="wrapper-scroll-bl">
+<div id="list_message_block" class="list-block-ind row"> 
+    <div class="title-name s19 col-sm-12">Свежие объявления 
+        <a class="a-all s13 c-7 f-l" href="/assets/allmess/">Все объявления</a></div><div class="wrapper-scroll"><div class="wrapper-scroll-bl">
   
 
 
