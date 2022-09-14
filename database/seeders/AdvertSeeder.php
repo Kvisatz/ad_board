@@ -25,6 +25,7 @@ class AdvertSeeder extends Seeder
                             'description' => Str::random(40),
                             'category_id' => 1,
                             'user_id' => 2,
+                            'test' => true,
                         ];
             $data[] = $product;
         }
@@ -40,6 +41,9 @@ class AdvertSeeder extends Seeder
                                                         'vip' => true,
                                                         'category_id' => 15,
                                                         'user_id' => 1,
+                                                        'region_id' => 5,
+                                                        'test' => true,
+
                                                     ],
                                                     [
                                                         'title' => 'Haval лучшая машина для китайца',
@@ -47,7 +51,9 @@ class AdvertSeeder extends Seeder
                                                         'description' => 'Совсем не езженный, мы русские друг друга не обманываем',
                                                         'vip' => true,
                                                         'category_id' => 9,
+                                                        'region_id' => 1,
                                                         'user_id' => 1,
+                                                        'test' => true,
                                                     ],
                                                     [
                                                         'title' => 'Кажется это ниссан но это неточно',
@@ -55,7 +61,9 @@ class AdvertSeeder extends Seeder
                                                         'description' => 'Плохого про машину сказать не могу я в близи ее не видел',
                                                         'vip' => true,
                                                         'category_id' => 9,
-                                                        'user_id' => 1,
+                                                        'region_id' => 1,
+                                                        'user_id' => 7,
+                                                        'test' => true,
                                                     ],
                                                     [
                                                         'title' => 'Снегоход',
@@ -63,7 +71,9 @@ class AdvertSeeder extends Seeder
                                                         'description' => 'Припарковал его в магазине одежды',
                                                         'vip' => true,
                                                         'category_id' => 15,
+                                                        'region_id' => 3,
                                                         'user_id' => 1,
+                                                        'test' => true,
                                                     ],
                                                     [
                                                         'title' => 'Супермегаэлитый диск',
@@ -71,7 +81,9 @@ class AdvertSeeder extends Seeder
                                                         'description' => 'Сам на нем верхом езжу',
                                                         'vip' => true,
                                                         'category_id' => 12,
+                                                        'region_id' => 2,
                                                         'user_id' => 1,
+                                                        'test' => true,
                                                     ],
                                                 ]);
     }

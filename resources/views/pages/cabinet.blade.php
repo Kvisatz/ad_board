@@ -27,11 +27,11 @@
                     @if(count($errors) > 0)
                         @foreach ($errors->all() as $error)
 
-                        <div class="alert alert-danger">
-                            <button class="close" data-dismiss="alert">×</button>
-                            {{ $error }}
-                        </div>
-                    @endforeach
+                            <div class="alert alert-danger">
+                                <button class="close" data-dismiss="alert">×</button>
+                                {{ $error }}
+                            </div>
+                        @endforeach
 
                     @endif
                     @if(session('success'))
@@ -90,41 +90,11 @@
                             <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
                                 <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
                                     <li role="presentation" class="active"><a href="/cabinet">Личные данные</a></li>
+                                    <li role="presentation"><a href="/cabinet/new-advert">Подать обьявление</a></li>
                                     <li role="presentation"><a href="/cabinet/favorite">Избранное</a></li>
                                     <li role="presentation"><a href="/cabinet/my-adverts">Мои обьявления</a></li>
                                 </ul>
-                                <!-- <ul class="nav nav-pills flex-column mb-auto">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link active" aria-current="page">
-                                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-                                        Личные данные
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="nav-link link-dark">
-                                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-                                        Dashboard
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="nav-link link-dark">
-                                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-                                        Orders
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="nav-link link-dark">
-                                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-                                        Products
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="nav-link link-dark">
-                                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-                                        Customers
-                                        </a>
-                                    </li>
-                                </ul> -->
+                                
                                 <hr>
                                 <div class="dropdown">
                                 

@@ -1588,6 +1588,18 @@ a {
     cursor: pointer;
 }
 
+.siz{
+	width: 30%;
+}
+
+.zis{
+	width: 70%;
+}
+
+.zizz{
+	margin-bottom: 15px;
+}
+
 
 /* Responsive */
 

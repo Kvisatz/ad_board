@@ -1,9 +1,48 @@
 @extends('templates.'.$template)
 
 @section('content')
+<div class="modal fade" id="selectRegion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-content-region">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title text-center s18" id="exampleModalLabel">Вы уверены что хотите удалить обьявление</h4> 
+                <form action="/cabinet/delete-advert" method="post">
+                    @csrf
+                    <input type="hidden" name="advert_id" value="{{$advert->id}}">
+                    <input type="submit" value="Удалить" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 
 <div id="main" class="mbg">
-    
+    @if(session('success'))
+        <div class="alert alert-success">
+            <strong>Ок!</strong> {{ session('success') }}
+            <button type="button" class="close" data-dismiss="alert">×</button>
+        </div>
+    @endif
+
+    @if(count($errors) > 0)
+        @foreach ($errors->all() as $error)
+
+            <div class="alert alert-danger">
+                <button class="close" data-dismiss="alert">×</button>
+                {{ $error }}
+            </div>
+        @endforeach
+
+    @endif
+
     <div class="container page-add ">
         <div class="bl-tb container-tb">
             <!-- Начало контента -->
@@ -25,12 +64,19 @@
                                             </div>
                                         </div>
                                         <div class="image-wrap">
-                                            <div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets/uploads/usr/0/ts_f3885b82302507da428b878abd73281c_35_1.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-                                                <img alt="{{ $advert->title }}" src="/assets/uploads/usr/0/ts_f3885b82302507da428b878abd73281c_35_1.webp" style="display: none;">
-                                            </div>
-                                            <div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets/uploads/usr/0/ts_f3885b82302507da428b878abd73281c_35_2.webp&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-                                                <img alt="{{ $advert->title }}" src="/assets/uploads/usr/0/ts_f3885b82302507da428b878abd73281c_35_2.webp" style="display: none;">
-                                            </div>
+                                            @if($advert->test == true)
+                                                @foreach($advert->images as $image)
+                                                    <div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets/uploads/usr/0/{{$image->name}}&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+                                                        <img alt="{{ $advert->title }}" src="/assets/uploads/usr/0/{{$image->name}}" style="display: none;">
+                                                    </div>
+                                                @endforeach
+                                                @elseif($advert->test == false)
+                                                    @foreach($advert->images as $image)
+                                                        <div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/storage/images/{{$image->name}}&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+                                                            <img alt="{{ $advert->title }}" src="/storage/images/{{$image->name}}" style="display: none;">
+                                                        </div>
+                                                    @endforeach
+                                            @endif
                                         </div>
                                     </div>
                                 </a>
@@ -58,7 +104,16 @@
                                 {{ $advert->price }}
                             </div>
                             <div class="offer-actions pos-abs">
-                                <div class="btn-group"></div>
+                                <div class="btn-group">
+                                    <!-- <form action="/cabinet/delete-advert" method="post">
+                                        @csrf
+                                        <input type="hidden" name="advert_id" value="{{$advert->id}}">
+                                        <input type="submit" value="Удалить" class="btn btn-primary">
+                                    </form> -->
+                                    <a href="#selectRegion" data-toggle="modal" class="selectRegion btn btn-primary">
+                                        удалить
+                                    </a>
+                                </div>
                                 <span class="notepad ic-star" data-id="30" data-toggle="tooltip" data-placement="top" title="Добавить в избранные"></span>
                             </div>
                         </div>
@@ -82,6 +137,7 @@
                             <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
                                 <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
                                     <li role="presentation"><a href="/cabinet">Личные данные</a></li>
+                                    <li role="presentation"><a href="/cabinet/new-advert">Подать обьявление</a></li>
                                     <li role="presentation"><a href="/cabinet/favorite">Избранное</a></li>
                                     <li role="presentation" class="active"><a href="/cabinet/my-adverts">Мои обьявления</a></li>
                                 </ul>

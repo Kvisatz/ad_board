@@ -13,33 +13,10 @@
     <meta name="msapplication-TileImage" content="/assets/templates/universal/assets/ico/fav192.png">
     <meta name="theme-color" content="#E6E6FA">
     <script async="" src="/assets/tag.js"></script>
-    <!-- <script>
-        if('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-            navigator.serviceWorker.register('/sw.js');
-        });
-        }
-
-            var pwaReq = null;
-        window.addEventListener('beforeinstallprompt', (e) => {
-            pwaReq = e
-        });
-        function pwa() {
-            if (pwaReq) {
-                pwaReq.prompt();
-                pwaReq.userChoice.then(function(choiceResult) {
-                    pwaReq = null
-                })
-            }
-        }
-    </script> -->
+   
     <link rel="shortcut icon" href="/assets/images/cat/logo.png" type="image/png">
     <title>Universal</title>
     <link href="/assets/templates/universal/css/bootstrap.min.css" rel="stylesheet">
-    <!-- @if(isset($bootstrap) && $bootstrap == true)
-    <link href="/assets/templates/universal/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link href="/assets/sidebar/sidebars.css" rel="stylesheet">
-    @endif -->
     <link href="/assets/templates/universal/css/style-main.css" rel="stylesheet">
     <link href="/assets/templates/universal/css/light.css" rel="stylesheet">
     <link href="/assets/templates/universal/css/glyphicon.css" rel="stylesheet">
@@ -86,9 +63,7 @@
                             </span>
                             <span class="logo-text al-mid s22 f-b">Universal</span>
                         </a> 
-                        <a href="#selectRegion" data-toggle="modal" class="selectRegion bl-inl al-mid c-20 s15">
-                            <span class="hidden-xsm bl-inl al-mid sp-now regw">Все регионы</span>
-                        </a>
+                        {!! $widget_regions !!}
                     </div>
     
                     <div class="bl-cell al-mid text-right">
@@ -111,7 +86,7 @@
                                 <a class="btn-user bl-inl al-mid c-20 br20 b-f s15" href="/login">Личный кабинет</a>
                             @endif
                             
-                            <a class="mob-btnadd btn btn-primary btn-add br30" href="/assets/add/">Подать объявление</a>
+                            <a class="mob-btnadd btn btn-primary btn-add br30" href="/">Подать объявление</a>
                             <span class="mbtn-close visible-xs pos-abs">×</span>
                         </div><!-- /mobile-menu -->
     
@@ -268,77 +243,7 @@
         var back_region = 0;
         var current_region = TPL_REGION_ID;
     </script>
-    <div class="modal fade" id="selectRegion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content modal-content-region">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                    <h4 class="modal-title text-center s18" id="exampleModalLabel">Выбор региона</h4> 
-                    <div class="bl-regionlist br3">
-                        <div class="region_current">
-                            <a href="/assets#" id="region_select_current">
-                                <span id="region_select_current_name"></span>
-                            </a>
-                        </div>  
-                        <div class="RegionFilter pos-rel">
-                            <input type="text" id="region-modal-filter" value="" class="form-control" placeholder="Фильтр по названию..." autocomplete="off">
-                            <a id="region-modal-clear" class="pos-abs bl-bl s16 point c-a  text-center">×</a>
-                        </div>
-                        <ul id="regionlist" style="">
-                            <li>
-                                <a href="#" class="" id="rl1">Россия</a>
-                            </li>
-                            <li>
-                                <a href="#" class="" id="rl104">Украина</a>
-                            </li>
-                            <li>
-                                <a href="#" class="" id="rl105">Белоруссия</a>
-                            </li>
-                            <li>
-                                <a href="#" class="" id="rl114">Грузия</a>
-                            </li>
-                            <li>
-                                <a href="#" class="" id="rl113">Туркмения</a>
-                            </li>
-                            <li>
-                                <a href="#" class="" id="rl112">Узбекистан</a>
-                            </li>
-                            <li>
-                                <a href="#" class="" id="rl111">Таджикистан</a>
-                            </li>
-                            <li>
-                                <a href="#" class="" id="rl110">Молдавия</a>
-                            </li>
-                            <li>
-                                <a href="#" class="" id="rl109">Киргизия</a>
-                            </li>
-                            <li>
-                                <a href="#" class="" id="rl108">Казахстан</a>
-                            </li>
-                            <li>
-                                <a href="#" class="" id="rl107">Армения</a>
-                            </li>
-                            <li>
-                                <a href="#" class="" id="rl106">Азербайджан</a>
-                            </li>
-                            <li>
-                                <a href="#" class="" id="rl115">Другое</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="region_loader_img" style="display:none;">
-                        <div>Пожалуйста, подождите...</div>
-                    </div>
-                    <div class="region_control">
-                        <a href="#" id="region_select_back" class="btn btn-default btn-xs">Назад</a>
-                        <a href="#" id="region_select_all" class="btn btn-default btn-xs pull-right">Все регионы</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <script src="/assets/templates/universal/js/jquery/3.2.1/jquery.min.js"></script>
     <script src="/assets/templates/universal/js/jquery.cookie.js"></script>
     

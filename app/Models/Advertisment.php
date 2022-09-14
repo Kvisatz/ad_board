@@ -23,6 +23,11 @@ class Advertisment extends Model
         return $this->belongsTo(Category::class, 'category_id');
     }
 
+    public function region()
+    {
+        return $this->belongsTo(Region::class, 'region_id');
+    }
+
     public function images()
     {
         return $this->hasMany(Image::class, 'advertisment_id');

@@ -24,8 +24,11 @@ Route::controller(IndexController::class)->group(function (){
         Route::post('/cabinet/personal-data-request', 'datarequestAction');
         Route::get('/cabinet/favorite', 'favoriteAction')->name('favorite');
         Route::get('/cabinet/my-adverts', 'myadvertsAction')->name('myadverts');
+        Route::get('/cabinet/new-advert', 'newadvertAction')->name('new-advert');
+        Route::post('/cabinet/advert-request', 'newadvertrequestAction');
+        Route::post('/cabinet/delete-advert', 'deleteadvertAction');
         
-
+       
         
     });
     Route::get('/', 'indexAction');

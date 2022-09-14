@@ -197,6 +197,8 @@ return [
         App\Providers\CategoryMenuServiceProvider::class,
         App\Providers\HeadercarouselServiceProvider::class,
         App\Providers\FooterpromoServiceProvider::class,
+        App\Providers\RegionServiceProvider::class,
+        // App\Providers\CabinetmainServiceProvider::class,
         
 
     ],

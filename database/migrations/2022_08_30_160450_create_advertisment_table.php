@@ -22,7 +22,9 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->integer('year')->nullable();
             $table->integer('kilometrage')->nullable();
+            $table->unsignedBigInteger('region_id')->nullable();
             $table->string('transmission')->nullable();
+            $table->boolean('test')->default(false);
         });
     }
 

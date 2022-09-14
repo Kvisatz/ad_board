@@ -7,11 +7,14 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use App\Validators\LoginValidator;
 use App\Validators\UserinfoValidator;
+use App\Validators\NewadvertValidator;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
 use App\Models\User;
 use App\Models\Advertisment;
+use App\Models\Region;
 use App\Helpers\CheckuserHelper;
+use App\Helpers\NewadvertaddHelper;
 
 
 
@@ -26,20 +29,24 @@ class IndexController extends Controller
         $categories = Category::get();
 
         $adverts = Advertisment::get();
-        // dd($adverts);
+        
         $vipAdverts = Advertisment::where('vip', true)->take(5)->get();
-        // dd($vipAdverts);
+        
+        $regions = Region::get();
 
-
-        $flag = true;
-
-        return view('pages.index', compact('template', 'categories', 'flag', 'adverts','vipAdverts'));
+        return view('pages.index', compact('template', 'categories', 'regions', 'adverts','vipAdverts'));
 
     }
     public function categoryAction($id)
     {
         $template = $this->template;
+
         $category = Category::where('id', $id)->first();
+
+        if(!$category){
+            abort(404);
+        }
+
         return view('pages.category', compact('template', 'category'));
 
     }
@@ -68,6 +75,38 @@ class IndexController extends Controller
         }        
 
     }
+    
+    
+    public function newadvertrequestAction(Request $request)
+    {
+        $validator = NewadvertValidator::advertValidator($request);
+                           
+        if($validator->fails()) {
+            return redirect()->route('new-advert')->withErrors($validator)->withInput();
+        }
+
+        $newadvert = NewadvertaddHelper::addadvert('title', $request);
+        // dd($newadvert);
+        return redirect()->route('myadverts')->with('success', 'Информация измеена')->withInput();       
+
+    }
+
+    public function deleteadvertAction(Request $request){
+			
+        $validator = NewadvertValidator::deleteValidator($request);
+
+        if($validator->fails()) {
+            return redirect()->route('myadverts')->withErrors($validator)->withInput();
+        }
+
+        Advertisment::where('id', $request->advert_id)->delete();
+
+        return redirect()->route('myadverts')->with('success', 'Ок! Обьявление успешно удалено')->withInput();
+    }
+
+    
+
+    
 
     public function datarequestAction(Request $request)
     {
@@ -97,9 +136,9 @@ class IndexController extends Controller
     {
         $template = $this->template;
 
-        
+        $user = User::where('id', Auth::user()->id)->first();
 
-        return view('pages.cabinet', compact('template'));
+        return view('pages.cabinet', compact('template', 'user'));
 
     }
 
@@ -108,7 +147,7 @@ class IndexController extends Controller
     {
         $template = $this->template;
 
-       $user = User::where('id', Auth::user()->id)->first();
+        $user = User::where('id', Auth::user()->id)->first();
 
         return view('pages.cabinetfavorite', compact('template', 'user'));
         
@@ -119,7 +158,7 @@ class IndexController extends Controller
     {
         $template = $this->template;
 
-       $user = User::where('id', Auth::user()->id)->first();
+        $user = User::where('id', Auth::user()->id)->first();
 
         return view('pages.myadverts', compact('template', 'user'));
         
@@ -138,6 +177,24 @@ class IndexController extends Controller
         
 
     }
+
+
+    public function newadvertAction()
+    {
+        $template = $this->template;
+
+        $user = User::where('id', Auth::user()->id)->first();
+
+        $categories = Category::where('parent_id', null)->get();
+
+        $regions = Region::get();
+        // dd($category);
+
+        return view('pages.cabinetnewadvert', compact('template', 'user', 'categories', 'regions'));
+        
+
+    }
+    
     
     
 }

@@ -83,6 +83,7 @@
                             <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
                                 <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
                                     <li role="presentation"><a href="/cabinet">Личные данные</a></li>
+                                    <li role="presentation"><a href="/cabinet/new-advert">Подать обьявление</a></li>
                                     <li role="presentation" class="active"><a href="/cabinet/favorite">Избранное</a></li>
                                     <li role="presentation"><a href="/cabinet/my-adverts">Мои обьявления</a></li>
                                 </ul>

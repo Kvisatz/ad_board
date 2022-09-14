@@ -35,6 +35,7 @@ class DatabaseSeeder extends Seeder
             ImagesSeeder::class,
             AdvertismentfilterSeeder::class,
             AdvertismentfilteroptionsSeeder::class,
+            RegionsSeeder::class,
         ]);
 
     }
