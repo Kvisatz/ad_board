@@ -35,6 +35,11 @@ Route::controller(IndexController::class)->group(function (){
     Route::get('/login', 'loginAction')->name('login');
     Route::post('/login-request', 'loginrequestAction');
     Route::get('/logout', 'logoutAction')->name('logout');
+    Route::get('/register', 'registerAction')->name('register');
+    Route::post('/register-request', 'registerrequestAction');
+    Route::get('/register-execution', 'registerexecutionAction')->name('register-execution');
+    
+    
     Route::get('/category/{id}', 'categoryAction', function($id){
         return $id;
         });

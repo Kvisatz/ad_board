@@ -15,6 +15,7 @@ use App\Models\Advertisment;
 use App\Models\Region;
 use App\Helpers\CheckuserHelper;
 use App\Helpers\NewadvertaddHelper;
+use App\Helpers\RegisteruserHelper;
 
 
 
@@ -75,6 +76,47 @@ class IndexController extends Controller
         }        
 
     }
+
+    public function registerAction()
+    {
+        $template = $this->template;
+
+        return view('pages.register', compact('template'));
+
+    }
+
+    public function registerexecutionAction()
+    {
+        $template = $this->template;
+
+        return view('pages.registerexecute', compact('template'));
+
+    }
+    
+
+    public function registerrequestAction(Request $request)
+    {
+
+        $validator = UserinfoValidator::userinfoValidator($request);
+        
+                                     
+        if($validator->fails())
+        {
+            return redirect()->route('register')->withErrors($validator)->withInput();
+        }
+
+        $registerHelper = RegisteruserHelper::registerUser($request);
+        
+        if(!$registerHelper){
+            return redirect()->route('register')->with('fail', 'Логин или email уже используются')->withInput();
+        }
+        
+
+        return redirect()->route('register-execution')->with('success', 'Пользователь зарегистрирован')->withInput();
+                
+
+    }
+    
     
     
     public function newadvertrequestAction(Request $request)

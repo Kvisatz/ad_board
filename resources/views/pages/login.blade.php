@@ -37,7 +37,7 @@
                             </div>
                             
                             <div class="text-center">
-                                <a class="a-reg" href="/users/register/">Регистрация</a>
+                                <a class="a-reg" href="/register">Регистрация</a>
                             </div>
                             
                         </form>
