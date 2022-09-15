@@ -86,7 +86,7 @@
                                 <a class="btn-user bl-inl al-mid c-20 br20 b-f s15" href="/login">Личный кабинет</a>
                             @endif
                             
-                            <a class="mob-btnadd btn btn-primary btn-add br30" href="/">Подать объявление</a>
+                            <a class="mob-btnadd btn btn-primary btn-add br30" href="/add-new-advert">Подать объявление</a>
                             <span class="mbtn-close visible-xs pos-abs">×</span>
                         </div><!-- /mobile-menu -->
     
@@ -120,9 +120,13 @@
         
                     <div class="header-menu col-xs-8 col-md-6 text-right"> 
                         {!! $widget_menu_category !!}
-                        
-                        <a class="btn-shop bl-inl al-mid c-20 s15 hidden-xs" href="/assets/shops/">Магазины</a> 
-                        <a class="btn btn-primary btn-add br30 hidden-xs" href="/assets/add/">Подать объявление</a>
+                        @if(Auth::user() == null)
+                            <a class="btn-shop bl-inl al-mid c-20 s15 hidden-xs" href="/assets/shops/">Магазины</a> 
+                            <a class="btn btn-primary btn-add br30 hidden-xs" href="/add-new-advert">Подать объявление</a>
+                            @else
+                            <a class="btn-shop bl-inl al-mid c-20 s15 hidden-xs" href="/assets/shops/">Магазины</a> 
+                            <a class="btn btn-primary btn-add br30 hidden-xs" href="/cabinet/new-advert">Подать объявление</a>
+                        @endif
                     </div>
                 </div>
             </div>

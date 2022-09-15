@@ -31,7 +31,8 @@
                     if(isset($request->avatar)){
                         $user->avatar = $avatarName;  
                     }
-                    return $user->save();
+                    $user->save();
+                    return $user->id;
                 }
                 else
                 {

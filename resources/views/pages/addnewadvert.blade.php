@@ -41,23 +41,28 @@
                             <strong>Ок!</strong> {{ session('success') }}
                             <button type="button" class="close" data-dismiss="alert">×</button>
                         </div>
+                        @elseif(session('fail'))
+                        <div class="alert alert-danger">
+                            <button class="close" data-dismiss="alert">×</button>
+                            {{ session('fail') }}
+                        </div>
                     @endif
                     <div class="text-center">
                         <div class="bl-inl text-left form-add">
-                            <form name="add" action="advert-request" method="post" id="main_form" enctype='multipart/form-data'> 
+                            <form name="add" action="reginster-advert-request" method="post" id="main_form" enctype='multipart/form-data'> 
                                 @csrf
                                 <input type="hidden" name="form_id" id="form_id" value="175758acefebd8e130e05edc64566453">
-                                <input type="hidden" name="user_id" id="add_cat" value="{{Auth::user()->id}}">
+                                
                                 <span class="visible-xs item-tooltip striped-brand child"></span>
                                 <input type="hidden" name="add_region" id="add_region" value="">
                                 <input name="post_filter" type="hidden" value="false">
-                                <div class="section-title f-m s15">Личные данные</div>  
+                                <div class="section-title f-m s15 zizz">Личные данные</div>  
                                 <div class="bl-tb add-tb pos-rel zizz">
                                     <div class="bl-celln bl-cell al-mid siz">
                                         <label for="name">Ваше имя</label>
                                     </div>
                                     <div class="bl-cellf bl-cell al-top zis">
-                                        <input name="name" value="{{ $user->name }}" class="form-control" required="" type="text" disabled>
+                                        <input name="name" value="" class="form-control" required="" type="text" placeholder="Введите имя не менее 3х символов">
                                         <span class="icon-info" data-original-title="Представьтесь, пожалуйста" data-placement="top" data-toggle="tooltip"></span>
                                     </div>
                                 </div>  
@@ -66,7 +71,7 @@
                                         <label for="email">Ваш e-mail</label>
                                     </div>
                                     <div class="bl-cellf bl-cell al-top zis">
-                                        <input name="email" value="{{ $user->email }}" class="form-control" required="" type="email" disabled>
+                                        <input name="email" value="" class="form-control" required="" type="email" placeholder="Введите email">
                                         <span class="icon-info" data-original-title="Будет использоваться в качестве логина для входа в систему На этот адрес будут приходить ответы на Ваше объявление. Адрес будет защищён от спам-ботов." data-placement="top" data-toggle="tooltip"></span>
                                     </div>
                                 </div>
@@ -76,7 +81,7 @@
                                     </div>
                                     <div class="bl-cellf bl-cell al-top zis">
                                         <div class="pos-rel">
-                                            <input name="password" id="password1" value="" class="form-control show-pas1" required="" type="password">
+                                            <input name="password" id="password1" value="" class="form-control show-pas1" required="" type="password" placeholder="Введите пароль не менее 3х символов">
                                             <span class="masked1 bl-bl pos-abs point"></span>
                                         </div>
                                         <div class="pos-rel">
@@ -89,7 +94,7 @@
                                         <span class="icon-info" data-original-title="Укажите пароль для регистрации, не меньше 6-ти символов" data-placement="top" data-toggle="tooltip"></span>  
                                     </div>  
                                 </div> 
-                                <div class="section-title f-m s15">Размещение объявления</div> 
+                                <div class="section-title f-m s15 zizz">Размещение объявления</div> 
                                 <div class="bl-tb add-tb pos-rel zizz">
                                     <div class="bl-celln bl-cell al-mid siz">
                                         <label class="control-label" for="title">Заголовок объявления</label>
@@ -104,7 +109,7 @@
                                         <label class="control-label" for="title">Прикрепите картинки</label>
                                     </div>
                                     <div class="bl-cellf bl-cell al-top zis">
-                                        <input value="" maxlength="100" name="image" data-original-title="Добавьте картинки" class="form-control calcletters" type="file" accept="image">
+                                        <input value="" maxlength="100" name="image" data-original-title="Добавьте картинки" class="form-control calcletters"  type="file" accept="image">
                                         <span class="icon-info" data-original-title="Добавьте картинки" data-placement="top" data-toggle="tooltip"></span>
                                     </div>
                                 </div>
@@ -158,7 +163,7 @@
                                     <div class="bl-cellf bl-cell al-top zis">
                                         <div class="multiselect" data-action="load" data-name="cat" data-default="">
                                             <div>
-                                                <select class="form-control" size="1" name="category">
+                                                <select class="form-control" size="1" name="category" required="required">
                                                     <option value="">[ Ваш выбор ]</option>
                                                     @foreach($categories as $category)
                                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -203,32 +208,7 @@
             <div class="col-md-3">
                 <div class="bl-cell al-top bl-right">
                     <div class="sidebar_right pos-rel">
-                        <!-- Sidebar начало -->
-        
-                        <div class="container">
-
-                            <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
-                                <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
-                                    <li role="presentation"><a href="/cabinet">Личные данные</a></li>
-                                    <li role="presentation" class="active"><a href="/cabinet/new-advert">Подать обьявление</a></li>
-                                    <li role="presentation"><a href="/cabinet/favorite">Избранное</a></li>
-                                    <li role="presentation"><a href="/cabinet/my-adverts">Мои обьявления</a></li>
-                                </ul>
-                                
-                                <hr>
-                                <div class="dropdown">
-                                
-                                    <form action="/logout" method="GET">
-                                        @csrf
-                                        <input type="submit" value="Выйти">
-                                    </form>
-                                
-                                </div>
-                            </div>
-
-                            </div>
-                            <script src="/assets/sidebar/sidebars.js"></script>
-                            <!-- Sidebar конец -->
+                        
                     </div>
                 </div>
             </div>

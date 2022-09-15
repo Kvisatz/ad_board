@@ -10,7 +10,7 @@
     class NewadvertaddHelper{
 
 
-        static function addImage($advert, $request){
+        static function addImage($id, $request){
 
 				if(isset($request->image))
 				{

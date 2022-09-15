@@ -15,7 +15,7 @@
             <div class="col-md-9">
 
                 <!-- <div class="bl-cell al-top bl-center"> -->
-                    <h1>Личные данные</h1> 
+                    <h1>Регистрация</h1> 
                     
                     @if(count($errors) > 0)
                         @foreach ($errors->all() as $error)

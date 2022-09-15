@@ -1,23 +1,7 @@
 @extends('templates.'.$template)
 
 @section('content')
-<div class="modal fade" id="selectRegion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content modal-content-region">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title text-center s18" id="exampleModalLabel">Вы уверены что хотите удалить обьявление</h4> 
-                <form action="/cabinet/delete-advert" method="post">
-                    @csrf
-                    <input type="hidden" name="advert_id" value="{{$advert->id}}">
-                    <input type="submit" value="Удалить" class="btn btn-primary">
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 
 
@@ -50,6 +34,27 @@
             <h2>Избранное</h2>
             <div class="offerlist">
                 @foreach($user->adverts as $advert)
+
+                <div class="modal fade" id="selectRegion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content modal-content-region">
+                            <div class="modal-body">
+                                <button type="button" class="close" data-dismiss="modal">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <h4 class="modal-title text-center s18" id="exampleModalLabel">Вы уверены что хотите удалить обьявление</h4> 
+                                <form action="/cabinet/delete-advert" method="post">
+                                    @csrf
+                                    <input type="hidden" name="advert_id" value="{{$advert->id}}">
+                                    <input type="submit" value="Удалить" class="btn btn-primary">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
                     <div class="cl-line pos-rel"></div>
                     <div id="message_30" class="offer bl-tb">
                         <div class="offer-photo bl-cell al-top pos-rel">
@@ -105,11 +110,7 @@
                             </div>
                             <div class="offer-actions pos-abs">
                                 <div class="btn-group">
-                                    <!-- <form action="/cabinet/delete-advert" method="post">
-                                        @csrf
-                                        <input type="hidden" name="advert_id" value="{{$advert->id}}">
-                                        <input type="submit" value="Удалить" class="btn btn-primary">
-                                    </form> -->
+                                    
                                     <a href="#selectRegion" data-toggle="modal" class="selectRegion btn btn-primary">
                                         удалить
                                     </a>

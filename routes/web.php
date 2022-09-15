@@ -38,6 +38,11 @@ Route::controller(IndexController::class)->group(function (){
     Route::get('/register', 'registerAction')->name('register');
     Route::post('/register-request', 'registerrequestAction');
     Route::get('/register-execution', 'registerexecutionAction')->name('register-execution');
+    Route::get('/add-new-advert', 'addnewadvertAction')->name('add-new-advert');
+    Route::post('/reginster-advert-request', 'registerandaddadvertrequestAction')->name('reginster-advert-request');
+
+    
+    
     
     
     Route::get('/category/{id}', 'categoryAction', function($id){

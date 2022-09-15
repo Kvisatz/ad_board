@@ -11,7 +11,7 @@
     class NewadvertaddHelper{
 
 
-        static function addadvert($field, $request){
+        static function addadvert($field, $request, $id = null){
 
             $adverts = Advertisment::where($field, $request->name)->get();
             if(count($adverts) == 0)
@@ -28,7 +28,13 @@
 				$advert->price = $request->price;
 				$advert->region_id = $request->region;
 				$advert->category_id = $request->category;
-				$advert->user_id = $request->user_id;
+				if($id == null){
+					$advert->user_id = $request->user_id;
+				}
+				else{
+					$advert->user_id = $id;
+				}
+				
 				$advert->description = $request->content;
 				if(isset($request->image))
 				{

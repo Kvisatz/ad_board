@@ -118,7 +118,7 @@ class IndexController extends Controller
     }
     
     
-    
+    // добавление обьявления авторизованным пользователем из кабинета
     public function newadvertrequestAction(Request $request)
     {
         $validator = NewadvertValidator::advertValidator($request);
@@ -129,10 +129,11 @@ class IndexController extends Controller
 
         $newadvert = NewadvertaddHelper::addadvert('title', $request);
         // dd($newadvert);
-        return redirect()->route('myadverts')->with('success', 'Информация измеена')->withInput();       
+        return redirect()->route('myadverts')->with('success', 'Обьявление успешно размещено')->withInput();       
 
     }
 
+    // удаление обьявления авторизованным пользователем из кабинета
     public function deleteadvertAction(Request $request){
 			
         $validator = NewadvertValidator::deleteValidator($request);
@@ -145,8 +146,7 @@ class IndexController extends Controller
 
         return redirect()->route('myadverts')->with('success', 'Ок! Обьявление успешно удалено')->withInput();
     }
-
-    
+ 
 
     
 
@@ -220,7 +220,7 @@ class IndexController extends Controller
 
     }
 
-
+    //страница добавления нового обьвления авторизованным пользователем через кабинет
     public function newadvertAction()
     {
         $template = $this->template;
@@ -236,6 +236,46 @@ class IndexController extends Controller
         
 
     }
+    //страница добавления нового обьвления неавторизованным пользователем с регистрацией
+
+    public function addnewadvertAction()
+    {
+        $template = $this->template;
+
+        $categories = Category::where('parent_id', null)->get();
+
+        $regions = Region::get();
+        // dd($category);
+
+        return view('pages.addnewadvert', compact('template', 'categories', 'regions'));     
+
+    }
+
+
+    public function registerandaddadvertrequestAction(Request $request)
+    {
+        $validator = UserinfoValidator::userinfoValidator($request);
+        if($validator->fails()) {
+            return redirect()->route('add-new-advert')->withErrors($validator)->withInput();
+        }
+        $validator = NewadvertValidator::advertValidator($request);
+                           
+        if($validator->fails()) {
+            return redirect()->route('add-new-advert')->withErrors($validator)->withInput();
+        }
+
+        $registerHelper = RegisteruserHelper::registerUser($request);
+        
+        if(!$registerHelper){
+            return redirect()->route('add-new-advert')->with('fail', 'Логин или email уже используются')->withInput();
+        }
+
+        $newadvert = NewadvertaddHelper::addadvert('title', $request, $registerHelper);
+        // dd($newadvert);
+        return redirect()->route('register-execution')->with('success', 'Поздравлям Вы успешно подали свое первое обьявление и зарегистрировались')->withInput();       
+
+    }
+    
     
     
     

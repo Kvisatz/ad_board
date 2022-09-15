@@ -10,7 +10,9 @@
                                                         'price' => 'required|integer|max:20',
                                                         'password' => 'required|min:3|max:20',
                                                         'title' => 'required|min:3|max:100',
+                                                        'image' => 'mimes:jpg,bmp,png',
                                                         'content' => 'required|min:5|max:2000',
+                                                        'category' => 'required'
                                                     ],
                                                     [
                                                         'price.required' => 'Введите цену',
@@ -25,6 +27,8 @@
                                                         'content.required' => 'Введите описание',
                                                         'content.min' => 'Минимальная длина описания 5 символов',
                                                         'content.max' => 'Маскимальная длина описания 2000 символов',
+                                                        'category.required' => 'Выберите категорию',
+
                                                     ]);
         }
 
