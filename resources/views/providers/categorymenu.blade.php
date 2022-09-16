@@ -16,7 +16,7 @@
                                 <li>
                                     <a class="sp-now" href="{{ url('/category', [$supcategory->id]) }}">
                                         {{ $supcategory->name }}
-                                        <span class="cat-count b-f c-7">{{ $supcategory->amount }}</span>
+                                        <span class="cat-count b-f c-7">{{ count($supcategory->advertisment) }}</span>
                                     </a>
                                 </li>
                             @endforeach

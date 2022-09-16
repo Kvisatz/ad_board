@@ -7,7 +7,7 @@
 
         static function advertValidator($request){
             return Validator::make($request->all(), [
-                                                        'price' => 'required|integer|max:20',
+                                                        'price' => 'required|integer|max:200000000',
                                                         'password' => 'required|min:3|max:20',
                                                         'title' => 'required|min:3|max:100',
                                                         'image' => 'mimes:jpg,bmp,png',
@@ -17,7 +17,7 @@
                                                     [
                                                         'price.required' => 'Введите цену',
                                                         'price.integer' => 'Цена может содержать только целые числа',
-                                                        'price.max' => 'Маскимальная длина цены 20 символов',
+                                                        'price.max' => 'Маскимальная ценf 200000000',
                                                         'password.required' => 'Введите пароль',
                                                         'password.min' => 'Минимальная длина пароля 3 символа',
                                                         'password.max' => 'Маскимальная длина пароля 20 символов',

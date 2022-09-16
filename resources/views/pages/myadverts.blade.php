@@ -3,7 +3,23 @@
 @section('content')
 
 
-
+<div class="modal fade" id="deleteAdvert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content ">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title text-center s18" id="exampleModalLabel">Вы уверены что хотите удалить обьявление</h4> 
+                <form action="/cabinet/delete-advert" method="post">
+                    @csrf
+                    <input type="hidden" name="advert_id" class="advert_id" value="">
+                    <input type="submit" value="Удалить" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -35,27 +51,7 @@
             <div class="offerlist">
                 @foreach($user->adverts as $advert)
 
-                <div class="modal fade" id="selectRegion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content modal-content-region">
-                            <div class="modal-body">
-                                <button type="button" class="close" data-dismiss="modal">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                                <h4 class="modal-title text-center s18" id="exampleModalLabel">Вы уверены что хотите удалить обьявление</h4> 
-                                <form action="/cabinet/delete-advert" method="post">
-                                    @csrf
-                                    <input type="hidden" name="advert_id" value="{{$advert->id}}">
-                                    <input type="submit" value="Удалить" class="btn btn-primary">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                    <div class="cl-line pos-rel"></div>
+                <div class="cl-line pos-rel"></div>
                     <div id="message_30" class="offer bl-tb">
                         <div class="offer-photo bl-cell al-top pos-rel">
                             <div class="pos-rel ov-h">
@@ -109,13 +105,16 @@
                                 {{ $advert->price }}
                             </div>
                             <div class="offer-actions pos-abs">
-                                <div class="btn-group">
+                                <div class="flex-btnss">
                                     
-                                    <a href="#selectRegion" data-toggle="modal" class="selectRegion btn btn-primary">
+                                    <a href="#deleteAdvert" data-toggle="modal" class="btn btn-primary delete-btn" data-id="{{$advert->id}}">
                                         удалить
                                     </a>
+                                    <a href="/cabinet/updateadvert/{{$advert->id}}" class="btn btn-primary">
+                                        редактировать
+                                    </a>
                                 </div>
-                                <span class="notepad ic-star" data-id="30" data-toggle="tooltip" data-placement="top" title="Добавить в избранные"></span>
+                                
                             </div>
                         </div>
                     </div>
@@ -164,7 +163,20 @@
     </div>
 </div>
 
+<script>
+        let btns = document.querySelectorAll(".delete-btn");
 
+        for(let btn of btns){
+          btn.addEventListener('click', function(evt){
+            let link = evt.target;
+            console.log(link);
+            let id = link.getAttribute('data-id')
+            console.log(id);
+
+            document.querySelector("#deleteAdvert .advert_id").value = id;
+          });
+        }
+      </script>
 
 
 

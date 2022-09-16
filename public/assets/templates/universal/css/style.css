@@ -1599,6 +1599,11 @@ a {
 .zizz{
 	margin-bottom: 15px;
 }
+.flex-btnss{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
 
 
 

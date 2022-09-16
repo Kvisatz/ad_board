@@ -23,7 +23,7 @@
                                                     <img src="/assets/images/cat/{{ $category->img }}" alt="{{ $category->name }}">
                                                 </span> 
                                                 <span class="name-cat s15 bl-bl sp-now">{{ $category->name }}</span>
-                                                <span class="count-tree c-7 s12 bl-bl sp-now">{{ $category->amount }} объявлений</span>
+                                                <span class="count-tree c-7 s12 bl-bl sp-now">{{ count($category->advertisment) }} объявлений</span>
                                             </a>
                                         </li>
                                     @endif

@@ -25,8 +25,12 @@ Route::controller(IndexController::class)->group(function (){
         Route::get('/cabinet/favorite', 'favoriteAction')->name('favorite');
         Route::get('/cabinet/my-adverts', 'myadvertsAction')->name('myadverts');
         Route::get('/cabinet/new-advert', 'newadvertAction')->name('new-advert');
+        Route::get('/cabinet/updateadvert/{id}', 'updateadvertAction', function($id){
+            return $id;
+            });
         Route::post('/cabinet/advert-request', 'newadvertrequestAction');
         Route::post('/cabinet/delete-advert', 'deleteadvertAction');
+        
         
        
         
@@ -41,10 +45,6 @@ Route::controller(IndexController::class)->group(function (){
     Route::get('/add-new-advert', 'addnewadvertAction')->name('add-new-advert');
     Route::post('/reginster-advert-request', 'registerandaddadvertrequestAction')->name('reginster-advert-request');
 
-    
-    
-    
-    
     Route::get('/category/{id}', 'categoryAction', function($id){
         return $id;
         });

@@ -319,3 +319,11 @@ width:236px !important;display:inline-block;*display:inline;*zoom:1;vertical-ali
 .sp_item{padding:0}.colp{float:none;padding:0 0 12px;width:100%;}}
 @media (max-width:410px){.form-login,.form-registr,.password-recovery{width:100%;}}
 @media (max-width:370px){#regionlist li{width:100%;}.title-name{display:table;width:100%;}}
+.flex-btnss{
+	display: flex;
+	flex-direction: column;
+}
+.flex-btnss .btn-primary{
+  margin-bottom: 10px;
+  border-radius: 10px;
+}

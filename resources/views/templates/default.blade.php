@@ -68,12 +68,12 @@
     
                     <div class="bl-cell al-mid text-right">
                         <div class="mobile-menu bl-inl"> 
-                            <a class="mob-shop c-20 s15" href="/assets/shops/">Магазины</a>
-                            <a class="btn-notepad bl-inl al-mid c-20 s15" title="Избранных объявлений: 0" href="/assets/notepad/">Избранное 
-                                <span class="n_count bl-inl al-top pos-rel br100 s11 text-center">0</span>
-                            </a>  
-                            
+                            <!-- <a class="mob-shop c-20 s15" href="/assets/shops/">Магазины</a> -->
                             @if(Auth::user() != null)
+                                <a class="btn-notepad bl-inl al-mid c-20 s15" title="Избранных объявлений: 0" href="/cabinet/favorite">Избранное 
+                                    <span class="n_count bl-inl al-top pos-rel br100 s11 text-center">{{ count(Auth::user()->favoriteadverts) }}</span>
+                                </a>
+                            
                             
                                 <a class="btn-user bl-inl al-mid c-20 br20 b-f s15" href="/cabinet">
                                 @if(isset(Auth::user()->avatar))
@@ -82,15 +82,17 @@
                                     
                                     <strong>{{ Auth::user()->name }}</strong>
                                 </a>
+                                <a href="/logout" class="btn btn-primary"  data-toggle="tooltip" data-placement="bottom">Выйти</a> 
                                 @else
                                 <a class="btn-user bl-inl al-mid c-20 br20 b-f s15" href="/login">Личный кабинет</a>
+                                
                             @endif
                             
                             <a class="mob-btnadd btn btn-primary btn-add br30" href="/add-new-advert">Подать объявление</a>
                             <span class="mbtn-close visible-xs pos-abs">×</span>
                         </div><!-- /mobile-menu -->
     
-                        <a href="/assets#" class="theme-type th-d bl-inl al-mid br100" data-id="dark" data-toggle="tooltip" data-placement="bottom" title="Тёмная тема"></a> 
+                        
                         <div class="mobile-btn bl-inl al-top pos-abs"></div> 
     
                     </div> <!-- /bl-cell al-mid text-right -->
@@ -98,18 +100,19 @@
                 </div>
             </div>
         </div>
-    
+                
         <div class="header-bottom b-f">
             <div class="container">
-                <div class="row">    
+                <div class="row">  
+                    <!-- Поиск -->  
                     <div class="col-xs-4 col-md-6">  
                         <form class="header-seach f-l bl-inl al-top br30" name="top_seach" method="GET" action="/search/">
                             <div class="bl-tb al-top">
-                                <div class="pos-rel locationicon bl-cell al-top">
+                                <!-- <div class="pos-rel locationicon bl-cell al-top">
                                     <input type="text" id="autocomplete-ajax" value="" class="form-control locinput input-rel searchtag-input" placeholder="Ваш город..." autocomplete="off">
                                     <input name="add_region" value="" type="hidden" id="ajax_region_id">
                                     <input type="hidden" name="add_cat" value="0">
-                                </div>
+                                </div> -->
                                 <div class="pos-rel inputtext bl-cell al-top">
                                     <input type="text" name="text" id="autocomplete-text" class="form-control" placeholder="Что вы ищете?" value="" autocomplete="off">
                                 </div>
@@ -117,14 +120,15 @@
                             </div>
                         </form>  
                     </div>
-        
+                    <!-- Поиск -->
+
                     <div class="header-menu col-xs-8 col-md-6 text-right"> 
                         {!! $widget_menu_category !!}
                         @if(Auth::user() == null)
-                            <a class="btn-shop bl-inl al-mid c-20 s15 hidden-xs" href="/assets/shops/">Магазины</a> 
+                            <!-- <a class="btn-shop bl-inl al-mid c-20 s15 hidden-xs" href="/assets/shops/">Магазины</a>  -->
                             <a class="btn btn-primary btn-add br30 hidden-xs" href="/add-new-advert">Подать объявление</a>
                             @else
-                            <a class="btn-shop bl-inl al-mid c-20 s15 hidden-xs" href="/assets/shops/">Магазины</a> 
+                            <!-- <a class="btn-shop bl-inl al-mid c-20 s15 hidden-xs" href="/assets/shops/">Магазины</a>  -->
                             <a class="btn btn-primary btn-add br30 hidden-xs" href="/cabinet/new-advert">Подать объявление</a>
                         @endif
                     </div>

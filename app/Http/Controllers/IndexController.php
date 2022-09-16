@@ -16,6 +16,7 @@ use App\Models\Region;
 use App\Helpers\CheckuserHelper;
 use App\Helpers\NewadvertaddHelper;
 use App\Helpers\RegisteruserHelper;
+use App\Helpers\AdvertupdateHelper;
 
 
 
@@ -34,8 +35,10 @@ class IndexController extends Controller
         $vipAdverts = Advertisment::where('vip', true)->take(5)->get();
         
         $regions = Region::get();
+        
+        $flag = true;
 
-        return view('pages.index', compact('template', 'categories', 'regions', 'adverts','vipAdverts'));
+        return view('pages.index', compact('template', 'categories', 'regions', 'flag', 'adverts','vipAdverts'));
 
     }
     public function categoryAction($id)
@@ -123,13 +126,33 @@ class IndexController extends Controller
     {
         $validator = NewadvertValidator::advertValidator($request);
                            
-        if($validator->fails()) {
-            return redirect()->route('new-advert')->withErrors($validator)->withInput();
-        }
+        // if($validator->fails()) {
+        //     return redirect()->route('new-advert')->withErrors($validator)->withInput();
+        // }
+        if($request->form_id != 'add'){
+            //маршрутизация для редактирования обьявления
+            if($validator->fails()) {
+                return redirect()->route('new-advert')->withErrors($validator)->withInput();
+            }
 
-        $newadvert = NewadvertaddHelper::addadvert('title', $request);
-        // dd($newadvert);
-        return redirect()->route('myadverts')->with('success', 'Обьявление успешно размещено')->withInput();       
+            $newadvert = AdvertupdateHelper::updateAdvert($request, Auth::user()->id);
+
+            return redirect()->route('myadverts')->with('success', 'Обьявление успешно отредактировано')->withInput(); 
+
+        }
+        else{
+            //маршрутизация для добавления нового обьявления
+
+            if($validator->fails()) {
+                return redirect()->route('new-advert')->withErrors($validator)->withInput();
+            }
+
+            $newadvert = NewadvertaddHelper::addadvert('title', $request);
+
+            return redirect()->route('myadverts')->with('success', 'Обьявление успешно размещено')->withInput(); 
+        }
+        
+              
 
     }
 
@@ -137,6 +160,8 @@ class IndexController extends Controller
     public function deleteadvertAction(Request $request){
 			
         $validator = NewadvertValidator::deleteValidator($request);
+
+        // dd($request->advert_id);
 
         if($validator->fails()) {
             return redirect()->route('myadverts')->withErrors($validator)->withInput();
@@ -146,6 +171,37 @@ class IndexController extends Controller
 
         return redirect()->route('myadverts')->with('success', 'Ок! Обьявление успешно удалено')->withInput();
     }
+
+    public function updateadvertAction($id)
+    {
+        $template = $this->template;
+
+        $user = User::where('id', Auth::user()->id)->first();
+
+        $categories = Category::where('parent_id', null)->get();
+
+        $regions = Region::get();
+
+        $myadvert = Advertisment::where('id', $id)->first();
+
+        return view('pages.cabinetnewadvert', compact('template', 'user', 'categories', 'regions', 'myadvert'));
+        
+
+    }
+    // public function updateadvertrequestAction(Request $request)
+    // {
+    //     $validator = NewadvertValidator::advertValidator($request);
+                           
+    //     if($validator->fails()) {
+    //         return redirect()->route('new-advert')->withErrors($validator)->withInput();
+    //     }
+
+    //     $newadvert = NewadvertaddHelper::addadvert('title', $request);
+    //     // dd($newadvert);
+    //     return redirect()->route('myadverts')->with('success', 'Обьявление успешно размещено')->withInput();       
+
+    // }
+    
  
 
     
