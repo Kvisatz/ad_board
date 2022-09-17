@@ -106,7 +106,7 @@
                 <div class="row">  
                     <!-- Поиск -->  
                     <div class="col-xs-4 col-md-6">  
-                        <form class="header-seach f-l bl-inl al-top br30" name="top_seach" method="GET" action="/search/">
+                        <form class="header-seach f-l bl-inl al-top br30" name="top_seach" method="GET" action="/search">
                             <div class="bl-tb al-top">
                                 <!-- <div class="pos-rel locationicon bl-cell al-top">
                                     <input type="text" id="autocomplete-ajax" value="" class="form-control locinput input-rel searchtag-input" placeholder="Ваш город..." autocomplete="off">
@@ -114,7 +114,7 @@
                                     <input type="hidden" name="add_cat" value="0">
                                 </div> -->
                                 <div class="pos-rel inputtext bl-cell al-top">
-                                    <input type="text" name="text" id="autocomplete-text" class="form-control" placeholder="Что вы ищете?" value="" autocomplete="off">
+                                    <input type="text" name="search" id="autocomplete-text" class="form-control" placeholder="Что вы ищете?" value="" autocomplete="off">
                                 </div>
                                 <button class="btn br100"></button>
                             </div>

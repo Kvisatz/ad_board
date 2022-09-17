@@ -51,6 +51,8 @@ Route::controller(IndexController::class)->group(function (){
     Route::get('/advert/{id}', 'advertAction', function($id){
         return $id;
         });
-    Route::get('/test', 'testAction');
+    Route::get('/search', 'searchAction');
+    Route::get('/filter-search', 'filtersearchAction');
+    
     
 });

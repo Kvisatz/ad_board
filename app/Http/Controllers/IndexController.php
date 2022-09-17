@@ -17,6 +17,7 @@ use App\Helpers\CheckuserHelper;
 use App\Helpers\NewadvertaddHelper;
 use App\Helpers\RegisteruserHelper;
 use App\Helpers\AdvertupdateHelper;
+use App\Http\Requests\SearchRequest;
 
 
 
@@ -188,21 +189,6 @@ class IndexController extends Controller
         
 
     }
-    // public function updateadvertrequestAction(Request $request)
-    // {
-    //     $validator = NewadvertValidator::advertValidator($request);
-                           
-    //     if($validator->fails()) {
-    //         return redirect()->route('new-advert')->withErrors($validator)->withInput();
-    //     }
-
-    //     $newadvert = NewadvertaddHelper::addadvert('title', $request);
-    //     // dd($newadvert);
-    //     return redirect()->route('myadverts')->with('success', 'Обьявление успешно размещено')->withInput();       
-
-    // }
-    
- 
 
     
 
@@ -331,6 +317,39 @@ class IndexController extends Controller
         return redirect()->route('register-execution')->with('success', 'Поздравлям Вы успешно подали свое первое обьявление и зарегистрировались')->withInput();       
 
     }
+
+    // поиск
+    
+    public function searchAction(SearchRequest $request)
+    {
+        $template = $this->template;
+
+        $categories = Category::get();
+
+        $regions = Region::get();
+
+        dd($request);
+
+        $data = $request->validated();
+
+       
+        $query = Advertisment::query();
+
+        $search = $data['search'];
+
+        if(isset($data['search']))
+        {
+            
+            $query->where('title', 'LIKE', "%{$data['search']}%");
+        }
+        
+        $adverts = $query->paginate(10);
+        // dd($adverts);
+        return view('pages.search', compact('template', 'categories', 'regions', 'adverts', 'search'));     
+
+    }
+
+
     
     
     
