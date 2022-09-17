@@ -197,10 +197,11 @@
                         
                     </div><!--/offerlist-->
                     <div class="mt-3">
-                      {{ $adverts->withQueryString()->links() }}  
+                       
                     </div>
                     
                 @endif
+                {{ $adverts->withQueryString()->links() }} 
             </div> 
             <div class="bl-cell al-top bl-right">
                 <div class="sidebar_right pos-rel"> 

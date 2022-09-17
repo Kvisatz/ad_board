@@ -322,30 +322,18 @@ class IndexController extends Controller
     // поиск
     
     public function searchAction(SearchRequest $request)
-    {
+    {   
+        // dd($request);
         $template = $this->template;
 
         $categories = Category::get();
 
         $regions = Region::get();
 
-        // dd($request);
-
         $data = $request->validated();
-
-       
-        // $query = Advertisment::query();
 
         $search = $data['search'];
 
-        // if(isset($data['search']))
-        // {
-            
-        //     $query->where('title', 'LIKE', "%{$data['search']}%");
-        // }
-        
-        // $adverts = $query->paginate(10);
-        // dd($adverts);
         $filter = app()->make(AdvertismentFilter::class, ['queryParams' => array_filter($data)]);
         // dd($filter);
 
