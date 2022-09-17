@@ -2,14 +2,19 @@
 
 namespace App\Models;
 
-// use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Traits\Filterable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+
 
 class Advertisment extends Model
 {
-    // use HasFactory;
+    use HasFactory;
+    use Filterable;
     
     protected $table = 'advertisment';
+    protected $guarded = false;
+
 
     public $timestamps = false;
 

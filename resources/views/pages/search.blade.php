@@ -23,7 +23,7 @@
                                 <h5 class="list-title f-l s15">
                                     Все рубрики
                                 </h5>  
-                                <select class="form-control" size="1" name="category">
+                                <select class="form-control" size="1" name="category_id">
                                     <option value="">Выберите категорию</option>
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -32,7 +32,7 @@
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-4 colp2">
                                 <h5 class="list-title f-l s15">Все регионы</h5> 
-                                <select class="form-control" size="1" name="region">
+                                <select class="form-control" size="1" name="region_id">
                                     <option value="">Выберите регион</option>
                                     @foreach($regions as $region)
                                         <option value="{{ $region->id }}">{{ $region->name }}</option>
@@ -197,7 +197,7 @@
                         
                     </div><!--/offerlist-->
                     <div class="mt-3">
-                      {{ $adverts->links() }}  
+                      {{ $adverts->withQueryString()->links() }}  
                     </div>
                     
                 @endif

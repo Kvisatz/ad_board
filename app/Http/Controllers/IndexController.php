@@ -18,6 +18,7 @@ use App\Helpers\NewadvertaddHelper;
 use App\Helpers\RegisteruserHelper;
 use App\Helpers\AdvertupdateHelper;
 use App\Http\Requests\SearchRequest;
+use App\Http\Filters\AdvertismentFilter;
 
 
 
@@ -328,23 +329,30 @@ class IndexController extends Controller
 
         $regions = Region::get();
 
-        dd($request);
+        // dd($request);
 
         $data = $request->validated();
 
        
-        $query = Advertisment::query();
+        // $query = Advertisment::query();
 
         $search = $data['search'];
 
-        if(isset($data['search']))
-        {
+        // if(isset($data['search']))
+        // {
             
-            $query->where('title', 'LIKE', "%{$data['search']}%");
-        }
+        //     $query->where('title', 'LIKE', "%{$data['search']}%");
+        // }
         
-        $adverts = $query->paginate(10);
+        // $adverts = $query->paginate(10);
         // dd($adverts);
+        $filter = app()->make(AdvertismentFilter::class, ['queryParams' => array_filter($data)]);
+        // dd($filter);
+
+        $adverts = Advertisment::filter($filter)->paginate(10);
+        // dd($adverts);
+
+
         return view('pages.search', compact('template', 'categories', 'regions', 'adverts', 'search'));     
 
     }

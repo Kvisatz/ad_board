@@ -24,11 +24,12 @@ class SearchRequest extends FormRequest
     public function rules()
     {
         return [
-            'search' => "string|max:200",
-            "category" => "string",
-            'region' => "string",
+            'search' => "string",
+            "category_id" => "string",
+            'region_id' => "string",
             'price_from' => "string",
             'price_to' => "string",
+            'sort_by' => "string",
         ];
     }
 }
