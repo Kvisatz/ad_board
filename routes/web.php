@@ -54,6 +54,9 @@ Route::controller(IndexController::class)->group(function (){
         });
     Route::get('/search', 'searchAction')->name('search');
     Route::post('/filter-search', 'filtersearchAction')->name('filter-search');
+    Route::get('/allmessvip', 'allmessvipAction');
+
+    
     
     
 });

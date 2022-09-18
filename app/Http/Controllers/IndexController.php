@@ -345,6 +345,20 @@ class IndexController extends Controller
 
     }
 
+    public function allmessvipAction()
+    {   
+        
+        $template = $this->template;
+
+        
+        $adverts = Advertisment::where('vip', true)->get();
+        // dd($adverts);
+
+
+        return view('pages.vipadvert', compact('template', 'adverts'));     
+
+    }
+    
     
 
 

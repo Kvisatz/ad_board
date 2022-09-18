@@ -59,7 +59,7 @@
                 <div class="list-block-ind row">
                     <div class="title-name s19 col-sm-12">
                         VIP-объявления 
-                        <a class="a-all s13 c-7 f-l" href="/allmessvip/">Все объявления</a>
+                        <a class="a-all s13 c-7 f-l" href="/allmessvip">Все объявления</a>
                     </div>
 
                     <div class="wrapper-scroll">
@@ -97,7 +97,7 @@
                                                         <span class="currency">₽</span>
                                                         {{ $advert->price }}
                                                     </span>
-                                                    <span class="reg_cat s13 c-7 f-l">Санкт-Петербург</span>
+                                                    <span class="reg_cat s13 c-7 f-l">{{ $advert->region->name }}</span>
                                                 </div>
                                             </div>
                                         </div>

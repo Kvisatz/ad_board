@@ -91,12 +91,10 @@
                                 
                                     {{ $advert->category->name }}
                                 
-                                <br> Москва</div>
-                            <div class="magazin-l">
-                                <a class="btn btn-default s13" href="/shops/7-zapchasti-all.html" title="Запчасти ALL">Запчасти ALL</a>
-                            </div>  
+                                <br> {{ $advert->region }}</div>
+                            
                             <div class="offer-details pos-abs">
-                                <span class="offer-date bl-inl al-top s13 f-l c-7">14 февраля 2022 в 21:28</span>
+                                <span class="offer-date bl-inl al-top s13 f-l c-7">{{ $advert->created_at }}</span>
                             </div>
                         </div>
                         <div class="offer-price bl-cell al-top pos-rel text-right">
