@@ -35,12 +35,13 @@ class IndexController extends Controller
         $adverts = Advertisment::get();
         
         $vipAdverts = Advertisment::where('vip', true)->take(5)->get();
+        $freshAdverts = Advertisment::where('fresh', true)->take(5)->get();
         
         $regions = Region::get();
         
         $flag = true;
 
-        return view('pages.index', compact('template', 'categories', 'regions', 'flag', 'adverts','vipAdverts'));
+        return view('pages.index', compact('template', 'categories', 'regions', 'flag', 'adverts','vipAdverts', 'freshAdverts'));
 
     }
     public function categoryAction($id)
@@ -350,14 +351,41 @@ class IndexController extends Controller
         
         $template = $this->template;
 
-        
-        $adverts = Advertisment::where('vip', true)->get();
+        $vip = true;
+        $adverts = Advertisment::where('vip', true)->paginate(3);
         // dd($adverts);
 
 
-        return view('pages.vipadvert', compact('template', 'adverts'));     
+        return view('pages.vipadvert', compact('template', 'adverts', 'vip'));     
 
     }
+
+    public function freshadvertAction()
+    {   
+        
+        $template = $this->template;
+
+        $fresh = true;
+        $adverts = Advertisment::where('fresh', true)->paginate(3);
+        // dd($adverts);
+
+
+        return view('pages.vipadvert', compact('template', 'adverts', 'fresh'));     
+
+    }
+
+    public function footerAction()
+    {   
+        
+        $template = $this->template;
+
+        return view('pages.footer', compact('template'));     
+
+    }
+
+
+
+    
     
     
 

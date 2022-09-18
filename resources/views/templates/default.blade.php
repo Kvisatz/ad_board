@@ -162,7 +162,7 @@
                                 </a>
                             </li>
                             <li class="footer-social c-7 s13">
-                                <a href="/assets/" data-toggle="tooltip" data-placement="top" title="vkontakte" class="s-vk">
+                                <a href="/" data-toggle="tooltip" data-placement="top" title="vkontakte" class="s-vk">
                                     <img alt="Оксана Соболева" src="/assets/templates/universal/images/svk.svg">
                                 </a>
                                 <a href="/" data-toggle="tooltip" data-placement="top" title="odnoklassniki" class="s-od">
@@ -184,16 +184,16 @@
                         <ul class="footer-link">
                             <li class="footer-tit text-up">Платные услуги</li>
                             <li>
-                                <a href="/partnerskaya-programma/" title="" class="c-4">Партнерская программа</a>
+                                <a href="/footer" title="" class="c-4">Партнерская программа</a>
                             </li>
                             <li>
-                                <a href="/reklama-na-saite/" title="" class="c-4">Реклама на сайте</a>
+                                <a href="/footer" title="" class="c-4">Реклама на сайте</a>
                             </li>  
                             <li>
-                                <a href="/uslugi_saita/" title="" class="c-4">Платные услуги</a>
+                                <a href="/footer" title="" class="c-4">Платные услуги</a>
                             </li>
                             <li>
-                                <a href="/mail/" title="" class="c-4">Контакты</a>
+                                <a href="/footer" title="" class="c-4">Контакты</a>
                             </li>
                         </ul>
                     </div>
@@ -201,16 +201,16 @@
                         <ul class="footer-link resp-line">
                             <li class="footer-tit text-up">Информация</li>
                             <li>
-                                <a href="/assets/politika-konfidencialnosti/" title="" class="c-4">Политика конфиденциальности</a>
+                                <a href="/footer" title="" class="c-4">Политика конфиденциальности</a>
                             </li>
                             <li>
-                                <a href="/assets/pravila/" title="" class="c-4">Правила сайта</a>
+                                <a href="/footer" title="" class="c-4">Правила сайта</a>
                             </li>
                             <li>
-                                <a href="/assets/help/" title="" class="c-4">Помощь</a>
+                                <a href="/footer" title="" class="c-4">Помощь</a>
                             </li>
                             <li>
-                                <a href="/assets/articles/" title="" class="c-4">Статьи</a>
+                                <a href="/footer" title="" class="c-4">Статьи</a>
                             </li>
                         </ul>
                     </div>
@@ -218,16 +218,16 @@
                         <ul class="footer-link resp-line">
                             <li class="footer-tit text-up">Пользователю</li>
                             <li>
-                                <a href="/assets/users/shop/" title="" class="c-4">Создать магазин</a>
+                                <a href="/footer" title="" class="c-4">Создать магазин</a>
                             </li>
                             <li>
-                                <a href="/assets/users/login/" title="" class="c-4">Личный кабинет</a>
+                                <a href="/login" title="" class="c-4">Личный кабинет</a>
                             </li>  
                             <li>
-                                <a href="/assets/users/register/" title="" class="c-4">Регистрация</a>
+                                <a href="register" title="" class="c-4">Регистрация</a>
                             </li>
                             <li>
-                                <a href="/assets#" onclick="pwa(); return false;" class="c-4" data-toggle="tooltip" data-placement="top" title="Установить мобильное приложение">Установить приложение</a>
+                                <a href="/footer" onclick="pwa(); return false;" class="c-4" data-toggle="tooltip" data-placement="top" title="Установить мобильное приложение">Установить приложение</a>
                             </li>
                         </ul>
                     </div>  

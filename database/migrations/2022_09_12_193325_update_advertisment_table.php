@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::table('advertisment', function (Blueprint $table) {
             $table->boolean('vip')->default(false);
+            $table->boolean('fresh')->default(false);
             $table->timestamps();
         });
     }

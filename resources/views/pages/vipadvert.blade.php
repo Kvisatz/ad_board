@@ -10,9 +10,13 @@
    
   
   
-  
+@if(isset($vip) && $vip == true)
 <h1>VIP-объявления</h1>  
-  
+@endif
+
+@if(isset($fresh) && $fresh == true)
+<h1>Свежие объявления</h1>  
+@endif
 
 <div class="filter-panel bl-tb">  
 
@@ -72,6 +76,9 @@
 </div><!--/bl-tb offer-->
 @endforeach
   
+
+{{ $adverts->withQueryString()->links() }} 
+
  
     
 
