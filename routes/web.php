@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ use App\Http\Controllers\IndexController;
 //     return view('pages.index');
 // });
 Route::controller(IndexController::class)->group(function (){
-    Route::middleware(['auth'])->group(function () {
+    Route::middleware(['auth', 'admin'])->group(function () {
         
         Route::get('/cabinet', 'cabinetAction')->name('cabinet');
         Route::post('/cabinet/personal-data-request', 'datarequestAction');
@@ -51,8 +52,15 @@ Route::controller(IndexController::class)->group(function (){
     Route::get('/advert/{id}', 'advertAction', function($id){
         return $id;
         });
-    Route::get('/search', 'searchAction');
-    Route::get('/filter-search', 'filtersearchAction');
+    Route::get('/search', 'searchAction')->name('search');
+    Route::post('/filter-search', 'filtersearchAction')->name('filter-search');
     
     
+});
+
+Route::controller(AdminController::class)->group(function (){
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/dashboard', 'indexAction')->name('dashboard');
+
+    });
 });

@@ -102,8 +102,7 @@ class IndexController extends Controller
     public function registerrequestAction(Request $request)
     {
 
-        $validator = UserinfoValidator::userinfoValidator($request);
-        
+        $validator = UserinfoValidator::userinfoValidator($request);        
                                      
         if($validator->fails())
         {
@@ -331,6 +330,7 @@ class IndexController extends Controller
         $regions = Region::get();
 
         $data = $request->validated();
+        // dd($data);
 
         $search = $data['search'];
 
@@ -341,9 +341,11 @@ class IndexController extends Controller
         // dd($adverts);
 
 
-        return view('pages.search', compact('template', 'categories', 'regions', 'adverts', 'search'));     
+        return view('pages.search', compact('template', 'categories', 'regions', 'adverts', 'data'));     
 
     }
+
+    
 
 
     

@@ -6,7 +6,7 @@
     <div class="container">  
         <div class="bl-tb container-tb">
             <div class="bl-cell al-top bl-center">
-                <h1>{{ $data['search'] }}</h1>  
+                <h1>{{ $search }}</h1>  
                 <script>
                     var must = new Array();
                     var cond = new Array();
@@ -17,45 +17,35 @@
                 </script>
                 <div class="result-bl b-f5 br3 s15">Показаны результаты для всех категорий</div>
                 <div class="block_search search-map">
-                    <form name="block_search" method="GET" action="/search">
-                        @csrf
-                        <input type="hidden" name="search" value="{{ $data['search'] }}">
+                    <form name="block_search" method="GET" action="/filter-search">
                         <div class="search_fields row search-category"> 
                             <div class="col-xs-12 col-sm-6 col-md-4 colp2">
                                 <h5 class="list-title f-l s15">
                                     Все рубрики
                                 </h5>  
                                 <select class="form-control" size="1" name="category_id">
-                                    @if(!isset($data['category_id']))
-                                        <option value="all" selected>Выберите категорию</option>
-                                    @endif
-                                        @foreach($categories as $category)
-                                            @if(isset($data['category_id']) && $data['category_id'] == $category->id)
-                                                <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
-                                                @else
-                                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                            @endif
-                                        @endforeach 
+                                    <option value="">Выберите категорию</option>
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-4 colp2">
                                 <h5 class="list-title f-l s15">Все регионы</h5> 
-                                <select class="form-control" size="1" name="region_id" value="">
-                                    @if(!isset($data['region_id']))
-                                        <option value="all" selected>Выберите регион</option>
-                                    @endif
+                                <select class="form-control" size="1" name="region_id">
+                                    <option value="">Выберите регион</option>
                                     @foreach($regions as $region)
-                                        @if(isset($data['region_id']) && $data['region_id'] == $region->id)
-                                            <option value="{{ $region->id }}" selected>{{ $region->name }}</option>
-                                            
-                                        @endif
-                                            <option value="{{ $region->id }}">{{ $region->name }}</option>
+                                        <option value="{{ $region->id }}">{{ $region->name }}</option>
                                     @endforeach
                                 </select>
                                 
                             </div>
                         </div> 
-                        
+                        <div class="search_fields get-text row">
+                            <div class="col-xs-12 col-sm-6 col-md-8 colp2">
+                                <input class="autocomplete-cat form-control" placeholder="Что вы ищете?" value="{{ $search }}" type="text" name="search" autocomplete="off">
+                            </div>
+                        </div>
                         <div class="block_search_ajax">
                             <div class="row search_fields bl-table yamm">
                                 <script>$(".radio-value").on("click",function(){var a="( ";$(this).find("input[type=radio]:checked").each(function(){a+=$(this).siblings("label").text()+" "});a+=")";"( )"==a&&(a="");$(this).find(".selected-radio").text(a)});
@@ -71,7 +61,7 @@
                                         <div class="dropdown-menu">
                                             <div class="btn-group">
                                                 <div class="btn btn-default cl-radio" role="button">
-                                                    <input id="sort_by1" name="sort_by" type="radio" value="date_add" checked="checked">
+                                                    <input id="sort_by1" name="sort_by" type="radio" value="date_add">
                                                     <label for="sort_by1">Дата</label>
                                                 </div>
                                                 <div class="btn btn-default cl-radio" role="button">
@@ -99,9 +89,9 @@
                                                 <div class="slider-cont" data-id="f_27" data-min="1140" data-max="9660000"> 
                                                     <div class="input-range">
                                                         <span class="bl-inl rateloc s13 c-5">От</span>
-                                                        <input class="from form-control bl-inl al-top" type="number" name="price_from" value="0">
+                                                        <input class="from form-control bl-inl al-top" type="number" name="price_from">
                                                         <span class="bl-inl rateloc s13 c-5">До</span>
-                                                        <input class="to form-control bl-inl al-top" type="number" name="price_to" value="9999999999999999999999999999">
+                                                        <input class="to form-control bl-inl al-top" type="number" name="price_to">
                                                     </div>
                                                     
                                                     <div class="rates-range btn-group">
@@ -121,20 +111,20 @@
                         </div>
                     </form>
                 </div>
-                <link href="/assets/templates/universal/css/style-search.css" rel="stylesheet">
+                <link href="/templates/universal/css/style-search.css" rel="stylesheet">
                 <br>
                 @if(count($adverts) == 0)
                     <div class="alert alert-warning">Нет объявлений</div>
                     @else
                     <div class="filter-panel bl-tb cl-s-fil">  
-                        <span class="count-s pull-left">На странице: {{ count($adverts) }} объявлений</span>  
+                        <span class="count-s pull-left">Всего: {{ count($adverts) }} объявление</span>  
                         <div class="current-list pos-rel bl-tb">
                         </div>
                     </div>
                     <div class="offerlist">
                         @foreach($adverts as $advert)
 
-                            <div class="cl-line pos-rel"></div>
+                        <div class="cl-line pos-rel"></div>
                             <div id="message_30" class="offer bl-tb">
                                 <div class="offer-photo bl-cell al-top pos-rel">
                                     <div class="pos-rel ov-h">

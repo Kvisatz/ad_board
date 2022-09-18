@@ -25,11 +25,11 @@ class SearchRequest extends FormRequest
     {
         return [
             'search' => "string",
-            "category_id" => "string",
-            'region_id' => "string",
-            'price_from' => "string",
-            'price_to' => "string",
-            'sort_by' => "string",
+            'category_id' => "integer",
+            'region_id' => "integer",
+            // 'price_from' => "integer",
+            // 'price_to' => "integer",
+            // 'sort_by' => "string",
         ];
     }
 }
