@@ -13,7 +13,7 @@
                 <h4 class="modal-title text-center s18" id="exampleModalLabel">Выбор региона</h4> 
                 <div class="bl-regionlist br3">
                     <div class="region_current">
-                        <a href="/assets#" id="region_select_current">
+                        <a href="/" id="region_select_current">
                             <span id="region_select_current_name"></span>
                         </a>
                     </div>  
@@ -21,23 +21,23 @@
                         <input type="text" id="region-modal-filter" value="" class="form-control" placeholder="Фильтр по названию..." autocomplete="off">
                         <a id="region-modal-clear" class="pos-abs bl-bl s16 point c-a  text-center">×</a>
                     </div>
-                    <ul id="regionlist" style="">
+                    <ul id="" style="">
 
                         @foreach($regions as $region)
                             <li>
-                                <a href="#" class="" id="rl1">{{$region->name}}</a>
+                                <a href="/" class="" id="rl1">{{$region->name}}</a>
                             </li>
                         @endforeach
 
 
                     </ul>
                 </div>
-                <div id="region_loader_img" style="display:none;">
+                <!-- <div id="region_loader_img" style="display:none;">
                     <div>Пожалуйста, подождите...</div>
-                </div>
+                </div> -->
                 <div class="region_control">
                     <a href="#" id="region_select_back" class="btn btn-default btn-xs">Назад</a>
-                    <a href="#" id="region_select_all" class="btn btn-default btn-xs pull-right">Все регионы</a>
+                    <!-- <a href="#" id="region_select_all" class="btn btn-default btn-xs pull-right">Все регионы</a> -->
                 </div>
             </div>
         </div>
