@@ -128,9 +128,6 @@ class IndexController extends Controller
     {
         $validator = NewadvertValidator::advertValidator($request);
                            
-        // if($validator->fails()) {
-        //     return redirect()->route('new-advert')->withErrors($validator)->withInput();
-        // }
         if($request->form_id != 'add'){
             //маршрутизация для редактирования обьявления
             if($validator->fails()) {

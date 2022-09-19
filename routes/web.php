@@ -19,7 +19,7 @@ use App\Http\Controllers\AdminController;
 //     return view('pages.index');
 // });
 Route::controller(IndexController::class)->group(function (){
-    Route::middleware(['auth', 'admin'])->group(function () {
+    Route::middleware(['auth'])->group(function () {
         
         Route::get('/cabinet', 'cabinetAction')->name('cabinet');
         Route::post('/cabinet/personal-data-request', 'datarequestAction');
@@ -31,10 +31,7 @@ Route::controller(IndexController::class)->group(function (){
             });
         Route::post('/cabinet/advert-request', 'newadvertrequestAction');
         Route::post('/cabinet/delete-advert', 'deleteadvertAction');
-        
-        
-       
-        
+ 
     });
     Route::get('/', 'indexAction');
     Route::get('/login', 'loginAction')->name('login');
@@ -65,8 +62,34 @@ Route::controller(IndexController::class)->group(function (){
 });
 
 Route::controller(AdminController::class)->group(function (){
-    Route::middleware(['auth'])->group(function () {
+    Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/dashboard', 'indexAction')->name('dashboard');
+        Route::get('/profile', 'profileAction')->name('profile');
+        Route::get('/admin-logout', 'logoutAction')->name('admin-logout');
+        Route::get('/coming-soon', 'comingsoonAction')->name('coming-soon');
+        Route::get('/categories', 'categoriesAction')->name('categories');
+        Route::get('/users', 'usersAction')->name('users');
+        Route::get('/adverts', 'advertsAction')->name('adverts');
+        Route::get('/alerts', 'alertsAction')->name('alerts');
+        Route::get('/badges', 'badgesAction')->name('badges');
+        Route::get('/buttons', 'buttonsAction')->name('buttons');
+        Route::get('/cards', 'cardsAction')->name('cards');
+        Route::get('/carousels', 'carouselsAction')->name('carousels');
+        Route::get('/lists', 'listsAction')->name('lists');
+        Route::get('/modals', 'modalsAction')->name('modals');
+        Route::get('/navigations', 'navigationsAction')->name('navigations');
+        Route::post('/delete-advert', 'deleteadvertAction')->name('delete-advert');
+        Route::get('/changeadvert/{id}', 'changeadvertAction', function($id){
+            return $id;
+            });
+        Route::post('/change-advert-request', 'changeadvertrequestAction')->name('change-advert-request');
+        
+            
 
+        
+        
+        
+        
+        
     });
 });

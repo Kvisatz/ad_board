@@ -93,6 +93,9 @@
                                     <li role="presentation"><a href="/cabinet/new-advert">Подать обьявление</a></li>
                                     <li role="presentation"><a href="/cabinet/favorite">Избранное</a></li>
                                     <li role="presentation"><a href="/cabinet/my-adverts">Мои обьявления</a></li>
+                                    @can('view', Auth::user())
+                                        <li role="presentation"><a href="dashboard">Панель администратора</a></li>
+                                    @endcan
                                 </ul>
                                 
                                 <hr>

@@ -73,7 +73,9 @@
                                 <a class="btn-notepad bl-inl al-mid c-20 s15" title="Избранных объявлений: 0" href="/cabinet/favorite">Избранное 
                                     <span class="n_count bl-inl al-top pos-rel br100 s11 text-center">{{ count(Auth::user()->favoriteadverts) }}</span>
                                 </a>
-                            
+                                @can('view', Auth::user())
+                                    <a href="dashboard" class="btn-primary btn">Панель администратора</a>
+                                @endcan
                             
                                 <a class="btn-user bl-inl al-mid c-20 br20 b-f s15" href="/cabinet">
                                 @if(isset(Auth::user()->avatar))

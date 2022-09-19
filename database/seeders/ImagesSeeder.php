@@ -50,6 +50,26 @@ class ImagesSeeder extends Seeder
                 'name' => 'диск.webp',
                 'advertisment_id' => 66
             ],
+            [
+                'name' => '3хколеска.webp',
+                'advertisment_id' => 67
+            ],
+            [
+                'name' => 'квартира.webp',
+                'advertisment_id' => 68
+            ],
+            [
+                'name' => 'GSB.webp',
+                'advertisment_id' => 69
+            ],
+            [
+                'name' => 'салон.webp',
+                'advertisment_id' => 70
+            ],
+            [
+                'name' => 'гитара.webp',
+                'advertisment_id' => 71
+            ],
         ]);
 
 

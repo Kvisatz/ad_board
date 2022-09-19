@@ -39,19 +39,19 @@
         <div class="offer-photo bl-cell al-top pos-rel"><div class="pos-rel ov-h">
 <a title="{{ $advert->title }}" href="/advert/{{ $advert->id }}">
 <div class="carousel-img br3 brazzers-daddy"><div class="carousel-more pos-abs c-f s12">Ещё 1 фото</div><div class="tmb-wrap"><div class="tmb-wrap-table"><div class="active"></div><div></div></div></div><div class="image-wrap">
-@if($advert->test == true)
-                                                @foreach($advert->images as $image)
-                                                    <div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets/uploads/usr/0/{{$image->name}}&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-                                                        <img alt="{{ $advert->title }}" src="/assets/uploads/usr/0/{{$image->name}}" style="display: none;">
-                                                    </div>
-                                                @endforeach
-                                                @elseif($advert->test == false)
-                                                    @foreach($advert->images as $image)
-                                                        <div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/storage/images/{{$image->name}}&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-                                                            <img alt="{{ $advert->title }}" src="/storage/images/{{$image->name}}" style="display: none;">
-                                                        </div>
-                                                    @endforeach
-                                            @endif
+    @if($advert->test == true)
+        @foreach($advert->images as $image)
+            <div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/assets/uploads/usr/0/{{$image->name}}&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+                <img alt="{{ $advert->title }}" src="/assets/uploads/usr/0/{{$image->name}}" style="display: none;">
+            </div>
+        @endforeach
+        @elseif($advert->test == false)
+            @foreach($advert->images as $image)
+                <div class="imgLiquidFill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/storage/images/{{$image->name}}&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+                    <img alt="{{ $advert->title }}" src="/storage/images/{{$image->name}}" style="display: none;">
+                </div>
+            @endforeach
+    @endif
 </div></div></a></div>
 </div>  
    

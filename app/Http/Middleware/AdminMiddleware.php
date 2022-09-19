@@ -19,8 +19,8 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next)
     {
 
-        if(Auth::user()->id == 1){
-            return redirect()->route('dashboard');
+        if(Auth::user()->id !== 1){
+            return redirect()->route('cabinet');
         }
         return $next($request);
     }
